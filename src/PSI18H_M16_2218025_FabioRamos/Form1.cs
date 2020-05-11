@@ -26,5 +26,15 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
 
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
