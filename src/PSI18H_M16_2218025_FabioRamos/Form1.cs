@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
@@ -35,6 +36,23 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void ReleaseCapture(System.IntPtr hwnd, int wMsg, int wParam, int IParam);
+
+
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 Outroform = new Form3();
+            Outroform.ShowDialog();
         }
     }
 }

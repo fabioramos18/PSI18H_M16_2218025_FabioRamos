@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Login = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,10 +56,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 528);
+            this.panel1.Size = new System.Drawing.Size(451, 494);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -97,10 +97,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.Login);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(451, 0);
+            this.panel2.Location = new System.Drawing.Point(451, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(433, 528);
+            this.panel2.Size = new System.Drawing.Size(433, 494);
             this.panel2.TabIndex = 1;
             // 
             // button2
@@ -136,6 +135,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 
@@ -234,11 +234,22 @@
             this.Login.TabIndex = 0;
             this.Login.Text = "Login";
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(884, 34);
+            this.panel7.TabIndex = 2;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 528);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -272,6 +283,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel7;
     }
 }
 
