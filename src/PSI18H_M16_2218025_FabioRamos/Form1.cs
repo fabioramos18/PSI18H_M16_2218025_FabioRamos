@@ -37,12 +37,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
 
         }
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void ReleaseCapture(System.IntPtr hwnd, int wMsg, int wParam, int IParam);
-
-
+        private Point MouseDownLocation;
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
