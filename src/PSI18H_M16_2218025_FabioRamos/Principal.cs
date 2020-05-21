@@ -7,18 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
-namespace PSI18H_M16_2218025_FabioRamos
-{
-    public partial class Form3 : Form
-    {
-        private bool isCollapsed;
-        public Form3()
+namespace PSI18H_M16_2218025_FabioRamos 
+{ 
+
+    public partial class Principal : Form
+    {  
+       
+        public Principal()
         {
             InitializeComponent();
             customizeDesign();
 
         }
+
+        //----------------------------ARRASTAR O FORM-----------------------------------\\
+
+        bool drag = false;
+        Point start_point = new Point(0, 0);
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+        private void BarraTitulo_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+        private void BarraTitulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point p = PointToScreen(e.Location);
+                this.Location = new Point(p.X - start_point.X, p.Y - start_point.Y);
+            }
+        }
+        //-------------------------------------------------------------------------------\\
+
 
         private void customizeDesign()
         {
@@ -53,9 +80,10 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //...
+            openChildForm(new HospBeatriz());
+            //....
             //meu codico
-            //...
+            //....
             hideSubmenu();
         }
 
@@ -69,9 +97,9 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button14_Click(object sender, EventArgs e)
         {
-            //...
+            //....
             //meu codico
-            //...
+            //....
             hideSubmenu();
         }
 
@@ -106,6 +134,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
+            openChildForm(new MarcarConsulta());
             //...
             //meu codico
             //...
@@ -127,6 +156,26 @@ namespace PSI18H_M16_2218025_FabioRamos
             //...
             hideSubmenu();
         }
+
+         
+        //--------------------------------------------------------------------
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelConteudo.Controls.Add(childForm);
+            panelConteudo.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+
+        //--------------------------------------------------------------------
 
 
 
@@ -150,8 +199,6 @@ namespace PSI18H_M16_2218025_FabioRamos
             this.WindowState = FormWindowState.Normal;
             btnRestaurar.Visible = false;
             btnMaximizar.Visible = true;
-
-
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -159,18 +206,17 @@ namespace PSI18H_M16_2218025_FabioRamos
             this.WindowState = FormWindowState.Minimized;
         }
 
+        
+
         private void button6_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-
-        private void panelConteudo_Paint(object sender, PaintEventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
-
     }
    
 }

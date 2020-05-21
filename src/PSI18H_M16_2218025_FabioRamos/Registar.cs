@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
-    public partial class Form2 : Form
+    public partial class Registar : Form
     {
-        public Form2()
+        public Registar()
         {
             InitializeComponent();
         }
