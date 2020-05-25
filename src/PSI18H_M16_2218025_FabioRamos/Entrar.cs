@@ -76,6 +76,11 @@ namespace PSI18H_M16_2218025_FabioRamos
             Principal Outroform = new Principal();
             Outroform.ShowDialog();
         }
-        
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Registar Outroform = new Registar();
+            Outroform.ShowDialog();
+        }
     }
 }

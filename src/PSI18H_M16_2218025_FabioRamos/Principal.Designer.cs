@@ -815,7 +815,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox12;
     }
 }

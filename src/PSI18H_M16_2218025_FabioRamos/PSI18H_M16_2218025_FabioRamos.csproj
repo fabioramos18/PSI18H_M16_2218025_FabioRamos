@@ -33,9 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +56,12 @@
     </Compile>
     <Compile Include="Entrar.Designer.cs">
       <DependentUpon>Entrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcarCConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcarCConsulta.Designer.cs">
+      <DependentUpon>MarcarCConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="Registar.cs">
       <SubType>Form</SubType>
@@ -81,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Entrar.resx">
       <DependentUpon>Entrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcarCConsulta.resx">
+      <DependentUpon>MarcarCConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registar.resx">
       <DependentUpon>Registar.cs</DependentUpon>
