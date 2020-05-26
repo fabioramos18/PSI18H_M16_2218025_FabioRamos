@@ -50,10 +50,6 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label1_Click_1(object sender, EventArgs e)
         {
@@ -81,6 +77,11 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             Registar Outroform = new Registar();
             Outroform.ShowDialog();
+        }
+
+        private void TextboxPasseword_OnValueChanged(object sender, EventArgs e)
+        {
+            TextboxPasseword.isPassword = true;          
         }
     }
 }
