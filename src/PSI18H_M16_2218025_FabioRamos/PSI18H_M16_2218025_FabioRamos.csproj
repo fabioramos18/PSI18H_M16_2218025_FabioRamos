@@ -36,6 +36,7 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -63,6 +64,7 @@
     <Compile Include="MarcarCConsulta.Designer.cs">
       <DependentUpon>MarcarCConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDB.cs" />
     <Compile Include="Registar.cs">
       <SubType>Form</SubType>
     </Compile>

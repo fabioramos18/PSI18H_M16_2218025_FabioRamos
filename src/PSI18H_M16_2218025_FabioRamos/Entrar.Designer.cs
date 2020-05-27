@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TextboxPasseword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.TextboxPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TextboxUser = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -84,7 +84,7 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.TextboxPasseword);
+            this.panel2.Controls.Add(this.TextboxPassword);
             this.panel2.Controls.Add(this.TextboxUser);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.panel6);
@@ -98,25 +98,25 @@
             this.panel2.Size = new System.Drawing.Size(433, 494);
             this.panel2.TabIndex = 1;
             // 
-            // TextboxPasseword
+            // TextboxPassword
             // 
-            this.TextboxPasseword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxPasseword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxPasseword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxPasseword.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxPasseword.HintText = "palavra-passe";
-            this.TextboxPasseword.isPassword = true;
-            this.TextboxPasseword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.TextboxPasseword.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.TextboxPasseword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.TextboxPasseword.LineThickness = 3;
-            this.TextboxPasseword.Location = new System.Drawing.Point(41, 254);
-            this.TextboxPasseword.Margin = new System.Windows.Forms.Padding(4);
-            this.TextboxPasseword.Name = "TextboxPasseword";
-            this.TextboxPasseword.Size = new System.Drawing.Size(300, 33);
-            this.TextboxPasseword.TabIndex = 12;
-            this.TextboxPasseword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxPasseword.OnValueChanged += new System.EventHandler(this.TextboxPasseword_OnValueChanged);
+            this.TextboxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextboxPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextboxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxPassword.HintForeColor = System.Drawing.Color.Empty;
+            this.TextboxPassword.HintText = "palavra-passe";
+            this.TextboxPassword.isPassword = true;
+            this.TextboxPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.TextboxPassword.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.TextboxPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.TextboxPassword.LineThickness = 3;
+            this.TextboxPassword.Location = new System.Drawing.Point(41, 254);
+            this.TextboxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxPassword.Name = "TextboxPassword";
+            this.TextboxPassword.Size = new System.Drawing.Size(300, 33);
+            this.TextboxPassword.TabIndex = 12;
+            this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TextboxPassword.OnValueChanged += new System.EventHandler(this.TextboxPasseword_OnValueChanged);
             // 
             // TextboxUser
             // 
@@ -271,7 +271,7 @@
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel7;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxPasseword;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxPassword;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxUser;
     }
 }

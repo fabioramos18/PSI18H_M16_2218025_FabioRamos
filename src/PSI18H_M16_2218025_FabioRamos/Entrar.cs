@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
     public partial class Entrar : Form
     {
+       
         public Entrar()
         {
             InitializeComponent();
@@ -69,6 +71,38 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MDB mdb = new MDB();
+
+            String username = TextboxUser.Text;
+            String password = TextboxPassword.Text;
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username`= @usn AND`password` = @pass", mdb.GetConnection());
+            
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
+            
+            adapter.SelectCommand = command;
+            
+            adapter.Fill(table);
+
+
+            //ver se u utilizador existe ou não
+
+
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("YES");
+            }
+            else
+            {
+                MessageBox.Show("NO");
+            }
+
+
             Principal Outroform = new Principal();
             Outroform.ShowDialog();
         }
@@ -81,7 +115,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void TextboxPasseword_OnValueChanged(object sender, EventArgs e)
         {
-            TextboxPasseword.isPassword = true;          
+            TextboxPassword.isPassword = true;          
         }
     }
 }
