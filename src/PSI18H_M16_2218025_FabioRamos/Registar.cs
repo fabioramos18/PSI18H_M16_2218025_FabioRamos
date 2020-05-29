@@ -71,8 +71,22 @@ namespace PSI18H_M16_2218025_FabioRamos
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = TextboxPassword;
 
 
-            //open conection
+            //abrir conecção
+            mdb.openConnection();
 
+            //consultar os dados
+            if(command.ExecuteNonQuery() == 0) //Mysql.ExecuteNonQuery();
+            {
+                MessageBox.Show("CONTA CRIADA COM SUCESSO");
+                
+            }
+            else
+            {
+                MessageBox.Show("ERRO");
+            }
+
+            //fechar conecção
+            mdb.closeConnection();
 
         }
     }

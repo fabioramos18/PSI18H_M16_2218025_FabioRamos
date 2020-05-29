@@ -40,7 +40,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         //returnar conexão
 
         public MySqlConnection GetConnection()
-        {
+        { 
             return connection;
         }
 
