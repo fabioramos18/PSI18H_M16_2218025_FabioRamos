@@ -80,7 +80,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username`= @usn AND`password` = @pass", mdb.GetConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username`= @usn AND`password` = @pass", mdb.getConnection());
             
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
@@ -96,26 +96,48 @@ namespace PSI18H_M16_2218025_FabioRamos
             if (table.Rows.Count > 0)
             {
                 MessageBox.Show("YES");
+                Principal principalform = new Principal();
+                this.Hide();
+                principalform.Show();
             }
             else
             {
-                MessageBox.Show("NO");
-            }
-
-
-            Principal Outroform = new Principal();
-            Outroform.ShowDialog();
+                if(username.Trim().Equals(""))
+                {
+                    MessageBox.Show("Digite o seu nome de utilizador para fazer login", "Empty Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (password.Trim().Equals(""))
+                {
+                    MessageBox.Show("Digite a sua palavra passe para fazer login", "Empty Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Nome de utilizador ou senha incorretos", "Wrong Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }       
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Registar Outroform = new Registar();
-            Outroform.ShowDialog();
+            Registar registarform = new Registar();
+            this.Hide();
+            registarform.Show();
+            
         }
 
         private void TextboxPasseword_OnValueChanged(object sender, EventArgs e)
         {
             TextboxPassword.isPassword = true;          
         }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }  
     }
 }

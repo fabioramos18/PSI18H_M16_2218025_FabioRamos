@@ -4,15 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
     class MDB
     {
         // DataBase ---------------------------------------
-        private MySqlConnection connection = new MySqlConnection("server=localhost; port=3306; username=root; password=; database=mydb");
+         MySqlConnection connection = new MySqlConnection("server=localhost; port=3306; username=root; password=root; database=mydb");
 
         //---------------------------------------------------
+
+
+        public MySqlConnection getConnection()
+        {
+                return connection;
+        }
+
+
 
         //iniciar conexão
         public void openConnection()

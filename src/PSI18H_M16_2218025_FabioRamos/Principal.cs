@@ -218,7 +218,10 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         }
 
-       
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
    
 }

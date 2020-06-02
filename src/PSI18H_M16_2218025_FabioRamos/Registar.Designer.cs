@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registar));
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,10 +47,30 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Regitar = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnFechar = new System.Windows.Forms.PictureBox();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFechar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.panel3.Controls.Add(this.btnMinimizar);
+            this.panel3.Controls.Add(this.btnFechar);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(895, 35);
+            this.panel3.TabIndex = 3;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
             // panel1
             // 
@@ -57,10 +78,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 528);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(451, 581);
+            this.panel1.TabIndex = 4;
             // 
             // label1
             // 
@@ -85,6 +106,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.TextboxPasswordConfirm);
             this.panel2.Controls.Add(this.TextboxPassword);
             this.panel2.Controls.Add(this.TextboxUserName);
@@ -98,11 +120,11 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.Regitar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(451, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(451, 35);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(444, 528);
-            this.panel2.TabIndex = 2;
+            this.panel2.Size = new System.Drawing.Size(444, 581);
+            this.panel2.TabIndex = 5;
             // 
             // TextboxPasswordConfirm
             // 
@@ -110,7 +132,7 @@
             this.TextboxPasswordConfirm.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.TextboxPasswordConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TextboxPasswordConfirm.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxPasswordConfirm.HintText = "palavra passe";
+            this.TextboxPasswordConfirm.HintText = "";
             this.TextboxPasswordConfirm.isPassword = false;
             this.TextboxPasswordConfirm.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.TextboxPasswordConfirm.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
@@ -121,6 +143,7 @@
             this.TextboxPasswordConfirm.Name = "TextboxPasswordConfirm";
             this.TextboxPasswordConfirm.Size = new System.Drawing.Size(300, 33);
             this.TextboxPasswordConfirm.TabIndex = 20;
+            this.TextboxPasswordConfirm.Text = "palavra passe";
             this.TextboxPasswordConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TextboxPassword
@@ -129,7 +152,7 @@
             this.TextboxPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.TextboxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TextboxPassword.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxPassword.HintText = "palavra-passe";
+            this.TextboxPassword.HintText = "";
             this.TextboxPassword.isPassword = false;
             this.TextboxPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.TextboxPassword.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
@@ -140,6 +163,7 @@
             this.TextboxPassword.Name = "TextboxPassword";
             this.TextboxPassword.Size = new System.Drawing.Size(300, 33);
             this.TextboxPassword.TabIndex = 19;
+            this.TextboxPassword.Text = "palavra-passe";
             this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TextboxUserName
@@ -148,7 +172,7 @@
             this.TextboxUserName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.TextboxUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TextboxUserName.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxUserName.HintText = "nome utilizador";
+            this.TextboxUserName.HintText = "";
             this.TextboxUserName.isPassword = false;
             this.TextboxUserName.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.TextboxUserName.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
@@ -159,6 +183,7 @@
             this.TextboxUserName.Name = "TextboxUserName";
             this.TextboxUserName.Size = new System.Drawing.Size(300, 33);
             this.TextboxUserName.TabIndex = 18;
+            this.TextboxUserName.Text = "nome utilizador";
             this.TextboxUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TextboxEmail
@@ -167,7 +192,7 @@
             this.TextboxEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.TextboxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TextboxEmail.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxEmail.HintText = "email";
+            this.TextboxEmail.HintText = "";
             this.TextboxEmail.isPassword = false;
             this.TextboxEmail.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.TextboxEmail.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
@@ -178,6 +203,7 @@
             this.TextboxEmail.Name = "TextboxEmail";
             this.TextboxEmail.Size = new System.Drawing.Size(300, 33);
             this.TextboxEmail.TabIndex = 17;
+            this.TextboxEmail.Text = "email";
             this.TextboxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TextboxCompleteName
@@ -186,7 +212,7 @@
             this.TextboxCompleteName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.TextboxCompleteName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TextboxCompleteName.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxCompleteName.HintText = "nome completo";
+            this.TextboxCompleteName.HintText = "";
             this.TextboxCompleteName.isPassword = false;
             this.TextboxCompleteName.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.TextboxCompleteName.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
@@ -197,9 +223,8 @@
             this.TextboxCompleteName.Name = "TextboxCompleteName";
             this.TextboxCompleteName.Size = new System.Drawing.Size(300, 33);
             this.TextboxCompleteName.TabIndex = 16;
+            this.TextboxCompleteName.Text = "nome completo";
             this.TextboxCompleteName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxCompleteName.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox1_OnValueChanged);
-            this.TextboxCompleteName.Enter += new System.EventHandler(this.TextboxName_Enter);
             // 
             // label6
             // 
@@ -236,7 +261,6 @@
             this.label5.Size = new System.Drawing.Size(54, 23);
             this.label5.TabIndex = 11;
             this.label5.Text = "Email:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnRegister
             // 
@@ -250,7 +274,7 @@
             this.btnRegister.TabIndex = 10;
             this.btnRegister.Text = "Criar nova conta";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
             // 
             // panel6
             // 
@@ -283,7 +307,6 @@
             this.label2.Size = new System.Drawing.Size(124, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome completo:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Regitar
             // 
@@ -296,45 +319,91 @@
             this.Regitar.Size = new System.Drawing.Size(148, 45);
             this.Regitar.TabIndex = 0;
             this.Regitar.Text = "Registar";
-            this.Regitar.Click += new System.EventHandler(this.Regitar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.button1.Location = new System.Drawing.Point(41, 522);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(300, 35);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Iniciar sessão  em  alternativa";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(831, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 6;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.Location = new System.Drawing.Point(862, 4);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(25, 25);
+            this.btnFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnFechar.TabIndex = 4;
+            this.btnFechar.TabStop = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // Registar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 528);
+            this.ClientSize = new System.Drawing.Size(895, 616);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registar";
             this.Text = "Registar";
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFechar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxPasswordConfirm;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxPassword;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxUserName;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxEmail;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxCompleteName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Regitar;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxCompleteName;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxPasswordConfirm;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxPassword;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxUserName;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxEmail;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.PictureBox btnFechar;
     }
 }
