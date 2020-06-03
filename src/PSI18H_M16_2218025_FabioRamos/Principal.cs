@@ -89,14 +89,17 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button13_Click(object sender, EventArgs e)
         {
-            //...
+            openChildForm(new HospLuz());
+            //....
             //meu codico
-            //...
+            //....
             hideSubmenu();
+            
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
+            openChildForm(new HospTrofa());
             //....
             //meu codico
             //....
