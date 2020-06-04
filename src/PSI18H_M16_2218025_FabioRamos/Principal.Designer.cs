@@ -45,7 +45,6 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.btnServicos = new System.Windows.Forms.Button();
-            this.btnExame = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.btnPrincipal = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -177,7 +176,6 @@
             this.MenuVertical.Controls.Add(this.btnProfissionais);
             this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.btnServicos);
-            this.MenuVertical.Controls.Add(this.btnExame);
             this.MenuVertical.Controls.Add(this.btnConsulta);
             this.MenuVertical.Controls.Add(this.btnPrincipal);
             this.MenuVertical.Controls.Add(this.panel2);
@@ -199,7 +197,7 @@
             this.btnQuemsomos.ForeColor = System.Drawing.Color.White;
             this.btnQuemsomos.Image = ((System.Drawing.Image)(resources.GetObject("btnQuemsomos.Image")));
             this.btnQuemsomos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuemsomos.Location = new System.Drawing.Point(0, 543);
+            this.btnQuemsomos.Location = new System.Drawing.Point(0, 498);
             this.btnQuemsomos.Name = "btnQuemsomos";
             this.btnQuemsomos.Size = new System.Drawing.Size(220, 35);
             this.btnQuemsomos.TabIndex = 9;
@@ -213,7 +211,7 @@
             this.panel3.Controls.Add(this.button16);
             this.panel3.Controls.Add(this.button17);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 466);
+            this.panel3.Location = new System.Drawing.Point(0, 421);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(220, 77);
             this.panel3.TabIndex = 11;
@@ -259,7 +257,7 @@
             this.btnProfissionais.ForeColor = System.Drawing.Color.White;
             this.btnProfissionais.Image = ((System.Drawing.Image)(resources.GetObject("btnProfissionais.Image")));
             this.btnProfissionais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfissionais.Location = new System.Drawing.Point(0, 431);
+            this.btnProfissionais.Location = new System.Drawing.Point(0, 386);
             this.btnProfissionais.Name = "btnProfissionais";
             this.btnProfissionais.Size = new System.Drawing.Size(220, 35);
             this.btnProfissionais.TabIndex = 9;
@@ -274,7 +272,7 @@
             this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.button12);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 307);
+            this.panel1.Location = new System.Drawing.Point(0, 262);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 124);
             this.panel1.TabIndex = 10;
@@ -335,32 +333,13 @@
             this.btnServicos.ForeColor = System.Drawing.Color.White;
             this.btnServicos.Image = ((System.Drawing.Image)(resources.GetObject("btnServicos.Image")));
             this.btnServicos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServicos.Location = new System.Drawing.Point(0, 262);
+            this.btnServicos.Location = new System.Drawing.Point(0, 217);
             this.btnServicos.Name = "btnServicos";
             this.btnServicos.Size = new System.Drawing.Size(220, 45);
             this.btnServicos.TabIndex = 9;
             this.btnServicos.Text = "Serviços";
             this.btnServicos.UseVisualStyleBackColor = false;
             this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
-            // 
-            // btnExame
-            // 
-            this.btnExame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.btnExame.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExame.FlatAppearance.BorderSize = 0;
-            this.btnExame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnExame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExame.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExame.ForeColor = System.Drawing.Color.White;
-            this.btnExame.Image = ((System.Drawing.Image)(resources.GetObject("btnExame.Image")));
-            this.btnExame.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExame.Location = new System.Drawing.Point(0, 217);
-            this.btnExame.Name = "btnExame";
-            this.btnExame.Size = new System.Drawing.Size(220, 45);
-            this.btnExame.TabIndex = 9;
-            this.btnExame.Text = "  Marcar Exame";
-            this.btnExame.UseVisualStyleBackColor = false;
-            this.btnExame.Click += new System.EventHandler(this.btnExame_Click);
             // 
             // btnConsulta
             // 
@@ -388,7 +367,7 @@
             this.btnPrincipal.FlatAppearance.BorderSize = 0;
             this.btnPrincipal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrincipal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrincipal.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrincipal.ForeColor = System.Drawing.Color.White;
             this.btnPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("btnPrincipal.Image")));
             this.btnPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -396,7 +375,7 @@
             this.btnPrincipal.Name = "btnPrincipal";
             this.btnPrincipal.Size = new System.Drawing.Size(220, 45);
             this.btnPrincipal.TabIndex = 9;
-            this.btnPrincipal.Text = "Principal";
+            this.btnPrincipal.Text = "Minha Conta";
             this.btnPrincipal.UseVisualStyleBackColor = false;
             this.btnPrincipal.Click += new System.EventHandler(this.btnPrincipal_Click);
             // 
@@ -609,9 +588,9 @@
             // 
             this.pictureBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(117, 292);
+            this.pictureBox11.Location = new System.Drawing.Point(123, 292);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(90, 60);
+            this.pictureBox11.Size = new System.Drawing.Size(84, 60);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 11;
             this.pictureBox11.TabStop = false;
@@ -789,7 +768,6 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button btnServicos;
-        private System.Windows.Forms.Button btnExame;
         private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.Button btnPrincipal;
         private System.Windows.Forms.Panel panel2;
