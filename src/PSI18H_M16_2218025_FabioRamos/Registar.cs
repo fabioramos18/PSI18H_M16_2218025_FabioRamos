@@ -159,7 +159,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             //verificar se  textbox contém os valores padrão
             Boolean VerificarValoresTextBoxes()
             {
-                String completename = TextboxCompleteName.Text;
+                String completename = TextboxCompleteName.Text;  
                 String email = TextboxEmail.Text;
                 String uname = TextboxUserName.Text;
                 String pass = TextboxPassword.Text;
