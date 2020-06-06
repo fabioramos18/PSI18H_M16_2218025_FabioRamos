@@ -47,6 +47,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // button4
@@ -72,7 +75,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label1.Location = new System.Drawing.Point(414, 33);
+            this.label1.Location = new System.Drawing.Point(398, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(342, 45);
             this.label1.TabIndex = 11;
@@ -93,6 +96,7 @@
             this.PedidoMarcar.TabIndex = 18;
             this.PedidoMarcar.Text = "Pedido de Marcação de Consulta";
             this.PedidoMarcar.UseVisualStyleBackColor = false;
+            this.PedidoMarcar.Click += new System.EventHandler(this.PedidoMarcar_Click);
             // 
             // NomeCompleto
             // 
@@ -161,11 +165,6 @@
             this.Hospital.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hospital.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Hospital.FormattingEnabled = true;
-            this.Hospital.Items.AddRange(new object[] {
-            "Hospital Beatriz Ângelo",
-            "Hospital Cruz  Vermelha",
-            "Hospital Da Luz",
-            "Hospital Santa Maria"});
             this.Hospital.Location = new System.Drawing.Point(342, 427);
             this.Hospital.Name = "Hospital";
             this.Hospital.Size = new System.Drawing.Size(518, 26);
@@ -179,18 +178,12 @@
             this.Especialidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Especialidade.FormattingEnabled = true;
             this.Especialidade.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L"});
+            "aaaaaaaaaaaaaa",
+            "bbbbbbbbbbbbbbbbb",
+            "cccccccccccccccc",
+            "dddddddddddddd",
+            "eeeeeeeeeeeee",
+            "fffffffffffffffffff"});
             this.Especialidade.Location = new System.Drawing.Point(342, 373);
             this.Especialidade.Name = "Especialidade";
             this.Especialidade.Size = new System.Drawing.Size(518, 26);
@@ -302,11 +295,39 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Telemóvel / Telefone";
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(686, 151);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 28;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(163, 216);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 29;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(99, 287);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(248, 26);
+            this.dateTimePicker2.TabIndex = 30;
+            // 
             // MarcarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 640);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -328,6 +349,7 @@
             this.Controls.Add(this.button4);
             this.Name = "MarcarConsulta";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.MarcarConsulta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,5 +376,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

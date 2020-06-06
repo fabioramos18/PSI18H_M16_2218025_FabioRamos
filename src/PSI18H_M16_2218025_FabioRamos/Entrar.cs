@@ -80,7 +80,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username`= @usn AND`password` = @pass", mdb.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `username`= @usn AND`password` = @pass", mdb.getConnection());
             
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
@@ -114,7 +114,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                 {
                     MessageBox.Show("Nome de utilizador ou senha incorretos", "Wrong Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }       
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
