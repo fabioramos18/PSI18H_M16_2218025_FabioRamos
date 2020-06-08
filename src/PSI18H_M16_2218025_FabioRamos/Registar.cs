@@ -66,7 +66,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
  
             {
-                MySqlCommand command = new MySqlCommand("INSERT INTO `user`(`nomecompleto`, `email`, `username`, `password`, `textbox`) VALUES (@nc, @email, @usn, @pass, @tb)", mdb.getConnection());
+                MySqlCommand command = new MySqlCommand("INSERT INTO `user`(`nome_completo`, `email`, `user`, `passe`) VALUES (@nc, @email, @usn, @pass)", mdb.getConnection());
 
                 command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = TextboxCompleteName.Text;
                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = TextboxEmail.Text;
@@ -135,7 +135,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `username`= @usn ", mdb.getConnection());
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `user`= @usn ", mdb.getConnection());
 
                 command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;               
 

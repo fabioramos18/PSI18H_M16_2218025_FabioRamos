@@ -80,7 +80,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `username`= @usn AND`password` = @pass", mdb.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `user`= @usn AND`passe` = @pass", mdb.getConnection());
             
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;

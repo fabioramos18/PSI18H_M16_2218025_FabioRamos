@@ -183,7 +183,7 @@
             this.TextboxPasswordConfirm.Name = "TextboxPasswordConfirm";
             this.TextboxPasswordConfirm.Size = new System.Drawing.Size(300, 33);
             this.TextboxPasswordConfirm.TabIndex = 20;
-            this.TextboxPasswordConfirm.Text = "palavra passe";
+            this.TextboxPasswordConfirm.Text = "palavra-passe";
             this.TextboxPasswordConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TextboxPassword

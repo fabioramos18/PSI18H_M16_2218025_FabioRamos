@@ -31,13 +31,13 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.PedidoMarcar = new System.Windows.Forms.Button();
-            this.NomeCompleto = new System.Windows.Forms.TextBox();
-            this.Contacto = new System.Windows.Forms.TextBox();
-            this.NumSaude = new System.Windows.Forms.TextBox();
+            this.txtNomeCompleto = new System.Windows.Forms.TextBox();
+            this.txtContacto = new System.Windows.Forms.TextBox();
+            this.txtNumSaude = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Morada = new System.Windows.Forms.TextBox();
-            this.Hospital = new System.Windows.Forms.ComboBox();
-            this.Especialidade = new System.Windows.Forms.ComboBox();
+            this.txtMorada = new System.Windows.Forms.TextBox();
+            this.cmbhospital = new System.Windows.Forms.ComboBox();
+            this.cmbespecialidade = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,9 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // button4
@@ -98,42 +95,45 @@
             this.PedidoMarcar.UseVisualStyleBackColor = false;
             this.PedidoMarcar.Click += new System.EventHandler(this.PedidoMarcar_Click);
             // 
-            // NomeCompleto
+            // txtNomeCompleto
             // 
-            this.NomeCompleto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NomeCompleto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NomeCompleto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeCompleto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.NomeCompleto.Location = new System.Drawing.Point(342, 103);
-            this.NomeCompleto.Name = "NomeCompleto";
-            this.NomeCompleto.Size = new System.Drawing.Size(518, 26);
-            this.NomeCompleto.TabIndex = 10;
-            this.NomeCompleto.Text = "Nome Completo";
-            this.NomeCompleto.TextChanged += new System.EventHandler(this.NomeCompleto_TextChanged);
+            this.txtNomeCompleto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNomeCompleto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomeCompleto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeCompleto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNomeCompleto.Location = new System.Drawing.Point(342, 103);
+            this.txtNomeCompleto.Name = "txtNomeCompleto";
+            this.txtNomeCompleto.Size = new System.Drawing.Size(518, 26);
+            this.txtNomeCompleto.TabIndex = 10;
+            this.txtNomeCompleto.Text = "Nome Completo";
+            this.txtNomeCompleto.TextChanged += new System.EventHandler(this.NomeCompleto_TextChanged);
+            this.txtNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCompleto_KeyPress);
             // 
-            // Contacto
+            // txtContacto
             // 
-            this.Contacto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Contacto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Contacto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Contacto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Contacto.Location = new System.Drawing.Point(342, 211);
-            this.Contacto.Name = "Contacto";
-            this.Contacto.Size = new System.Drawing.Size(266, 26);
-            this.Contacto.TabIndex = 12;
-            this.Contacto.Text = "Telemovel / Telefone ";
+            this.txtContacto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContacto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContacto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContacto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtContacto.Location = new System.Drawing.Point(342, 211);
+            this.txtContacto.Name = "txtContacto";
+            this.txtContacto.Size = new System.Drawing.Size(266, 26);
+            this.txtContacto.TabIndex = 12;
+            this.txtContacto.Text = "Telemovel / Telefone ";
+            this.txtContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContacto_KeyPress);
             // 
-            // NumSaude
+            // txtNumSaude
             // 
-            this.NumSaude.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NumSaude.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NumSaude.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumSaude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.NumSaude.Location = new System.Drawing.Point(342, 157);
-            this.NumSaude.Name = "NumSaude";
-            this.NumSaude.Size = new System.Drawing.Size(266, 26);
-            this.NumSaude.TabIndex = 13;
-            this.NumSaude.Text = "N. de Saude";
+            this.txtNumSaude.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNumSaude.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumSaude.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumSaude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNumSaude.Location = new System.Drawing.Point(342, 157);
+            this.txtNumSaude.Name = "txtNumSaude";
+            this.txtNumSaude.Size = new System.Drawing.Size(266, 26);
+            this.txtNumSaude.TabIndex = 13;
+            this.txtNumSaude.Text = "N. de Saude";
+            this.txtNumSaude.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumSaude_KeyPress);
             // 
             // dateTimePicker1
             // 
@@ -147,48 +147,47 @@
             this.dateTimePicker1.TabIndex = 14;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // Morada
+            // txtMorada
             // 
-            this.Morada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Morada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Morada.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Morada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Morada.Location = new System.Drawing.Point(342, 319);
-            this.Morada.Name = "Morada";
-            this.Morada.Size = new System.Drawing.Size(518, 26);
-            this.Morada.TabIndex = 15;
-            this.Morada.Text = "Morada";
+            this.txtMorada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMorada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMorada.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMorada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMorada.Location = new System.Drawing.Point(342, 319);
+            this.txtMorada.Name = "txtMorada";
+            this.txtMorada.Size = new System.Drawing.Size(518, 26);
+            this.txtMorada.TabIndex = 15;
+            this.txtMorada.Text = "Morada";
+            this.txtMorada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMorada_KeyPress);
             // 
-            // Hospital
+            // cmbhospital
             // 
-            this.Hospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hospital.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hospital.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Hospital.FormattingEnabled = true;
-            this.Hospital.Location = new System.Drawing.Point(342, 427);
-            this.Hospital.Name = "Hospital";
-            this.Hospital.Size = new System.Drawing.Size(518, 26);
-            this.Hospital.TabIndex = 16;
-            this.Hospital.Text = "Hospital Beatriz Ângelo";
+            this.cmbhospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbhospital.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbhospital.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbhospital.FormattingEnabled = true;
+            this.cmbhospital.Items.AddRange(new object[] {
+            "Hospital Beatriz Ângelo",
+            "Hospital Da Luz",
+            "Hospital Trofa Saúde"});
+            this.cmbhospital.Location = new System.Drawing.Point(342, 373);
+            this.cmbhospital.Name = "cmbhospital";
+            this.cmbhospital.Size = new System.Drawing.Size(518, 26);
+            this.cmbhospital.TabIndex = 16;
+            this.cmbhospital.Text = "Hospital Beatriz Ângelo";
+            this.cmbhospital.SelectedIndexChanged += new System.EventHandler(this.cmbhospital_SelectedIndexChanged);
             // 
-            // Especialidade
+            // cmbespecialidade
             // 
-            this.Especialidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Especialidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Especialidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Especialidade.FormattingEnabled = true;
-            this.Especialidade.Items.AddRange(new object[] {
-            "aaaaaaaaaaaaaa",
-            "bbbbbbbbbbbbbbbbb",
-            "cccccccccccccccc",
-            "dddddddddddddd",
-            "eeeeeeeeeeeee",
-            "fffffffffffffffffff"});
-            this.Especialidade.Location = new System.Drawing.Point(342, 373);
-            this.Especialidade.Name = "Especialidade";
-            this.Especialidade.Size = new System.Drawing.Size(518, 26);
-            this.Especialidade.TabIndex = 17;
-            this.Especialidade.Text = "Especialidade";
+            this.cmbespecialidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbespecialidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbespecialidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbespecialidade.FormattingEnabled = true;
+            this.cmbespecialidade.Location = new System.Drawing.Point(342, 427);
+            this.cmbespecialidade.Name = "cmbespecialidade";
+            this.cmbespecialidade.Size = new System.Drawing.Size(518, 26);
+            this.cmbespecialidade.TabIndex = 17;
+            this.cmbespecialidade.Text = "Especialidade";
             // 
             // comboBox1
             // 
@@ -234,7 +233,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(338, 402);
+            this.label4.Location = new System.Drawing.Point(338, 348);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 22);
             this.label4.TabIndex = 22;
@@ -256,7 +255,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(338, 348);
+            this.label6.Location = new System.Drawing.Point(338, 402);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 22);
             this.label6.TabIndex = 24;
@@ -295,39 +294,11 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Telemóvel / Telefone";
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(686, 151);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 28;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(163, 216);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 29;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(99, 287);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(248, 26);
-            this.dateTimePicker2.TabIndex = 30;
-            // 
             // MarcarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 640);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -338,14 +309,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.PedidoMarcar);
-            this.Controls.Add(this.Especialidade);
-            this.Controls.Add(this.Hospital);
-            this.Controls.Add(this.Morada);
+            this.Controls.Add(this.cmbespecialidade);
+            this.Controls.Add(this.cmbhospital);
+            this.Controls.Add(this.txtMorada);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.NumSaude);
-            this.Controls.Add(this.Contacto);
+            this.Controls.Add(this.txtNumSaude);
+            this.Controls.Add(this.txtContacto);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.NomeCompleto);
+            this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.button4);
             this.Name = "MarcarConsulta";
             this.Text = " ";
@@ -360,13 +331,13 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button PedidoMarcar;
-        private System.Windows.Forms.TextBox NomeCompleto;
-        private System.Windows.Forms.TextBox Contacto;
-        private System.Windows.Forms.TextBox NumSaude;
+        private System.Windows.Forms.TextBox txtNomeCompleto;
+        private System.Windows.Forms.TextBox txtContacto;
+        private System.Windows.Forms.TextBox txtNumSaude;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox Morada;
-        private System.Windows.Forms.ComboBox Hospital;
-        private System.Windows.Forms.ComboBox Especialidade;
+        private System.Windows.Forms.TextBox txtMorada;
+        private System.Windows.Forms.ComboBox cmbhospital;
+        private System.Windows.Forms.ComboBox cmbespecialidade;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -376,8 +347,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

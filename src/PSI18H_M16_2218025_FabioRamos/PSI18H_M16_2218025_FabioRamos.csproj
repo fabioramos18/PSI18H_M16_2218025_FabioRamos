@@ -64,6 +64,12 @@
     <Compile Include="Entrar.Designer.cs">
       <DependentUpon>Entrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formtestarcombobobxes1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formtestarcombobobxes1.Designer.cs">
+      <DependentUpon>Formtestarcombobobxes1.cs</DependentUpon>
+    </Compile>
     <Compile Include="HospLuz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,12 +81,6 @@
     </Compile>
     <Compile Include="HospTrofa.Designer.cs">
       <DependentUpon>HospTrofa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MarcarCConsulta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MarcarCConsulta.Designer.cs">
-      <DependentUpon>MarcarCConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="MDB.cs" />
     <Compile Include="Registar.cs">
@@ -115,14 +115,14 @@
     <EmbeddedResource Include="Entrar.resx">
       <DependentUpon>Entrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formtestarcombobobxes1.resx">
+      <DependentUpon>Formtestarcombobobxes1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HospLuz.resx">
       <DependentUpon>HospLuz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HospTrofa.resx">
       <DependentUpon>HospTrofa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MarcarCConsulta.resx">
-      <DependentUpon>MarcarCConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registar.resx">
       <DependentUpon>Registar.cs</DependentUpon>

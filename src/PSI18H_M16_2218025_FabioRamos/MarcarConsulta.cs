@@ -40,75 +40,118 @@ namespace PSI18H_M16_2218025_FabioRamos
         }
 
 
-
-
+    
 
         private void PedidoMarcar_Click(object sender, EventArgs e)
         {
-            /* MDB mdb = new MDB();
+             
+                 MDB mdb = new MDB();
 
-             {
-                 MySqlCommand command = new MySqlCommand("INSERT INTO `consulta`(`nomecompleto`, `email`, `username`, `password`, `textbox`) VALUES (@nc, @email, @usn, @pass, @tb)", mdb.getConnection());
-
-                 command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = TextboxCompleteName.Text;
-                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = TextboxEmail.Text;
-                 command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = TextboxUserName.Text;
-                 command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = TextboxPassword.Text;
-                 command.Parameters.Add("@tb", MySqlDbType.VarChar).Value = Especialidade.Text;
-
-                 //abrir conecção
-                 mdb.openConnection();
+              {
+                
 
 
-                 //verificar se as textbox teem valores padrao
-                 if (!VerificarValoresTextBoxes())
-                 {
-                     //verificar se as passwords são iguais
-                     if (TextboxPassword.Text.Equals(TextboxPasswordConfirm.Text))
-                     {
-                         // verificar se o username ja existe
-                         if (verificarUserName())
-                         {
-                             MessageBox.Show("Esse nome de utilizador já existe. Experimente outro", " Username Duplicado ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                         }
-                         else
-                         {
-                             //consultar os dados
-                             if (command.ExecuteNonQuery() == 1)
-                             {
-                                 MessageBox.Show("A sua conta foi criada com sucesso", "Conta criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `marcacao`(`nome_completo`, `num_saude`, `contacto`, `Data_nascimento`, `morada`, `nome_especialidade`,  `nome_hospital`)VALUES (@nc, @ns,@cont, @dn, @mor, @ne, @nh)", mdb.getConnection());
 
-                                 Entrar entrarform = new Entrar();
-                                 this.Hide();
-                                 entrarform.Show();
-                             }
-                             else
-                             {
-                                 MessageBox.Show("ERRO");
-                             }
-                         }
-                     }
-                     else
-                     {
-                         MessageBox.Show("As palavras-passe não correspondiam. Tente novamente", "Erro Passe", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                     }
-                 }
+                  command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = txtNomeCompleto.Text;
+                  command.Parameters.Add("@ns", MySqlDbType.VarChar).Value = txtNumSaude.Text;
+                  command.Parameters.Add("@cont", MySqlDbType.VarChar).Value = txtContacto.Text;
+                  command.Parameters.Add("@dn", MySqlDbType.Date).Value = dateTimePicker1.Value;
+                  command.Parameters.Add("@mor", MySqlDbType.VarChar).Value = txtMorada.Text;
+                  command.Parameters.Add("@ne", MySqlDbType.VarChar).Value = cmbespecialidade.Text;
+                  command.Parameters.Add("@nh", MySqlDbType.VarChar).Value = cmbhospital.Text;
+                //abrir conecção
+                mdb.openConnection();
 
-                 else
-                 {
-                     MessageBox.Show("Preencha os campos com informação valida", "Empty Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+               
 
-                 }
+                //consultar os dados
+                if (command.ExecuteNonQuery() == 1)
+                  {
+                    MessageBox.Show("A sua conta foi criada com sucesso", "Conta criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("ERRO");
+                }
+              
+              }
 
-                 //fechar conecção
-                 mdb.closeConnection();
-             }*/
+          //fechar conecção
+          mdb.closeConnection();
         }
 
+        private void cmbhospital_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbhospital.SelectedItem.ToString() == "Hospital Beatriz Ângelo")
+            {
+                cmbespecialidade.Items.Clear();
+                cmbespecialidade.Items.Add("Cardiologia");
+                cmbespecialidade.Items.Add("Dentista");
+                cmbespecialidade.Items.Add("Fisioterapia");
+                cmbespecialidade.Items.Add("Ginecologia");
+                cmbespecialidade.Items.Add("Neurologia");
+                cmbespecialidade.Items.Add("Nutrição");
+            }
+            else if (cmbhospital.SelectedItem.ToString() == "Hospital Da Luz")
+            {
+                cmbespecialidade.Items.Clear();
+                cmbespecialidade.Items.Add("Fisioterapia");
+                cmbespecialidade.Items.Add("Ginecologia");
+                cmbespecialidade.Items.Add("Neurologia");
+                cmbespecialidade.Items.Add("Nutrição");
+                cmbespecialidade.Items.Add("Obsterticia");
+                cmbespecialidade.Items.Add("Psicologia");
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+            }
+            else
+            {
+                cmbespecialidade.Items.Clear();
+                cmbespecialidade.Items.Add("Neurologia");
+                cmbespecialidade.Items.Add("Nutrição");
+                cmbespecialidade.Items.Add("Obsterticia");
+                cmbespecialidade.Items.Add("Psicologia");
+                cmbespecialidade.Items.Add("Pediatria");
+                cmbespecialidade.Items.Add("Vacina");
+            }
+        }
+
+        private void txtNumSaude_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if((e.KeyChar >= 32 && e.KeyChar <= 47 || e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Insira apenas números", "Atenção",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtContacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtMorada_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
     }
+
+       
 }
+
