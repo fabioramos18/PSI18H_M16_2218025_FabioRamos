@@ -443,7 +443,6 @@
             this.panelConteudo.Controls.Add(this.pictureBox3);
             this.panelConteudo.Controls.Add(this.pictureBox2);
             this.panelConteudo.Controls.Add(this.label2);
-            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelConteudo.Location = new System.Drawing.Point(220, 35);
             this.panelConteudo.Name = "panelConteudo";
             this.panelConteudo.Size = new System.Drawing.Size(1080, 640);

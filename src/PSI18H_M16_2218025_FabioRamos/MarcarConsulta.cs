@@ -17,6 +17,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         public MarcarConsulta()
         {
             InitializeComponent();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -36,6 +37,8 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void MarcarConsulta_Load(object sender, EventArgs e)
         {
+            // carregar hospitais
+            CarregarHospitais();
 
         }
 
@@ -48,9 +51,6 @@ namespace PSI18H_M16_2218025_FabioRamos
                  MDB mdb = new MDB();
 
               {
-                
-
-
                 MySqlCommand command = new MySqlCommand("INSERT INTO `marcacao`(`nome_completo`, `num_saude`, `contacto`, `Data_nascimento`, `morada`, `nome_especialidade`,  `nome_hospital`)VALUES (@nc, @ns,@cont, @dn, @mor, @ne, @nh)", mdb.getConnection());
 
                   command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = txtNomeCompleto.Text;
@@ -81,40 +81,93 @@ namespace PSI18H_M16_2218025_FabioRamos
           mdb.closeConnection();
         }
 
-        private void cmbhospital_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        void CarregarHospitais()
         {
-            if (cmbhospital.SelectedItem.ToString() == "Hospital Beatriz Ângelo")
+            MDB mdb = new MDB();
             {
-                cmbespecialidade.Items.Clear();
-                cmbespecialidade.Items.Add("Cardiologia");
-                cmbespecialidade.Items.Add("Dentista");
-                cmbespecialidade.Items.Add("Fisioterapia");
-                cmbespecialidade.Items.Add("Ginecologia");
-                cmbespecialidade.Items.Add("Neurologia");
-                cmbespecialidade.Items.Add("Nutrição");
-            }
-            else if (cmbhospital.SelectedItem.ToString() == "Hospital Da Luz")
-            {
-                cmbespecialidade.Items.Clear();
-                cmbespecialidade.Items.Add("Fisioterapia");
-                cmbespecialidade.Items.Add("Ginecologia");
-                cmbespecialidade.Items.Add("Neurologia");
-                cmbespecialidade.Items.Add("Nutrição");
-                cmbespecialidade.Items.Add("Obsterticia");
-                cmbespecialidade.Items.Add("Psicologia");
+                MySqlCommand command = new MySqlCommand("SELECT * FROM hospital ORDER BY nome_hospital ASC;", mdb.getConnection());
+
+               // string selectQuery = "SELECT * FROM hospital ORDER BY nome_hospital ASC;";
+              //  using (MySqlCommand mysqlcommand = new MySqlCommand(selectQuery, mdb.Connection))
+                {
+                    MySqlDataReader myReader;
+                    try
+                    {
+                        mdb.openConnection();
+                        myReader = command.ExecuteReader();
+                        DataTable dt = new DataTable();
+                        dt.Load(myReader);
+                        cmbhospital.DisplayMember = "nome_hospital";
+                        cmbhospital.ValueMember = "idHospita";
+                        cmbhospital.DataSource = dt;
+                    }
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show("Erro:" + erro.Message);
+                    }
+                    finally
+                    {
+                        mdb.closeConnection();
+                    }
+                }
+
+                
+
+
+
+
 
             }
-            else
-            {
-                cmbespecialidade.Items.Clear();
-                cmbespecialidade.Items.Add("Neurologia");
-                cmbespecialidade.Items.Add("Nutrição");
-                cmbespecialidade.Items.Add("Obsterticia");
-                cmbespecialidade.Items.Add("Psicologia");
-                cmbespecialidade.Items.Add("Pediatria");
-                cmbespecialidade.Items.Add("Vacina");
-            }
+
         }
+
+
+
+        private void cmbhospital_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                MDB mdb = new MDB();
+
+            {
+                
+
+                    string sql= $@"select e.idEspecialidade
+,       e.nome_especialidade 
+from hospital_tem_especialidade x 
+	 inner join especialidade e on x.Especialidade_idEspecialidade = e.idEspecialidade 
+where x.Hospital_idHospital = {cmbhospital.SelectedValue} order by e.nome_especialidade";
+
+                MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
+                {
+                    MySqlDataReader myReader;
+                    try
+                    {
+                        mdb.openConnection();
+                        myReader = command.ExecuteReader();
+                        DataTable dt = new DataTable();
+                        dt.Load(myReader);
+                        cmbespecialidade.DisplayMember = "nome_especialidade";
+                        cmbespecialidade.ValueMember = "Especialidade_idEspecialidade";
+                        cmbespecialidade.DataSource = dt;
+                    }
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show("Erro:" + erro.Message);
+                    }
+                    finally
+                    {
+                        mdb.closeConnection();
+                    }
+                }
+                
+
+            }
+
+
+        }
+        
 
         private void txtNumSaude_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -138,9 +191,9 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void txtContacto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47 || e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Insira apenas números", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }

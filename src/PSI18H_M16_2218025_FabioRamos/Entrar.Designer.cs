@@ -38,7 +38,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Login = new System.Windows.Forms.Label();
@@ -94,7 +93,6 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.buttonLogin);
-            this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.Login);
@@ -118,7 +116,7 @@
             this.TextboxPassword.Location = new System.Drawing.Point(41, 254);
             this.TextboxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxPassword.Name = "TextboxPassword";
-            this.TextboxPassword.Size = new System.Drawing.Size(300, 33);
+            this.TextboxPassword.Size = new System.Drawing.Size(333, 33);
             this.TextboxPassword.TabIndex = 12;
             this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TextboxPassword.OnValueChanged += new System.EventHandler(this.TextboxPasseword_OnValueChanged);
@@ -138,7 +136,7 @@
             this.TextboxUser.Location = new System.Drawing.Point(41, 176);
             this.TextboxUser.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxUser.Name = "TextboxUser";
-            this.TextboxUser.Size = new System.Drawing.Size(300, 33);
+            this.TextboxUser.Size = new System.Drawing.Size(333, 33);
             this.TextboxUser.TabIndex = 11;
             this.TextboxUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -150,7 +148,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(41, 424);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(300, 35);
+            this.button2.Size = new System.Drawing.Size(333, 35);
             this.button2.TabIndex = 10;
             this.button2.Text = "Criar nova conta";
             this.button2.UseVisualStyleBackColor = false;
@@ -159,9 +157,9 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Location = new System.Drawing.Point(41, 402);
+            this.panel6.Location = new System.Drawing.Point(41, 408);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(300, 1);
+            this.panel6.Size = new System.Drawing.Size(331, 1);
             this.panel6.TabIndex = 6;
             // 
             // buttonLogin
@@ -170,25 +168,13 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(193, 323);
+            this.buttonLogin.Location = new System.Drawing.Point(41, 315);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(148, 35);
+            this.buttonLogin.Size = new System.Drawing.Size(333, 35);
             this.buttonLogin.TabIndex = 8;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.checkBox1.Location = new System.Drawing.Point(41, 330);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(111, 24);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Lembrar-me";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -221,7 +207,7 @@
             this.Login.BackColor = System.Drawing.SystemColors.Control;
             this.Login.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.Login.Location = new System.Drawing.Point(68, 64);
+            this.Login.Location = new System.Drawing.Point(81, 48);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(98, 45);
             this.Login.TabIndex = 0;
@@ -305,7 +291,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel7;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxPassword;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxUser;

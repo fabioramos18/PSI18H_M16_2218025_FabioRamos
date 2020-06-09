@@ -55,6 +55,18 @@
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New Doctor .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Doctor .Designer.cs">
+      <DependentUpon>New Doctor .cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
@@ -83,6 +95,12 @@
       <DependentUpon>HospTrofa.cs</DependentUpon>
     </Compile>
     <Compile Include="MDB.cs" />
+    <Compile Include="Medicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medicos.Designer.cs">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +130,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entrar.resx">
       <DependentUpon>Entrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HospTrofa.resx">
       <DependentUpon>HospTrofa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medicos.resx">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Doctor .resx">
+      <DependentUpon>New Doctor .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registar.resx">
       <DependentUpon>Registar.cs</DependentUpon>

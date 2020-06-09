@@ -166,10 +166,6 @@
             this.cmbhospital.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbhospital.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbhospital.FormattingEnabled = true;
-            this.cmbhospital.Items.AddRange(new object[] {
-            "Hospital Beatriz Ângelo",
-            "Hospital Da Luz",
-            "Hospital Trofa Saúde"});
             this.cmbhospital.Location = new System.Drawing.Point(342, 373);
             this.cmbhospital.Name = "cmbhospital";
             this.cmbhospital.Size = new System.Drawing.Size(518, 26);
