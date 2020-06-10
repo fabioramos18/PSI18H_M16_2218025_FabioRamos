@@ -34,8 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlError = new System.Windows.Forms.Panel();
-            this.lblError = new System.Windows.Forms.Label();
-            this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.Mobile = new System.Windows.Forms.Label();
             this.txtMobile = new System.Windows.Forms.TextBox();
@@ -45,9 +43,11 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btn2 = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlError.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -77,6 +77,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.pnlError);
@@ -98,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 313);
+            this.label4.Location = new System.Drawing.Point(34, 312);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 12;
@@ -106,7 +108,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(33, 337);
+            this.textBox1.Location = new System.Drawing.Point(37, 328);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(363, 20);
             this.textBox1.TabIndex = 11;
@@ -114,40 +116,11 @@
             // pnlError
             // 
             this.pnlError.BackColor = System.Drawing.Color.Tomato;
-            this.pnlError.Controls.Add(this.lblError);
             this.pnlError.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlError.Location = new System.Drawing.Point(0, 0);
             this.pnlError.Name = "pnlError";
             this.pnlError.Size = new System.Drawing.Size(432, 26);
             this.pnlError.TabIndex = 10;
-            this.pnlError.Visible = false;
-            // 
-            // lblError
-            // 
-            this.lblError.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.lblError.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblError.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.White;
-            this.lblError.Location = new System.Drawing.Point(0, 0);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(432, 26);
-            this.lblError.TabIndex = 2;
-            this.lblError.Text = "First Name";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn2
-            // 
-            this.btn2.BackColor = System.Drawing.Color.Tomato;
-            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Location = new System.Drawing.Point(153, 399);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(114, 33);
-            this.btn2.TabIndex = 9;
-            this.btn2.Text = "Delete";
-            this.btn2.UseVisualStyleBackColor = false;
-            this.btn2.Visible = false;
             // 
             // btn1
             // 
@@ -165,7 +138,7 @@
             // Mobile
             // 
             this.Mobile.AutoSize = true;
-            this.Mobile.Location = new System.Drawing.Point(32, 173);
+            this.Mobile.Location = new System.Drawing.Point(34, 205);
             this.Mobile.Name = "Mobile";
             this.Mobile.Size = new System.Drawing.Size(43, 13);
             this.Mobile.TabIndex = 7;
@@ -173,7 +146,7 @@
             // 
             // txtMobile
             // 
-            this.txtMobile.Location = new System.Drawing.Point(33, 266);
+            this.txtMobile.Location = new System.Drawing.Point(37, 272);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(363, 20);
             this.txtMobile.TabIndex = 6;
@@ -181,7 +154,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 240);
+            this.label3.Location = new System.Drawing.Point(34, 256);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 5;
@@ -189,7 +162,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(33, 201);
+            this.txtEmail.Location = new System.Drawing.Point(37, 221);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(363, 20);
             this.txtEmail.TabIndex = 4;
@@ -197,7 +170,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 110);
+            this.label2.Location = new System.Drawing.Point(34, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 3;
@@ -205,7 +178,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(33, 134);
+            this.txtLastName.Location = new System.Drawing.Point(37, 114);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(363, 20);
             this.txtLastName.TabIndex = 2;
@@ -221,10 +194,40 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(35, 66);
+            this.txtFirstName.Location = new System.Drawing.Point(35, 58);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(363, 20);
             this.txtFirstName.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(34, 151);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Id da Especialidade";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(37, 167);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(363, 20);
+            this.textBox2.TabIndex = 13;
+            // 
+            // btn2
+            // 
+            this.btn2.BackColor = System.Drawing.Color.Tomato;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.ForeColor = System.Drawing.Color.White;
+            this.btn2.Location = new System.Drawing.Point(153, 399);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(114, 33);
+            this.btn2.TabIndex = 9;
+            this.btn2.Text = "Delete";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Visible = false;
             // 
             // Edit
             // 
@@ -239,7 +242,6 @@
             this.pnlHeader.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnlError.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -252,8 +254,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel pnlError;
-        private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Label Mobile;
         private System.Windows.Forms.TextBox txtMobile;
@@ -263,5 +263,8 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btn2;
     }
 }

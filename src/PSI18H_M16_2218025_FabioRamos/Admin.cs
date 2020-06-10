@@ -16,5 +16,16 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Medicos medicosform = new Medicos();
+            this.Hide();
+            medicosform.Show();
+
+          
+
+
+        }
     }
 }

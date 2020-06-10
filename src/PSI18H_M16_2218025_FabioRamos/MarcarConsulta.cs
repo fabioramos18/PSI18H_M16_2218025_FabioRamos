@@ -60,6 +60,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                   command.Parameters.Add("@mor", MySqlDbType.VarChar).Value = txtMorada.Text;
                   command.Parameters.Add("@ne", MySqlDbType.VarChar).Value = cmbespecialidade.Text;
                   command.Parameters.Add("@nh", MySqlDbType.VarChar).Value = cmbhospital.Text;
+
                 //abrir conecção
                 mdb.openConnection();
 

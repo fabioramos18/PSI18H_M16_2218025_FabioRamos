@@ -16,5 +16,22 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // toggle panel
+            if (panel3.Visible == true)
+                panel3.Visible = false;
+            else
+                panel3.Visible = true;
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            if (panel3.Visible == false)
+                panel3.Visible = true;
+            else
+                panel3.Visible = false;
+        }
     }
 }
