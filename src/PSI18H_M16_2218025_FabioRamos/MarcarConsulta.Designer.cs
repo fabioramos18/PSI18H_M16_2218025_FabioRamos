@@ -64,8 +64,7 @@
             this.button4.Size = new System.Drawing.Size(184, 42);
             this.button4.TabIndex = 9;
             this.button4.Text = "Voltar ao inicio ";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.UseVisualStyleBackColor = false; 
             // 
             // label1
             // 
@@ -108,7 +107,7 @@
             this.txtNomeCompleto.Size = new System.Drawing.Size(518, 26);
             this.txtNomeCompleto.TabIndex = 10;
             this.txtNomeCompleto.Text = "Nome Completo";
-            this.txtNomeCompleto.TextChanged += new System.EventHandler(this.NomeCompleto_TextChanged);
+           
             this.txtNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCompleto_KeyPress);
             // 
             // txtNumSaude
@@ -134,7 +133,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(266, 26);
             this.dateTimePicker1.TabIndex = 14;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txtMorada
             // 

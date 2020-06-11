@@ -64,63 +64,74 @@ namespace PSI18H_M16_2218025_FabioRamos
             //adicionar novo user
 
             MDB mdb = new MDB();
- 
+
             {
-                MySqlCommand command = new MySqlCommand("INSERT INTO `user`(`nome_completo`, `email`, `user`, `passe`) VALUES (@nc, @email, @usn, @pass)", mdb.getConnection());
+                string sql = $@"INSERT INTO `user`(`nome_completo`, `email`, `user`, `passe`) VALUES (@nc, @email, @usn, @pass)";
+                    MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
                 command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = TextboxCompleteName.Text;
                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = TextboxEmail.Text;
                 command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = TextboxUserName.Text;
                 command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = TextboxPassword.Text;
-               
-
-                //abrir conecção
-                mdb.openConnection();
 
 
-                //verificar se as textbox teem valores padrao
-                if(!VerificarValoresTextBoxes())
+                try
                 {
-                    //verificar se as passwords são iguais
-                    if(TextboxPassword.Text.Equals(TextboxPasswordConfirm.Text))
-                    {
-                        // verificar se o username ja existe
-                        if (verificarUserName())
-                        {
-                            MessageBox.Show("Esse nome de utilizador já existe. Experimente outro"," Username Duplicado ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            //consultar os dados
-                            if (command.ExecuteNonQuery() == 1)
-                            {
-                                MessageBox.Show("A sua conta foi criada com sucesso","Conta criada",MessageBoxButtons.OK,  MessageBoxIcon.Information);
+                    //abrir conecção
+                    mdb.openConnection();
 
-                                Entrar entrarform = new Entrar();
-                                this.Hide();
-                                entrarform.Show();
+
+                    //verificar se as textbox teem valores padrao
+                    if (!VerificarValoresTextBoxes())
+                    {
+                        //verificar se as passwords são iguais
+                        if (TextboxPassword.Text.Equals(TextboxPasswordConfirm.Text))
+                        {
+                            // verificar se o username ja existe
+                            if (verificarUserName())
+                            {
+                                MessageBox.Show("Esse nome de utilizador já existe. Experimente outro", " Username Duplicado ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                             }
                             else
                             {
-                                MessageBox.Show("ERRO");
+                                //consultar os dados
+                                if (command.ExecuteNonQuery() == 1)
+                                {
+                                    MessageBox.Show("A sua conta foi criada com sucesso", "Conta criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    Entrar entrarform = new Entrar();
+                                    this.Hide();
+                                    entrarform.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("ERRO");
+                                }
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("As palavras-passe não correspondiam. Tente novamente", "Erro Passe", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        }
                     }
+
                     else
                     {
-                        MessageBox.Show("As palavras-passe não correspondiam. Tente novamente","Erro Passe",MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        MessageBox.Show("Preencha os campos com informação valida", "Empty Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+
                     }
                 }
-                    
-                else
+                catch (Exception erro)
                 {
-                    MessageBox.Show("Preencha os campos com informação valida", "Empty Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-
+                    throw erro;
                 }
-
-                //fechar conecção
-                mdb.closeConnection();      
+                finally
+                {
+                    mdb.closeConnection();
+                }
             }
+
+        
 
 
 

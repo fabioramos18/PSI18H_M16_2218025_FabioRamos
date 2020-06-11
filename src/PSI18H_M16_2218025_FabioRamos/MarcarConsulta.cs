@@ -20,20 +20,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void NomeCompleto_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void MarcarConsulta_Load(object sender, EventArgs e)
         {
@@ -51,35 +38,38 @@ namespace PSI18H_M16_2218025_FabioRamos
                  MDB mdb = new MDB();
 
               {
-                MySqlCommand command = new MySqlCommand("INSERT INTO `marcacao`(`nome_completo`, `num_saude`, `contacto`, `Data_nascimento`, `morada`, `nome_especialidade`,  `nome_hospital`)VALUES (@nc, @ns,@cont, @dn, @mor, @ne, @nh)", mdb.getConnection());
+                string sql = $@"INSERT INTO `marcacao`(`nome_completo`, `num_saude`, `contacto`, `Data_nascimento`, `morada`, `nome_especialidade`,  `nome_hospital`)VALUES (@nc, @ns,@cont, @dn, @mor, @ne, @nh)";
+                MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
-                  command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = txtNomeCompleto.Text;
-                  command.Parameters.Add("@ns", MySqlDbType.VarChar).Value = txtNumSaude.Text;
-                  command.Parameters.Add("@cont", MySqlDbType.VarChar).Value = txtContacto.Text;
-                  command.Parameters.Add("@dn", MySqlDbType.Date).Value = dateTimePicker1.Value;
-                  command.Parameters.Add("@mor", MySqlDbType.VarChar).Value = txtMorada.Text;
-                  command.Parameters.Add("@ne", MySqlDbType.VarChar).Value = cmbespecialidade.Text;
-                  command.Parameters.Add("@nh", MySqlDbType.VarChar).Value = cmbhospital.Text;
-
-                //abrir conecção
-                mdb.openConnection();
-
+                command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = txtNomeCompleto.Text;
+                command.Parameters.Add("@ns", MySqlDbType.VarChar).Value = txtNumSaude.Text;
+                command.Parameters.Add("@cont", MySqlDbType.VarChar).Value = txtContacto.Text;
+                command.Parameters.Add("@dn", MySqlDbType.Date).Value = dateTimePicker1.Value;
+                command.Parameters.Add("@mor", MySqlDbType.VarChar).Value = txtMorada.Text;
+                command.Parameters.Add("@ne", MySqlDbType.VarChar).Value = cmbespecialidade.Text;
+                command.Parameters.Add("@nh", MySqlDbType.VarChar).Value = cmbhospital.Text;
                
-
-                //consultar os dados
-                if (command.ExecuteNonQuery() == 1)
-                  {
-                    MessageBox.Show("A sua conta foi criada com sucesso", "Conta criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                try
                 {
-                    MessageBox.Show("ERRO");
+                    mdb.openConnection();
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("A sua conta foi criada com sucesso", "Conta criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERRO");
+                    }
                 }
-              
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    mdb.closeConnection();
+                }
               }
-
-          //fechar conecção
-          mdb.closeConnection();
         }
 
 
@@ -89,10 +79,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
             {
                 MySqlCommand command = new MySqlCommand("SELECT * FROM hospital ORDER BY nome_hospital ASC;", mdb.getConnection());
-
-               // string selectQuery = "SELECT * FROM hospital ORDER BY nome_hospital ASC;";
-              //  using (MySqlCommand mysqlcommand = new MySqlCommand(selectQuery, mdb.Connection))
-                {
+               {
                     MySqlDataReader myReader;
                     try
                     {
@@ -113,15 +100,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                         mdb.closeConnection();
                     }
                 }
-
-                
-
-
-
-
-
             }
-
         }
 
 
@@ -134,7 +113,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             {
                 
 
-                    string sql= $@"select e.idEspecialidade
+          string sql= $@"select e.idEspecialidade
 ,       e.nome_especialidade 
 from hospital_tem_especialidade x 
 	 inner join especialidade e on x.Especialidade_idEspecialidade = e.idEspecialidade 

@@ -11,8 +11,7 @@ namespace PSI18H_M16_2218025_FabioRamos
     class MDB
     {
         // DataBase ---------------------------------------
-         MySqlConnection connection = new MySqlConnection("server=localhost; port=3306; username=root; password=root; database=mydb");
-
+         MySqlConnection connection = new MySqlConnection("server=localhost; port=3306; username=root; password=root; database=mydb");   
         //---------------------------------------------------
 
 
@@ -45,14 +44,6 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
 
         }
-
-        //returnar conexão
-
-        public MySqlConnection GetConnection()
-        { 
-            return connection;
-        }
-
 
     }
 }
