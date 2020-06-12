@@ -92,13 +92,17 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             //ver se u utilizador existe ou não
 
-
-            if (table.Rows.Count > 0)
+            if (TextboxUser.Text.Equals("Admin") && TextboxPassword.Text.Equals("Admin"))
             {
-                MessageBox.Show("YES");
-                Principal principalform = new Principal();
+                Admin adminform = new Admin();
                 this.Hide();
-                principalform.Show();
+                adminform.Show();
+            }
+            else if (table.Rows.Count > 0)
+            {
+                Loading loadingform = new Loading();
+                this.Hide();
+                loadingform.Show();
             }
             else
             {
