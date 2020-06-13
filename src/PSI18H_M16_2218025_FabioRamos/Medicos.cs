@@ -23,7 +23,8 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"SELECT * FROM `medico`";
+                string sql = $@"select idMedico, nome_medico, morada, email, contacto, nome_hospital, nome_especialidade from medico m join especialidade e on m.id_especialidade = e.idEspecialidade join hospital h on m.id_hospital = h.idHospita order by idMedico";
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 dataGridView_Medicos.DataSource = table;
@@ -107,7 +108,9 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"SELECT * FROM `medico`";
+                string sql = $@"select idMedico, nome_medico, morada, email, contacto, nome_hospital, nome_especialidade from medico m join especialidade e on m.id_especialidade = e.idEspecialidade join hospital h on m.id_hospital = h.idHospita order by idMedico";
+
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 dataGridView_Medicos.DataSource = table;
@@ -214,13 +217,12 @@ namespace PSI18H_M16_2218025_FabioRamos
                 }
             }
         }
+
         //pesquisar
         public void pesquisar(string valorpesquisa)
         {
             MDB mdb = new MDB();
-            {
-                
-               
+            { 
                 string pesquisarQuery = "SELECT * FROM medico WHERE  CONCAT( idMedico, nome_medico, contacto, email ) LIKE '%" + valorpesquisa + "%'";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(pesquisarQuery, mdb.getConnection());
                 DataTable table = new DataTable();
@@ -230,8 +232,9 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+ private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             pesquisar(txtSearch.Text);
         }
+       
     }}

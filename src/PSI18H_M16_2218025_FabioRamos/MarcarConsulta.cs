@@ -54,7 +54,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                     mdb.openConnection();
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("A sua conta foi criada com sucesso", "Conta criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Pedido de consulta realizado com sucesso", "Mrcação de consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -141,11 +141,7 @@ where x.Hospital_idHospital = {cmbhospital.SelectedValue} order by e.nome_especi
                         mdb.closeConnection();
                     }
                 }
-                
-
             }
-
-
         }
         
 
@@ -182,6 +178,12 @@ where x.Hospital_idHospital = {cmbhospital.SelectedValue} order by e.nome_especi
         private void txtMorada_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

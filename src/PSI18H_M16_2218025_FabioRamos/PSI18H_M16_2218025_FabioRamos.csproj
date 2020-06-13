@@ -88,11 +88,11 @@
     <Compile Include="Entrar.Designer.cs">
       <DependentUpon>Entrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formtestarcombobobxes1.cs">
+    <Compile Include="Profissionais.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formtestarcombobobxes1.Designer.cs">
-      <DependentUpon>Formtestarcombobobxes1.cs</DependentUpon>
+    <Compile Include="Profissionais.Designer.cs">
+      <DependentUpon>Profissionais.cs</DependentUpon>
     </Compile>
     <Compile Include="HospLuz.cs">
       <SubType>Form</SubType>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="Entrar.resx">
       <DependentUpon>Entrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formtestarcombobobxes1.resx">
-      <DependentUpon>Formtestarcombobobxes1.cs</DependentUpon>
+    <EmbeddedResource Include="Profissionais.resx">
+      <DependentUpon>Profissionais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HospLuz.resx">
       <DependentUpon>HospLuz.cs</DependentUpon>

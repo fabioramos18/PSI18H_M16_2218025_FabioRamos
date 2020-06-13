@@ -71,7 +71,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1026, 52);
+            this.panel1.Size = new System.Drawing.Size(1026, 40);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -79,7 +79,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 29);
             this.label1.TabIndex = 0;
@@ -95,9 +95,9 @@
             this.panel2.Controls.Add(this.dataGridView_Medicos);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.txtSearch);
-            this.panel2.Location = new System.Drawing.Point(17, 58);
+            this.panel2.Location = new System.Drawing.Point(17, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(994, 389);
+            this.panel2.Size = new System.Drawing.Size(994, 406);
             this.panel2.TabIndex = 1;
             // 
             // btnNovo
@@ -140,7 +140,7 @@
             this.dataGridView_Medicos.Name = "dataGridView_Medicos";
             this.dataGridView_Medicos.ReadOnly = true;
             this.dataGridView_Medicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Medicos.Size = new System.Drawing.Size(969, 330);
+            this.dataGridView_Medicos.Size = new System.Drawing.Size(969, 350);
             this.dataGridView_Medicos.TabIndex = 7;
             this.dataGridView_Medicos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Medicos_MouseDoubleClick);
             // 
@@ -382,6 +382,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Medicos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medicos";

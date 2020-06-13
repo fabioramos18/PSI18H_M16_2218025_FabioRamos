@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+
 namespace PSI18H_M16_2218025_FabioRamos 
 { 
 
@@ -24,25 +25,24 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         //----------------------------ARRASTAR O FORM-----------------------------------\\
 
-        bool drag = false;
-        Point start_point = new Point(0, 0);
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
 
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
-            drag = true;
-            start_point = new Point(e.X, e.Y);
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            
         }
-        private void BarraTitulo_MouseUp(object sender, MouseEventArgs e)
-        {
-            drag = false;
-        }
+       
         private void BarraTitulo_MouseMove(object sender, MouseEventArgs e)
         {
-            if (drag)
-            {
-                Point p = PointToScreen(e.Location);
-                this.Location = new Point(p.X - start_point.X, p.Y - start_point.Y);
-            }
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         //-------------------------------------------------------------------------------\\
 
@@ -121,6 +121,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button16_Click(object sender, EventArgs e)
         {
+            openChildForm(new Profissionais());
             //...
             //meu codico
             //...
@@ -144,13 +145,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             hideSubmenu();
         }
 
-        private void btnExame_Click(object sender, EventArgs e)
-        {
-            //...
-            //meu codico
-            //...
-            hideSubmenu();
-        }
+      
 
         private void btnQuemsomos_Click(object sender, EventArgs e)
         {
@@ -224,6 +219,12 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Principal principalform = new Principal();
+            principalform.Show();
         }
     }
    
