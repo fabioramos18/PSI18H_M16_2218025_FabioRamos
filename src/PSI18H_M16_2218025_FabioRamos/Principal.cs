@@ -23,6 +23,8 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         }
 
+
+
         //----------------------------ARRASTAR O FORM-----------------------------------\\
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -75,9 +77,9 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void btnServicos_Click(object sender, EventArgs e)
         {
-            showSubmenu(panel1);
+        showSubmenu(panel1);
         }
-
+       
         private void button12_Click(object sender, EventArgs e)
         {
             openChildForm(new HospBeatriz());
@@ -138,7 +140,16 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            openChildForm(new MarcarConsulta());
+            //Aqui você vai pegar o valor do textBox
+            string valor = textBox1.Text;
+            string valor2 = textBox2.Text;
+
+           // openChildForm(new MarcarConsulta(valor, valor2));
+            openChildForm(new PedidoMarcacao());
+
+            valor = textBox1.Text;
+             valor2 = textBox2.Text;
+
             //...
             //meu codico
             //...
@@ -226,6 +237,8 @@ namespace PSI18H_M16_2218025_FabioRamos
             Principal principalform = new Principal();
             principalform.Show();
         }
+
+       
     }
    
 }

@@ -17,15 +17,27 @@ namespace PSI18H_M16_2218025_FabioRamos
         public MarcarConsulta()
         {
             InitializeComponent();
-            
+          
+
         }
 
-       
+        public MarcarConsulta(string texto, string texto1)
+        {
+            InitializeComponent();
+            textBox1.Text = texto ;
+            textBox2.Text = texto1;
+            
+        //    userControl21.Hide();
+
+        }
 
         private void MarcarConsulta_Load(object sender, EventArgs e)
         {
             // carregar hospitais
             CarregarHospitais();
+            
+            
+            button1.Visible = true;
 
         }
 
@@ -34,42 +46,59 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void PedidoMarcar_Click(object sender, EventArgs e)
         {
-             
-                 MDB mdb = new MDB();
 
-              {
-                string sql = $@"INSERT INTO `marcacao`(`nome_completo`, `num_saude`, `contacto`, `Data_nascimento`, `morada`, `nome_especialidade`,  `nome_hospital`)VALUES (@nc, @ns,@cont, @dn, @mor, @ne, @nh)";
-                MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
+            /*  MDB mdb = new MDB();
 
-                command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = txtNomeCompleto.Text;
-                command.Parameters.Add("@ns", MySqlDbType.VarChar).Value = txtNumSaude.Text;
-                command.Parameters.Add("@cont", MySqlDbType.VarChar).Value = txtContacto.Text;
-                command.Parameters.Add("@dn", MySqlDbType.Date).Value = dateTimePicker1.Value;
-                command.Parameters.Add("@mor", MySqlDbType.VarChar).Value = txtMorada.Text;
-                command.Parameters.Add("@ne", MySqlDbType.VarChar).Value = cmbespecialidade.Text;
-                command.Parameters.Add("@nh", MySqlDbType.VarChar).Value = cmbhospital.Text;
-               
-                try
-                {
-                    mdb.openConnection();
-                    if (command.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("Pedido de consulta realizado com sucesso", "Mrcação de consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("ERRO");
-                    }
-                }
-                catch (Exception erro)
-                {
-                    throw erro;
-                }
-                finally
-                {
-                    mdb.closeConnection();
-                }
-              }
+           {
+             string sql = $@"INSERT INTO `marcacao`(`nome_completo`, `num_saude`, `contacto`, `Data_nascimento`, `morada`, `nome_especialidade`,  `nome_hospital`)VALUES (@nc, @ns,@cont, @dn, @mor, @ne, @nh)";
+             MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
+
+             command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = txtNomeCompleto.Text;
+             command.Parameters.Add("@ns", MySqlDbType.VarChar).Value = txtNumSaude.Text;
+             command.Parameters.Add("@cont", MySqlDbType.VarChar).Value = txtContacto.Text;
+             command.Parameters.Add("@dn", MySqlDbType.Date).Value = dateTimePicker1.Value;
+             command.Parameters.Add("@mor", MySqlDbType.VarChar).Value = txtMorada.Text;
+             command.Parameters.Add("@ne", MySqlDbType.VarChar).Value = cmbespecialidade.Text;
+             command.Parameters.Add("@nh", MySqlDbType.VarChar).Value = cmbhospital.Text;
+
+             try
+             {
+                 mdb.openConnection();
+                 if (command.ExecuteNonQuery() == 1)
+                 {
+                     MessageBox.Show("Pedido de consulta realizado com sucesso", "Mrcação de consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 }
+                 else
+                 {
+                     MessageBox.Show("ERRO");
+                 }
+             }
+             catch (Exception erro)
+             {
+                 throw erro;
+             }
+             finally
+             {
+                 mdb.closeConnection();
+             }
+           }
+         this.AcceptButton = PedidoMarcar;*/
+
+            openChildForm(new PedidoMarcacao ());
+        }
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+          //  panelConteudo.Controls.Add(childForm);
+            //panelConteudo.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
 
@@ -184,6 +213,24 @@ where x.Hospital_idHospital = {cmbhospital.SelectedValue} order by e.nome_especi
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+         /*   userControl11.Hide();
+            userControl21.Show();
+            userControl21.BringToFront();
+            button1.Visible = false;
+            button2.Visible = true;*/
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           /* userControl11.Hide();
+            userControl21.Show();
+            userControl21.BringToFront();
+            button1.Visible = true;
+            button2.Visible = false;*/
         }
     }
 

@@ -120,6 +120,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                     MessageBox.Show("Nome de utilizador ou senha incorretos", "Wrong Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            this.AcceptButton = buttonLogin;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -143,6 +144,11 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }  
+        }
+
+        private void buttonLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
     }
 }

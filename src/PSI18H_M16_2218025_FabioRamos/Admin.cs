@@ -17,16 +17,46 @@ namespace PSI18H_M16_2218025_FabioRamos
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void movepanel(Control btn)
         {
-            Medicos medicosform = new Medicos();
+            panelSlide.Width = btn.Width;
+            panelSlide.Left = btn.Left;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            movepanel(button1);
+            panel2.Visible = true;
+            panel3.Visible = false;
+            panel4.Visible = false;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            movepanel(button2);
+            panel2.Visible = false;
+            panel4.Visible = false;
+            panel3.Visible = true;
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            /*Medicos medicosform = new Medicos();
             this.Hide();
-            medicosform.Show();
+            medicosform.Show();*/
+              movepanel(button3);
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = true;
+
         }
 
         private void Admin_Load(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }
