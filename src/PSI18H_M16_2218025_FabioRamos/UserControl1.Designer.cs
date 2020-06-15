@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbespecialidade = new System.Windows.Forms.ComboBox();
             this.cmbhospital = new System.Windows.Forms.ComboBox();
+            this.Btn2 = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +101,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.label6.Location = new System.Drawing.Point(40, 287);
+            this.label6.Location = new System.Drawing.Point(41, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(137, 22);
             this.label6.TabIndex = 28;
@@ -112,7 +113,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.label4.Location = new System.Drawing.Point(40, 191);
+            this.label4.Location = new System.Drawing.Point(41, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 22);
             this.label4.TabIndex = 27;
@@ -124,7 +125,13 @@
             this.cmbespecialidade.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbespecialidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.cmbespecialidade.FormattingEnabled = true;
-            this.cmbespecialidade.Location = new System.Drawing.Point(44, 325);
+            this.cmbespecialidade.Items.AddRange(new object[] {
+            "z",
+            "x",
+            "c",
+            "v",
+            "b"});
+            this.cmbespecialidade.Location = new System.Drawing.Point(45, 337);
             this.cmbespecialidade.Name = "cmbespecialidade";
             this.cmbespecialidade.Size = new System.Drawing.Size(518, 29);
             this.cmbespecialidade.TabIndex = 26;
@@ -136,16 +143,49 @@
             this.cmbhospital.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbhospital.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.cmbhospital.FormattingEnabled = true;
-            this.cmbhospital.Location = new System.Drawing.Point(44, 227);
+            this.cmbhospital.Items.AddRange(new object[] {
+            "a",
+            "b",
+            "c",
+            "d"});
+            this.cmbhospital.Location = new System.Drawing.Point(45, 239);
             this.cmbhospital.Name = "cmbhospital";
             this.cmbhospital.Size = new System.Drawing.Size(518, 29);
             this.cmbhospital.TabIndex = 25;
             this.cmbhospital.Text = "Hospital Beatriz Ângelo";
+            this.cmbhospital.SelectedIndexChanged += new System.EventHandler(this.cmbhospital_SelectedIndexChanged);
+            // 
+            // Btn2
+            // 
+            this.Btn2.ActiveBorderThickness = 1;
+            this.Btn2.ActiveCornerRadius = 20;
+            this.Btn2.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
+            this.Btn2.ActiveForecolor = System.Drawing.Color.White;
+            this.Btn2.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
+            this.Btn2.BackColor = System.Drawing.SystemColors.Control;
+            this.Btn2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn2.BackgroundImage")));
+            this.Btn2.ButtonText = "Continuar";
+            this.Btn2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.Btn2.IdleBorderThickness = 1;
+            this.Btn2.IdleCornerRadius = 20;
+            this.Btn2.IdleFillColor = System.Drawing.Color.White;
+            this.Btn2.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.Btn2.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
+            this.Btn2.Location = new System.Drawing.Point(897, 571);
+            this.Btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn2.Name = "Btn2";
+            this.Btn2.Size = new System.Drawing.Size(148, 45);
+            this.Btn2.TabIndex = 48;
+            this.Btn2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Btn2.Click += new System.EventHandler(this.Btn2_Click);
             // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Btn2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbespecialidade);
@@ -156,7 +196,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(1080, 564);
+            this.Size = new System.Drawing.Size(1080, 640);
+            this.Load += new System.EventHandler(this.UserControl1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -174,5 +215,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbespecialidade;
         private System.Windows.Forms.ComboBox cmbhospital;
+        private Bunifu.Framework.UI.BunifuThinButton2 Btn2;
     }
 }

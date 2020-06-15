@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Medicos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.dataGridView_Medicos = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -56,11 +57,12 @@
             this.txtIdespecialdade = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNomeMedico = new System.Windows.Forms.TextBox();
+            this.dataGridView_Medicos = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Medicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Medicos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,6 +75,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1026, 40);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // label1
             // 
@@ -127,22 +132,6 @@
             this.btnRefresh.Text = "Atualizar";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // dataGridView_Medicos
-            // 
-            this.dataGridView_Medicos.AllowUserToAddRows = false;
-            this.dataGridView_Medicos.AllowUserToDeleteRows = false;
-            this.dataGridView_Medicos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_Medicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_Medicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Medicos.Location = new System.Drawing.Point(15, 44);
-            this.dataGridView_Medicos.Name = "dataGridView_Medicos";
-            this.dataGridView_Medicos.ReadOnly = true;
-            this.dataGridView_Medicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Medicos.Size = new System.Drawing.Size(969, 350);
-            this.dataGridView_Medicos.TabIndex = 7;
-            this.dataGridView_Medicos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Medicos_MouseDoubleClick);
             // 
             // pictureBox1
             // 
@@ -373,6 +362,38 @@
             this.txtNomeMedico.Size = new System.Drawing.Size(363, 24);
             this.txtNomeMedico.TabIndex = 0;
             // 
+            // dataGridView_Medicos
+            // 
+            this.dataGridView_Medicos.AllowUserToAddRows = false;
+            this.dataGridView_Medicos.AllowUserToDeleteRows = false;
+            this.dataGridView_Medicos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_Medicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Medicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_Medicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Medicos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_Medicos.Location = new System.Drawing.Point(15, 44);
+            this.dataGridView_Medicos.Name = "dataGridView_Medicos";
+            this.dataGridView_Medicos.ReadOnly = true;
+            this.dataGridView_Medicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Medicos.Size = new System.Drawing.Size(969, 350);
+            this.dataGridView_Medicos.TabIndex = 7;
+            this.dataGridView_Medicos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Medicos_MouseDoubleClick);
+            // 
             // Medicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,10 +412,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Medicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Medicos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,7 +427,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridView_Medicos;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtIdhospital;
@@ -428,5 +448,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.DataGridView dataGridView_Medicos;
     }
 }

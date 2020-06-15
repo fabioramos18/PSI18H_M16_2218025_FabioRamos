@@ -28,7 +28,6 @@ namespace PSI18H_M16_2218025_FabioRamos
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 dataGridView_Medicos.DataSource = table;
-
             }
         }
 
@@ -232,9 +231,32 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         }
 
- private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             pesquisar(txtSearch.Text);
         }
-       
-    }}
+
+        bool drag = false;
+        Point start_point = new Point(0, 0);
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point p = PointToScreen(e.Location);
+                this.Location = new Point(p.X - start_point.X, p.Y - start_point.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+    }
+}

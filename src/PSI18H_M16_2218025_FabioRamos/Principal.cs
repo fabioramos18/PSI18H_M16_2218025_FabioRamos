@@ -115,6 +115,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button17_Click(object sender, EventArgs e)
         {
+            openChildForm(new Profissionais());
             //...
             //meu codico
             //...
@@ -123,7 +124,6 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button16_Click(object sender, EventArgs e)
         {
-            openChildForm(new Profissionais());
             //...
             //meu codico
             //...
@@ -140,19 +140,8 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            //Aqui você vai pegar o valor do textBox
-            string valor = textBox1.Text;
-            string valor2 = textBox2.Text;
-
            // openChildForm(new MarcarConsulta(valor, valor2));
             openChildForm(new PedidoMarcacao());
-
-            valor = textBox1.Text;
-             valor2 = textBox2.Text;
-
-            //...
-            //meu codico
-            //...
             hideSubmenu();
         }
 
@@ -238,7 +227,10 @@ namespace PSI18H_M16_2218025_FabioRamos
             principalform.Show();
         }
 
-       
+        private void panelConteudo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
    
 }

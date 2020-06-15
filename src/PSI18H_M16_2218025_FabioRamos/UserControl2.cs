@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
@@ -19,10 +21,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
        
 
-        private void UserControl2_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void txtNSaude_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -52,6 +51,46 @@ namespace PSI18H_M16_2218025_FabioRamos
                 e.Handled = true;
                 return;
             }
+        }
+
+
+           
+
+        private void UserControl2_Load(object sender, EventArgs e)
+        {
+
+           
+        }
+
+
+        public static string passingText2;
+        public static string passingText3;
+        public static string passingText4;
+        public static string passingText5;
+        public static string passingText6;
+        public static string passingText7;
+
+
+
+
+        private void Btn2_Click(object sender, EventArgs e)
+        {
+          //  DateTime data1 = Convert.ToDateTime(dateTimePicker1.text);
+            passingText2 = txtNomeCompleto.Text;
+            passingText3 = txtNSaude.Text;
+            passingText4 = txtContacto.Text;
+            passingText5 = dateTimePicker1.Text;
+            passingText6 = txtMorada.Text;
+            passingText7 = txtEmail.Text;
+            this.Hide();
+            this.Parent.Controls.Add(new UserControl3());
+        }
+
+        private void Btn3_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            this.Parent.Controls.Add(new UserControl1());
         }
     }
 }

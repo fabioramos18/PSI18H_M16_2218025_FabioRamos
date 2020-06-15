@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
@@ -15,31 +16,79 @@ namespace PSI18H_M16_2218025_FabioRamos
         public Profissionais()
         {
             InitializeComponent();
+            
         }
 
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Profissionais_Load(object sender, EventArgs e)
         {
+            CarregarHospitais();
+            userControl41.Hide();
+            userControl51.Hide();
+            userControl61.Hide();
+            cmbhospital.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
 
-            if (comboBox1.SelectedItem.ToString() == "a")
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmbhospital.Text.Equals("Hospital Beatriz Ângelo"))
             {
-
-                panel1.Visible = false;
-
+                userControl51.Hide();
+                userControl61.Hide();
+                userControl41.Show();
+                userControl41.BringToFront();
 
             }
-            else if (comboBox1.SelectedItem.ToString() == "bb")
+            else if (cmbhospital.Text.Equals("Hospital Da Luz"))
             {
-
-                panel1.Visible = true;
-                panel2.Visible = true;
-                panel8.Visible = true;
-                panel5.Visible = true;
-
-
-
+                userControl41.Hide();
+                userControl61.Hide();
+                userControl51.Show();
+                userControl51.BringToFront();
+            }
+            else if (cmbhospital.Text.Equals("Hospital Trofa Saúde"))
+            {
+                userControl41.Hide();
+                userControl51.Hide();
+                userControl61.Show();
+                userControl61.BringToFront();
+            }
+            else
+            {
+                userControl41.Hide();
+                userControl51.Hide();
+                userControl61.Hide();
             }
         }
-   
+
+        public void CarregarHospitais()
+        {
+            MDB mdb = new MDB();
+            {
+                MySqlCommand command = new MySqlCommand("SELECT * FROM hospital ORDER BY nome_hospital ASC;", mdb.getConnection());
+                {
+                    MySqlDataReader myReader;
+                    try
+                    {
+                        mdb.openConnection();
+                        myReader = command.ExecuteReader();
+                        DataTable dt = new DataTable();
+                        dt.Load(myReader);
+                        cmbhospital.DisplayMember = "nome_hospital";
+                        cmbhospital.ValueMember = "idHospita";
+                        cmbhospital.DataSource = dt;
+                    }
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show("Erro:" + erro.Message);
+                    }
+                    finally
+                    {
+                        mdb.closeConnection();
+                    }
+                }
+            }
+        }
+
+       
     }
 }
