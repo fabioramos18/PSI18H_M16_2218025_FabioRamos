@@ -69,6 +69,8 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         }
 
+        public static string passingText2;
+
         private void button1_Click(object sender, EventArgs e)
         {
             MDB mdb = new MDB();
@@ -101,6 +103,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
             else if (table.Rows.Count > 0)
             {
+                passingText2 = TextboxUser.Text;
                 Loading loadingform = new Loading();
                 this.Hide();
                 loadingform.Show();

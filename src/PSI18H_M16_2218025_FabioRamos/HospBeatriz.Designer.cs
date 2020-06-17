@@ -46,6 +46,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);

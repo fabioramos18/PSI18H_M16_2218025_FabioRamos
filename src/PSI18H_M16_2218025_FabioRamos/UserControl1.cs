@@ -78,7 +78,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 ,       e.nome_especialidade 
 from hospital_tem_especialidade x 
 	 inner join especialidade e on x.Especialidade_idEspecialidade = e.idEspecialidade 
-where x.Hospital_idHospital = {cmbhospital.SelectedValue} order by e.nome_especialidade";
+where x.Hospital_idHospita = {cmbhospital.SelectedValue} order by e.nome_especialidade";
 
                 MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
                 {

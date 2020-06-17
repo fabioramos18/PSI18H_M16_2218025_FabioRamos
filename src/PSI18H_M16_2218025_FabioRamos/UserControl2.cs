@@ -54,14 +54,6 @@ namespace PSI18H_M16_2218025_FabioRamos
         }
 
 
-           
-
-        private void UserControl2_Load(object sender, EventArgs e)
-        {
-
-           
-        }
-
 
         public static string passingText2;
         public static string passingText3;

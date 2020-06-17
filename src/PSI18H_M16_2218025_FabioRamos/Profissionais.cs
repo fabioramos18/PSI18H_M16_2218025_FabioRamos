@@ -25,6 +25,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             userControl41.Hide();
             userControl51.Hide();
             userControl61.Hide();
+           // userControl71.Hide();
             cmbhospital.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -36,6 +37,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                 userControl61.Hide();
                 userControl41.Show();
                 userControl41.BringToFront();
+
 
             }
             else if (cmbhospital.Text.Equals("Hospital Da Luz"))
@@ -54,9 +56,8 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
             else
             {
-                userControl41.Hide();
-                userControl51.Hide();
-                userControl61.Hide();
+                userControl71.Show();
+                userControl71.BringToFront();
             }
         }
 
@@ -88,7 +89,5 @@ namespace PSI18H_M16_2218025_FabioRamos
                 }
             }
         }
-
-       
     }
 }

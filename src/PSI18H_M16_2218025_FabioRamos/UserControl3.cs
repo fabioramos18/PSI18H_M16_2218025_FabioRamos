@@ -17,7 +17,10 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             InitializeComponent();
         }
-    
+
+
+
+
         public void CarregarHospitais()
         {
             MDB mdb = new MDB();
@@ -47,16 +50,17 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
         }
 
+
         private void cmbhospital_SelectedIndexChanged_1(object sender, EventArgs e)
         {
                 MDB mdb = new MDB();
 
                 {
                     string sql = $@"select e.idEspecialidade
-,       e.nome_especialidade 
-from hospital_tem_especialidade x 
-	 inner join especialidade e on x.Especialidade_idEspecialidade = e.idEspecialidade 
-where x.Hospital_idHospital = {cmbhospital.SelectedValue} order by e.nome_especialidade";
+,           e.nome_especialidade 
+            from hospital_tem_especialidade x 
+	        inner join especialidade e on x.Especialidade_idEspecialidade = e.idEspecialidade 
+            where x.Hospital_idHospita = {cmbhospital.SelectedValue} order by e.nome_especialidade";
 
                     MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
                     {
@@ -90,41 +94,73 @@ where x.Hospital_idHospital = {cmbhospital.SelectedValue} order by e.nome_especi
         }
 
 
-
+        public static string passingText10;
 
         private void UserControl3_Load(object sender, EventArgs e)
+
         {
-            cmbhospital.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbespecialidade.DropDownStyle = ComboBoxStyle.DropDownList;
-            CarregarHospitais();
-            cmbhospital.Text = UserControl1.passingText;
-            cmbespecialidade.Text = UserControl1.passingText1;
-            txtNomeCompleto.Text = UserControl2.passingText2;
-            txtNSaude.Text = UserControl2.passingText3;
-            txtContacto.Text = UserControl2.passingText4;
-            dateTimePicker1.Text = UserControl2.passingText5;
-            txtMorada.Text = UserControl2.passingText6;
-            txtEmail.Text = UserControl2.passingText7;
+            MDB mdb = new MDB();
+            {
+                try
+                {
+                    mdb.openConnection();
+                    DataTable table = new DataTable();
+                    MySqlCommand command = new MySqlCommand("select id_user from `user` where `user` = @im ", mdb.getConnection());
+                    command.Parameters.Clear();
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.Add("@im", MySqlDbType.VarChar).Value = Entrar.passingText2;
+                    MySqlDataReader dr;
+                    dr = command.ExecuteReader();
+                    dr.Read();
+                    passingText10 = dr.GetString(0);
+
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    mdb.closeConnection();
+                }
+            }
+
+                cmbhospital.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbespecialidade.DropDownStyle = ComboBoxStyle.DropDownList;
+                CarregarHospitais();
+
+                cmbhospital.Text = UserControl1.passingText;
+                cmbespecialidade.Text = UserControl1.passingText1;
+                txtNomeCompleto.Text = UserControl2.passingText2;
+                txtNSaude.Text = UserControl2.passingText3;
+                txtContacto.Text = UserControl2.passingText4;
+                dateTimePicker1.Text = UserControl2.passingText5;
+                txtMorada.Text = UserControl2.passingText6;
+             // txtEmail.Text = UserControl2.passingText7;
+           
         }
+
+
 
         private void Btn5_Click(object sender, EventArgs e)
         {
               MDB mdb = new MDB();
 
            {
-             string sql = $@"INSERT INTO `marcacao`(`nome_completo`, `num_saude`, `contacto`, `Data_nascimento`, `morada`, `email`, `nome_especialidade`,  `nome_hospital`)VALUES (@nc, @ns,@cont, @dn, @mor, @mail, @ne, @nh)";
+             string sql = $@"INSERT INTO `consulta`(`User_id_user`, `nome_completo`, `num_saude`, `contacto`, `Data_nascimento`, `morada`, `nome_especialidade`, `nome_hospital`)VALUES (@iu, @nc, @ns,@cont, @dn, @mor, @ne, @nh )";
              MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
              command.Parameters.Add("@nc", MySqlDbType.VarChar).Value = txtNomeCompleto.Text;
              command.Parameters.Add("@ns", MySqlDbType.VarChar).Value = txtNSaude.Text;
              command.Parameters.Add("@cont", MySqlDbType.VarChar).Value = txtContacto.Text;
-             command.Parameters.Add("@mail", MySqlDbType.VarChar).Value = txtEmail.Text;
              command.Parameters.Add("@dn", MySqlDbType.Date).Value = dateTimePicker1.Value;
              command.Parameters.Add("@mor", MySqlDbType.VarChar).Value = txtMorada.Text;
              command.Parameters.Add("@ne", MySqlDbType.VarChar).Value = cmbespecialidade.Text;
              command.Parameters.Add("@nh", MySqlDbType.VarChar).Value = cmbhospital.Text;
 
-             try
+             command.Parameters.Add("@iu", MySqlDbType.VarChar).Value = UserControl3.passingText10;
+
+                try
              {
                  mdb.openConnection();
                  if (command.ExecuteNonQuery() == 1)

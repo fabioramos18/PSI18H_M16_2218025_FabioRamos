@@ -28,18 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profissionais));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label49 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.cmbhospital = new System.Windows.Forms.ComboBox();
             this.userControl61 = new PSI18H_M16_2218025_FabioRamos.UserControl6();
             this.userControl51 = new PSI18H_M16_2218025_FabioRamos.UserControl5();
             this.userControl41 = new PSI18H_M16_2218025_FabioRamos.userControl4();
+            this.userControl71 = new PSI18H_M16_2218025_FabioRamos.UserControl7();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label49);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.cmbhospital);
@@ -48,6 +56,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 86);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(717, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 60;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(376, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
             // 
             // label49
             // 
@@ -80,9 +108,9 @@
             // userControl61
             // 
             this.userControl61.AutoScroll = true;
-            this.userControl61.Location = new System.Drawing.Point(0, 92);
+            this.userControl61.Location = new System.Drawing.Point(0, 84);
             this.userControl61.Name = "userControl61";
-            this.userControl61.Size = new System.Drawing.Size(1080, 543);
+            this.userControl61.Size = new System.Drawing.Size(1080, 554);
             this.userControl61.TabIndex = 3;
             // 
             // userControl51
@@ -101,12 +129,21 @@
             this.userControl41.Size = new System.Drawing.Size(1080, 546);
             this.userControl41.TabIndex = 1;
             // 
+            // userControl71
+            // 
+            this.userControl71.AutoScroll = true;
+            this.userControl71.Location = new System.Drawing.Point(0, 84);
+            this.userControl71.Name = "userControl71";
+            this.userControl71.Size = new System.Drawing.Size(1080, 554);
+            this.userControl71.TabIndex = 4;
+            // 
             // Profissionais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1080, 640);
+            this.Controls.Add(this.userControl71);
             this.Controls.Add(this.userControl61);
             this.Controls.Add(this.userControl51);
             this.Controls.Add(this.userControl41);
@@ -117,6 +154,8 @@
             this.Load += new System.EventHandler(this.Profissionais_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -130,5 +169,8 @@
         private userControl4 userControl41;
         private UserControl5 userControl51;
         private UserControl6 userControl61;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private UserControl7 userControl71;
     }
 }

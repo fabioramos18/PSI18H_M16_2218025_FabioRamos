@@ -51,7 +51,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.panelConteudo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -421,7 +421,7 @@
             // 
             this.panelConteudo.AutoScroll = true;
             this.panelConteudo.BackColor = System.Drawing.SystemColors.Control;
-            this.panelConteudo.Controls.Add(this.label1);
+            this.panelConteudo.Controls.Add(this.label49);
             this.panelConteudo.Controls.Add(this.label13);
             this.panelConteudo.Controls.Add(this.label12);
             this.panelConteudo.Controls.Add(this.label11);
@@ -444,24 +444,22 @@
             this.panelConteudo.Controls.Add(this.pictureBox3);
             this.panelConteudo.Controls.Add(this.pictureBox2);
             this.panelConteudo.Controls.Add(this.label2);
-            this.panelConteudo.Location = new System.Drawing.Point(220, 35);
+            this.panelConteudo.Location = new System.Drawing.Point(217, 35);
             this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(1080, 640);
+            this.panelConteudo.Size = new System.Drawing.Size(1083, 640);
             this.panelConteudo.TabIndex = 4;
             this.panelConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConteudo_Paint);
             // 
-            // label1
+            // label49
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label1.Location = new System.Drawing.Point(437, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Especialidades";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.label49.Location = new System.Drawing.Point(457, 16);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(229, 36);
+            this.label49.TabIndex = 61;
+            this.label49.Text = "Especialidades";
             // 
             // label13
             // 
@@ -677,13 +675,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(252, 71);
+            this.label2.Location = new System.Drawing.Point(184, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(677, 66);
+            this.label2.Size = new System.Drawing.Size(810, 66);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Combinados, os Hospitais do Healthy Life contam com 10 especialidades \r\nclinicas " +
-    "de forma a assegurar um acompanhamento mais completo\r\npara qualquer problema de " +
-    "saude dos nossos pacientes.";
+            this.label2.Text = resources.GetString("label2.Text");
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Principal
@@ -772,7 +768,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Label label49;
     }
 }

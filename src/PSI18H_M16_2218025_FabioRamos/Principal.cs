@@ -59,7 +59,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             if (panel1.Visible == true)
                 panel1.Visible = false;
-            if (panel3.Visible == true)
+            else if (panel3.Visible == true)
                 panel3.Visible = false;
 
         }
@@ -124,6 +124,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button16_Click(object sender, EventArgs e)
         {
+        
             //...
             //meu codico
             //...
@@ -132,6 +133,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void btnPrincipal_Click(object sender, EventArgs e)
         {
+            openChildForm(new MinhaConta());
             //...
             //meu codico
             //...
@@ -140,7 +142,6 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-           // openChildForm(new MarcarConsulta(valor, valor2));
             openChildForm(new PedidoMarcacao());
             hideSubmenu();
         }
@@ -231,6 +232,8 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
 
         }
+
+       
     }
    
 }

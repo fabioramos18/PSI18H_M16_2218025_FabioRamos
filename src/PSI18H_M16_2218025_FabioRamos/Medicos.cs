@@ -23,15 +23,17 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select idMedico, nome_medico, morada, email, contacto, nome_hospital, nome_especialidade from medico m join especialidade e on m.id_especialidade = e.idEspecialidade join hospital h on m.id_hospital = h.idHospita order by idMedico";
+                string sql = $@"select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada, contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade from medico m join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
-                dataGridView_Medicos.DataSource = table;
+                bunifuCustomDataGrid1.DataSource = table;
             }
-        }
 
-        private void dataGridView_Medicos_MouseDoubleClick(object sender, MouseEventArgs e)
+    }
+
+
+        private void bunifuCustomDataGrid1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             panel3.Visible = false;
 
@@ -49,14 +51,48 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
 
 
-            txtIdmedico.Text = dataGridView_Medicos.CurrentRow.Cells[0].Value.ToString();
-            txtNomeMedico.Text = dataGridView_Medicos.CurrentRow.Cells[1].Value.ToString();
-            txtIdespecialdade.Text = dataGridView_Medicos.CurrentRow.Cells[5].Value.ToString();
-            txtIdhospital.Text = dataGridView_Medicos.CurrentRow.Cells[6].Value.ToString();
-            txtMorada.Text = dataGridView_Medicos.CurrentRow.Cells[2].Value.ToString();
-            txtEmail.Text = dataGridView_Medicos.CurrentRow.Cells[3].Value.ToString();
-            txtContacto.Text = dataGridView_Medicos.CurrentRow.Cells[4].Value.ToString();
+            txtIdmedico.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
+            txtNomeMedico.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
+            txtIdhospital.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
+            txtIdespecialdade.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
+            txtMorada.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
+            txtEmail.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
+            txtContacto.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
+
+            string teste = Text;
+            Text = "pendente ";
+
+            //codico para quando o user der duble click apareca o id do hospital e especialidade em vez do nome
+            MDB mdb = new MDB();
+            {
+                try
+                {
+                    mdb.openConnection();
+                    //DataTable table = new DataTable();
+                    MySqlCommand command = new MySqlCommand("select Hospital_idHospita, Especialidade_idEspecialidade from medico where idMedico = @im", mdb.getConnection());
+                    command.Parameters.Clear();
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.Add("@im", MySqlDbType.VarChar).Value = txtIdmedico.Text;
+                    MySqlDataReader dr;
+                    dr = command.ExecuteReader();
+                    dr.Read();
+                    txtIdhospital.Text = dr.GetString(0);
+                    txtIdespecialdade.Text = dr.GetString(1);
+
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    mdb.closeConnection();
+                }
+
+            }
+            //_---------------------------------------------------------
         }
+
 
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -64,7 +100,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
             {
 
-                string sql = $@"INSERT INTO `medico`(`nome_medico`, `morada`, `email`, `contacto`, `id_especialidade`, `id_hospital`) VALUES (@nm, @mor,@email, @cont, @ie, @ih)";
+                string sql = $@"INSERT INTO `medico`(`nome_medico`, `morada`, `email`, `contacto`, `Especialidade_idEspecialidade`, `Hospital_idHospita`) VALUES (@nm, @mor,@email, @cont, @ie, @ih)";
                 MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
 
@@ -104,21 +140,24 @@ namespace PSI18H_M16_2218025_FabioRamos
         //atualizar o gridview
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            panel3.Visible = false;
+
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select idMedico, nome_medico, morada, email, contacto, nome_hospital, nome_especialidade from medico m join especialidade e on m.id_especialidade = e.idEspecialidade join hospital h on m.id_hospital = h.idHospita order by idMedico";
+                string sql = $@"select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada, contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade from medico m join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
 
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
-                dataGridView_Medicos.DataSource = table;
+                bunifuCustomDataGrid1.DataSource = table;
             }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             panel3.Visible = false;
+           
 
             //esvaziar textbox
             txtIdmedico.Text = "";
@@ -130,15 +169,18 @@ namespace PSI18H_M16_2218025_FabioRamos
             txtContacto.Text = "";
 
             //ocultar os butões delet e editar
-            if (btnDelete.Visible == true || btnEditar.Visible == true)
+            if (btnDelete.Visible == true || btnEditar.Visible == true || btnGuardar.Visible == false)
             {
                 btnDelete.Visible = false;
                 btnEditar.Visible = false;
+                btnGuardar.Visible = true;
+
             }
 
             //mostrar panel
             if (panel3.Visible == false)
                 panel3.Visible = true;
+
             else
                 panel3.Visible = false;
         }
@@ -180,7 +222,8 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             MDB mdb = new MDB();
             {
-                string sql = $@"UPDATE medico SET nome_medico= @nm , morada= @mor,email= @email, contacto= @cont, id_especialidade = @ie, id_hospital=@ih WHERE idMedico = @im ";
+                string sql = $@"UPDATE `medico` SET `nome_medico`= @nm , `morada` = @mor, `email`= @email, `contacto` = @cont, `Especialidade_idEspecialidade` = @ie, `Hospital_idHospita` =@ih WHERE `idMedico` = @im ";
+
                 MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
 
@@ -222,11 +265,11 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             MDB mdb = new MDB();
             { 
-                string pesquisarQuery = "SELECT * FROM medico WHERE  CONCAT( idMedico, nome_medico, contacto, email ) LIKE '%" + valorpesquisa + "%'";
+                string pesquisarQuery = "SELECT * FROM medico WHERE  CONCAT( idMedico, nome_medico, Especialidade_idEspecialidade, Hospital_idHospita, contacto, email ) LIKE '%" + valorpesquisa + "%'";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(pesquisarQuery, mdb.getConnection());
                 DataTable table = new DataTable();
                 adapter.Fill(table);
-                dataGridView_Medicos.DataSource = table;
+                bunifuCustomDataGrid1.DataSource = table;
             }
 
         }
@@ -235,6 +278,8 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             pesquisar(txtSearch.Text);
         }
+
+
 
         bool drag = false;
         Point start_point = new Point(0, 0);
@@ -257,6 +302,11 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             drag = false;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
