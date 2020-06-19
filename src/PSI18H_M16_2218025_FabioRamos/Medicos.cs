@@ -23,7 +23,10 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada, contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade from medico m join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
+                string sql = $@"select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada,
+contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade from medico m 
+join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade 
+join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
@@ -53,10 +56,12 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             txtIdmedico.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
             txtNomeMedico.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
+
+
             txtIdhospital.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
             txtIdespecialdade.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
-            txtMorada.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
-            txtEmail.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
+            txtMorada.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
+            txtEmail.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
             txtContacto.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
 
             string teste = Text;
@@ -100,7 +105,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
             {
 
-                string sql = $@"INSERT INTO `medico`(`nome_medico`, `morada`, `email`, `contacto`, `Especialidade_idEspecialidade`, `Hospital_idHospita`) VALUES (@nm, @mor,@email, @cont, @ie, @ih)";
+                string sql = $@"INSERT INTO `medico`(`nome_medico`, `email`, `morada`, `contacto`, `Especialidade_idEspecialidade`, `Hospital_idHospita`) VALUES (@nm, @email, @mor, @cont, @ie, @ih)";
                 MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
 
@@ -216,13 +221,15 @@ namespace PSI18H_M16_2218025_FabioRamos
                     mdb.closeConnection();
                 }
             }
+
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             MDB mdb = new MDB();
             {
-                string sql = $@"UPDATE `medico` SET `nome_medico`= @nm , `morada` = @mor, `email`= @email, `contacto` = @cont, `Especialidade_idEspecialidade` = @ie, `Hospital_idHospita` =@ih WHERE `idMedico` = @im ";
+                string sql = $@"UPDATE `medico` SET `nome_medico`= @nm ,  `email`= @email, `morada` = @mor, `contacto` = @cont, `Especialidade_idEspecialidade` = @ie, `Hospital_idHospita` =@ih WHERE `idMedico` = @im ";
 
                 MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 

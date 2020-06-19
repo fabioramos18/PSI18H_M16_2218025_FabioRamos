@@ -28,7 +28,6 @@ namespace PSI18H_M16_2218025_FabioRamos
                 try
                 {
                     mdb.openConnection();
-                    DataTable table = new DataTable();
                 MySqlCommand command = new MySqlCommand("select id_user, nome_completo, email from `user` where `user` = @im ", mdb.getConnection());
                     command.Parameters.Clear();
                     command.CommandType = CommandType.Text;
@@ -51,7 +50,6 @@ namespace PSI18H_M16_2218025_FabioRamos
                 {
                     mdb.closeConnection();
                 }
-
                     DataTable tablex = new DataTable();
                     string sql = $@"SELECT * FROM `consulta`";
 

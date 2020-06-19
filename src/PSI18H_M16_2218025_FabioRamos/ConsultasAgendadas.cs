@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -11,32 +11,31 @@ using MySql.Data.MySqlClient;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
-    public partial class ucConsultas : UserControl
+    public partial class ConsultasAgendadas : UserControl
     {
-        public ucConsultas()
+        public ConsultasAgendadas()
         {
             InitializeComponent();
         }
 
-        private static ucConsultas _instancia;
+        private static ConsultasAgendadas _instancia;
 
-        public static ucConsultas instancia
+        public static ConsultasAgendadas instancia
         {
             get
             {
                 if (_instancia == null)
-                    _instancia = new ucConsultas();
+                    _instancia = new ConsultasAgendadas();
                 return _instancia;
             }
         }
 
-        private void ucConsultas_Load(object sender, EventArgs e)
+        private void ConsultasAgendadas_Load(object sender, EventArgs e)
         {
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select * FROM consulta WHERE Data_consulta is null";
-
+                string sql = $@"select * FROM consulta WHERE Data_consulta is not null";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 bunifuCustomDataGrid1.DataSource = table;

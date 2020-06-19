@@ -20,20 +20,8 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             if (panel2.Visible == true)
                 panel2.Visible = false;
-            if (panel3.Visible == true)
-                panel3.Visible = false;
-            if (panel4.Visible == true)
-                panel4.Visible = false;
         }
-        private void hideuc()
-        {
-            if (panel2.Visible == true)
-                panel2.Visible = false;
-            if (panel3.Visible == true)
-                panel3.Visible = false;
-            if (panel4.Visible == true)
-                panel4.Visible = false;
-        }
+      
 
         private void showSubmenu(Panel subMenu)
         {
@@ -55,12 +43,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void button1_Click(object sender, EventArgs e)
         {
             showSubmenu(panel2);
-            if (!panelConteudo.Controls.Contains(ucConsultas.instancia))
-            {
-                panelConteudo.Controls.Add(ucConsultas.instancia);
-                ucConsultas.instancia.Dock = DockStyle.Fill;
-                ucConsultas.instancia.BringToFront();
-            }
+            
 
             movepanel(button1);
             //hideSubmenu();
@@ -68,37 +51,34 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            //openChildForm(new TestargGridView());
+            if (panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
+                panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
+                panelConteudo.Controls.Contains(ucConsultas.instancia) ||
+                !panelConteudo.Controls.Contains(MarcarC.instancia))
 
-            if (!panelConteudo.Controls.Contains(UserControl8.instancia))
+
             {
-                panelConteudo.Controls.Add(UserControl8.instancia);
-                UserControl8.instancia.Dock = DockStyle.Fill;
-               // UserControl8.instancia.BringToFront();
+                panelConteudo.Controls.Add(MarcarC.instancia);
+                MarcarC.instancia.Dock = DockStyle.Fill;
+                MarcarC.instancia.BringToFront();
             }
 
+
             movepanel(button2);
-            hideSubmenu();
+            
         }
 
 
         private void button3_Click(object sender, EventArgs e)
         {
             openChildForm(new Medicos());
-
-            
-
-            //         Medicos medicosform = new Medicos();
-            //  this.Hide();
-            //       medicosform.Show();
             movepanel(button3);
-            hideSubmenu();
-
+            
         }
 
         private void Admin_Load(object sender, EventArgs e)
         {
-          //  ucConsultas1.Hide();
+          
         }
 
         private Form activeForm = null;
@@ -117,17 +97,46 @@ namespace PSI18H_M16_2218025_FabioRamos
         }
 
         
-
-       
-
-        private void button4_Click_1(object sender, EventArgs e)
+        private void button4_Click_2(object sender, EventArgs e)
         {
-
+            if (panelConteudo.Controls.Contains(MarcarC.instancia) || 
+                panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
+                panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
+                !panelConteudo.Controls.Contains(ucConsultas.instancia))
+            {
+                panelConteudo.Controls.Add(ucConsultas.instancia);
+                ucConsultas.instancia.Dock = DockStyle.Fill;
+                ucConsultas.instancia.BringToFront();
+            }
+            hideSubmenu();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
+            if (panelConteudo.Controls.Contains(MarcarC.instancia) || 
+                panelConteudo.Controls.Contains(ucConsultas.instancia) ||
+                panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
+                !panelConteudo.Controls.Contains(HistoricoConsulta.instancia))
+            {
+                panelConteudo.Controls.Add(HistoricoConsulta.instancia);
+                HistoricoConsulta.instancia.Dock = DockStyle.Fill;
+                HistoricoConsulta.instancia.BringToFront();
+            }
+            hideSubmenu();
+        }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (panelConteudo.Controls.Contains(MarcarC.instancia) ||
+                panelConteudo.Controls.Contains(ucConsultas.instancia) ||
+                panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
+               !panelConteudo.Controls.Contains(ConsultasAgendadas.instancia))
+            {
+                panelConteudo.Controls.Add(ConsultasAgendadas.instancia);
+                ConsultasAgendadas.instancia.Dock = DockStyle.Fill;
+                ConsultasAgendadas.instancia.BringToFront();
+            }
+            hideSubmenu();
         }
     }
 }

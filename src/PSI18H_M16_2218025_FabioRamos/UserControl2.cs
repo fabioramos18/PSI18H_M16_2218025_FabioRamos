@@ -73,7 +73,6 @@ namespace PSI18H_M16_2218025_FabioRamos
             passingText4 = txtContacto.Text;
             passingText5 = dateTimePicker1.Text;
             passingText6 = txtMorada.Text;
-            passingText7 = txtEmail.Text;
             this.Hide();
             this.Parent.Controls.Add(new UserControl3());
         }

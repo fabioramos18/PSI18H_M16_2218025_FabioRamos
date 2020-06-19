@@ -122,9 +122,8 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(491, 152);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 21);
+            this.label5.Size = new System.Drawing.Size(0, 21);
             this.label5.TabIndex = 64;
-            this.label5.Text = "g";
             // 
             // label6
             // 
@@ -132,9 +131,8 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(385, 225);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 21);
+            this.label6.Size = new System.Drawing.Size(0, 21);
             this.label6.TabIndex = 65;
-            this.label6.Text = "g";
             // 
             // label7
             // 
@@ -142,9 +140,8 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(473, 190);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 21);
+            this.label7.Size = new System.Drawing.Size(0, 21);
             this.label7.TabIndex = 66;
-            this.label7.Text = "g";
             // 
             // label8
             // 
@@ -152,9 +149,8 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(467, 89);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 21);
+            this.label8.Size = new System.Drawing.Size(0, 21);
             this.label8.TabIndex = 67;
-            this.label8.Text = "g";
             // 
             // Btn5
             // 

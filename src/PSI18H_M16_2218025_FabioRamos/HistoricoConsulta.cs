@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -11,31 +11,31 @@ using MySql.Data.MySqlClient;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
-    public partial class ucConsultas : UserControl
+    public partial class HistoricoConsulta : UserControl
     {
-        public ucConsultas()
+        public HistoricoConsulta()
         {
             InitializeComponent();
         }
 
-        private static ucConsultas _instancia;
+        private static HistoricoConsulta _instancia;
 
-        public static ucConsultas instancia
+        public static HistoricoConsulta instancia
         {
             get
             {
                 if (_instancia == null)
-                    _instancia = new ucConsultas();
+                    _instancia = new HistoricoConsulta();
                 return _instancia;
             }
         }
 
-        private void ucConsultas_Load(object sender, EventArgs e)
+        private void HistoricoConsulta_Load(object sender, EventArgs e)
         {
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select * FROM consulta WHERE Data_consulta is null";
+                string sql = $@"select * FROM consulta WHERE Data_consulta  BETWEEN DATE_ADD(CURRENT_DATE(), INTERVAL -100 year ) AND CURRENT_DATE()";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);

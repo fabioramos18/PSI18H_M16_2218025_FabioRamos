@@ -37,12 +37,10 @@ namespace PSI18H_M16_2218025_FabioRamos
         //terminar conexão
         public void closeConnection()
         {
-
             if (connection.State == System.Data.ConnectionState.Open)
             {
                 connection.Close();
             }
-
         }
 
     }

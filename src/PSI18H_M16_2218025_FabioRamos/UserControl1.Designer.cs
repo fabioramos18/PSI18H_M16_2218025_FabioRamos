@@ -125,12 +125,6 @@
             this.cmbespecialidade.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbespecialidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.cmbespecialidade.FormattingEnabled = true;
-            this.cmbespecialidade.Items.AddRange(new object[] {
-            "z",
-            "x",
-            "c",
-            "v",
-            "b"});
             this.cmbespecialidade.Location = new System.Drawing.Point(45, 337);
             this.cmbespecialidade.Name = "cmbespecialidade";
             this.cmbespecialidade.Size = new System.Drawing.Size(518, 29);
@@ -143,11 +137,6 @@
             this.cmbhospital.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbhospital.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.cmbhospital.FormattingEnabled = true;
-            this.cmbhospital.Items.AddRange(new object[] {
-            "a",
-            "b",
-            "c",
-            "d"});
             this.cmbhospital.Location = new System.Drawing.Point(45, 239);
             this.cmbhospital.Name = "cmbhospital";
             this.cmbhospital.Size = new System.Drawing.Size(518, 29);

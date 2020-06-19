@@ -70,17 +70,35 @@
     <Compile Include="Consulas.Designer.cs">
       <DependentUpon>Consulas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultasAgendadas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConsultasAgendadas.Designer.cs">
+      <DependentUpon>ConsultasAgendadas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoricoConsulta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HistoricoConsulta.Designer.cs">
+      <DependentUpon>HistoricoConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcarC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MarcarC.Designer.cs">
+      <DependentUpon>MarcarC.cs</DependentUpon>
     </Compile>
     <Compile Include="MinhaConta.cs">
       <SubType>Form</SubType>
@@ -208,11 +226,20 @@
     <EmbeddedResource Include="Consulas.resx">
       <DependentUpon>Consulas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultasAgendadas.resx">
+      <DependentUpon>ConsultasAgendadas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entrar.resx">
       <DependentUpon>Entrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricoConsulta.resx">
+      <DependentUpon>HistoricoConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcarC.resx">
+      <DependentUpon>MarcarC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MinhaConta.resx">
       <DependentUpon>MinhaConta.cs</DependentUpon>
