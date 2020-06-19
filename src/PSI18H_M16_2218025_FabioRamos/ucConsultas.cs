@@ -32,11 +32,108 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void ucConsultas_Load(object sender, EventArgs e)
         {
+            panel3.Visible = false;
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select * FROM consulta WHERE Data_consulta is null";
+                string sql = $@"select * FROM consulta WHERE Data_consulta is null ";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
+                adapter.Fill(table);
+                bunifuCustomDataGrid1.DataSource = table;
+            }
 
+            dateTimePicker2.MinDate = DateTime.Now;
+        }
+        private void bunifuCustomDataGrid1_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            panel3.Visible = true;
+
+                        txtIdmarcacao.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
+                        txtIduser.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
+                        txtNomeutente.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
+                        txtnums.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
+                        dateTimePicker1.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
+                        txtContacto.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
+                        txtMorada.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
+                        txtHospital.Text = bunifuCustomDataGrid1.CurrentRow.Cells[7].Value.ToString();
+                        txtEspecialidade.Text = bunifuCustomDataGrid1.CurrentRow.Cells[8].Value.ToString();
+        }
+
+        private void btnAgendar_Click(object sender, EventArgs e)
+        {
+            MDB mdb = new MDB();
+            {
+                string sql = $@"UPDATE `consulta` SET `data_consulta`= @dc, `Medico_idMedico`= @med WHERE `idMarcacao` = @im ";
+
+                MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
+
+                command.Parameters.Add("@dc", MySqlDbType.Date).Value = dateTimePicker1.Value;
+                command.Parameters.AddWithValue("@med", txtidMedico.Text);
+                command.Parameters.AddWithValue("@im", txtIdmarcacao.Text);
+               
+                try
+                {
+                    mdb.openConnection();
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Consulta Agendada", "Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        panel3.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERRO");
+                    }
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    mdb.closeConnection();
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MDB mdb = new MDB();
+            {
+                string sql = $@"DELETE FROM `consulta` WHERE idMarcacao= @im ";
+                MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
+
+                command.Parameters.AddWithValue("@im", txtIdmarcacao.Text);
+
+                try
+                {
+                    mdb.openConnection();
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Pedido de consulta Cancelado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        panel3.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERRO");
+                    }
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    mdb.closeConnection();
+                }
+            }
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            MDB mdb = new MDB();
+            {
+                DataTable table = new DataTable();
+                string sql = $@"select * FROM consulta WHERE Data_consulta is null ";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 bunifuCustomDataGrid1.DataSource = table;

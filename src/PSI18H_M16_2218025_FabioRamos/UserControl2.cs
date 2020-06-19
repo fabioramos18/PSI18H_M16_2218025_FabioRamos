@@ -83,5 +83,10 @@ namespace PSI18H_M16_2218025_FabioRamos
             this.Hide();
             this.Parent.Controls.Add(new UserControl1());
         }
+
+        private void UserControl2_Load(object sender, EventArgs e)
+        {
+            dateTimePicker1.MaxDate = DateTime.Now;
+        }
     }
 }

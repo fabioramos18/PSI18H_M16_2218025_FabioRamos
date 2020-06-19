@@ -296,6 +296,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(45, 368);
+            this.dateTimePicker1.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(267, 28);
             this.dateTimePicker1.TabIndex = 64;
@@ -323,6 +324,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "UserControl2";
             this.Size = new System.Drawing.Size(1080, 640);
+            this.Load += new System.EventHandler(this.UserControl2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

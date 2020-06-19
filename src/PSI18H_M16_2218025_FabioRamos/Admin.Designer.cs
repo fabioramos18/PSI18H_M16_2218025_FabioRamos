@@ -98,7 +98,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 40);
+            this.panel1.Size = new System.Drawing.Size(1064, 40);
             this.panel1.TabIndex = 3;
             // 
             // panelSlide
@@ -118,7 +118,7 @@
             this.panelConteudo.Location = new System.Drawing.Point(0, 40);
             this.panelConteudo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(1028, 640);
+            this.panelConteudo.Size = new System.Drawing.Size(1064, 741);
             this.panelConteudo.TabIndex = 19;
             // 
             // panel2
@@ -185,12 +185,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 680);
+            this.ClientSize = new System.Drawing.Size(1064, 781);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelConteudo);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
             this.panel1.ResumeLayout(false);

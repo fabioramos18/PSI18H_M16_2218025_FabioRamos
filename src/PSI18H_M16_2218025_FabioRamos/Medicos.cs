@@ -24,9 +24,10 @@ namespace PSI18H_M16_2218025_FabioRamos
             {
                 DataTable table = new DataTable();
                 string sql = $@"select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada,
-contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade from medico m 
-join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade 
-join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
+                                contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade 
+                                from medico m 
+                                join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade 
+                                join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
@@ -56,16 +57,13 @@ join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
 
             txtIdmedico.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
             txtNomeMedico.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
-
-
+            txtEmail.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
+            txtMorada.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
+            txtContacto.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
             txtIdhospital.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
             txtIdespecialdade.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
-            txtMorada.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
-            txtEmail.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
-            txtContacto.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
-
-            string teste = Text;
-            Text = "pendente ";
+            
+            
 
             //codico para quando o user der duble click apareca o id do hospital e especialidade em vez do nome
             MDB mdb = new MDB();
@@ -105,9 +103,10 @@ join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
             MDB mdb = new MDB();
             {
 
-                string sql = $@"INSERT INTO `medico`(`nome_medico`, `email`, `morada`, `contacto`, `Especialidade_idEspecialidade`, `Hospital_idHospita`) VALUES (@nm, @email, @mor, @cont, @ie, @ih)";
-                MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
+                string sql = $@"INSERT INTO `medico`(`nome_medico`, `email`, `morada`, `contacto`, `Especialidade_idEspecialidade`, `Hospital_idHospita`) 
+                                VALUES (@nm, @email, @mor, @cont, @ie, @ih)";
 
+                MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
                 command.Parameters.Add("@nm", MySqlDbType.VarChar).Value = txtNomeMedico.Text;
                 command.Parameters.Add("@mor", MySqlDbType.VarChar).Value = txtMorada.Text;
@@ -150,7 +149,13 @@ join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada, contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade from medico m join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
+                string sql = $@"select idMedico as ID, nome_medico as `Nome`,  
+                             email as Email, morada as Morada, contacto as Contacto, nome_hospital as Hospital, 
+                             nome_especialidade as Especialidade 
+                             from medico m 
+                             join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade 
+                             join hospital h on m.Hospital_idHospita = h.idHospita 
+                             order by idMedico";
 
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
@@ -272,7 +277,14 @@ join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
         {
             MDB mdb = new MDB();
             { 
-                string pesquisarQuery = "SELECT * FROM medico WHERE  CONCAT( idMedico, nome_medico, Especialidade_idEspecialidade, Hospital_idHospita, contacto, email ) LIKE '%" + valorpesquisa + "%'";
+                string pesquisarQuery = "select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada, contacto as Contacto, " +
+                    "nome_hospital as Hospital, nome_especialidade as Especialidade " +
+                    "from medico m " +
+                    "join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade " +
+                    "join hospital h on m.Hospital_idHospita = h.idHospita   " +
+                    "WHERE  CONCAT( idMedico, nome_medico, nome_especialidade, nome_hospital ) " +
+                    "LIKE '%" + valorpesquisa + "%'";
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(pesquisarQuery, mdb.getConnection());
                 DataTable table = new DataTable();
                 adapter.Fill(table);

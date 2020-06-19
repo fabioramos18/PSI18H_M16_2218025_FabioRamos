@@ -88,6 +88,11 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void MarcarC_Load(object sender, EventArgs e)
         {
             CarregarHospitais();
+            txtNomeCompleto.Text = "Nome Completo";
+            txtNSaude.Text = "Nº de Saude";
+            txtContacto.Text = "Telemovel / Telefone";
+            dateTimePicker1.Value = DateTime.Now;
+            txtMorada.Text = "Morada";
         }
 
 
@@ -104,10 +109,12 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void Btn4_Click(object sender, EventArgs e)
         {
-            txtNomeCompleto.Text = "";
-            txtNSaude.Text = "";
-            txtContacto.Text = "";
-            txtMorada.Text = "";
+            txtNomeCompleto.Text = "Nome Completo";
+            txtNSaude.Text = "Nº de Saude";
+            txtContacto.Text = "Telemovel / Telefone";
+            dateTimePicker1.Value = DateTime.Now;
+            txtMorada.Text = "Morada";
+            this.Parent.Controls.Clear(); ;
         }
 
         private void Btn5_Click(object sender, EventArgs e)
@@ -132,10 +139,13 @@ namespace PSI18H_M16_2218025_FabioRamos
                     if (command.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Pedido de consulta realizado com sucesso", "Mrcação de consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtNomeCompleto.Text = "";
-                        txtNSaude.Text = "";
-                        txtContacto.Text = "";
-                        txtMorada.Text = "";
+                        txtNomeCompleto.Text = "Nome Completo";
+                        txtNSaude.Text = "Nº de Saude";
+                        txtContacto.Text = "Telemovel / Telefone";
+                        dateTimePicker1.Value = DateTime.Now;
+                        txtMorada.Text = "Morada";
+                        this.Parent.Controls.Clear(); ;
+                       
                     }
                     else
                     {

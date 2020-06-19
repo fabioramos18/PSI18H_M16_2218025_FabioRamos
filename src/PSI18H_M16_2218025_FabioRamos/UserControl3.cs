@@ -99,6 +99,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void UserControl3_Load(object sender, EventArgs e)
 
         {
+            dateTimePicker1.MaxDate = DateTime.Now;
             MDB mdb = new MDB();
             {
                 try
