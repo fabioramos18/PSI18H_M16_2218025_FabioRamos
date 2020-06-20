@@ -33,6 +33,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             if (cmbhospital.Text.Equals("Hospital Beatriz Ângelo"))
             {
+               // userControl71.Hide();
                 userControl51.Hide();
                 userControl61.Hide();
                 userControl41.Show();
@@ -42,6 +43,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
             else if (cmbhospital.Text.Equals("Hospital Da Luz"))
             {
+                userControl71.Hide();
                 userControl41.Hide();
                 userControl61.Hide();
                 userControl51.Show();
@@ -49,6 +51,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
             else if (cmbhospital.Text.Equals("Hospital Trofa Saúde"))
             {
+                userControl71.Hide();
                 userControl41.Hide();
                 userControl51.Hide();
                 userControl61.Show();

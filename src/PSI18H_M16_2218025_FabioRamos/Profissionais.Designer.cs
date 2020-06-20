@@ -35,10 +35,10 @@
             this.label49 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.cmbhospital = new System.Windows.Forms.ComboBox();
+            this.userControl71 = new PSI18H_M16_2218025_FabioRamos.UserControl7();
             this.userControl61 = new PSI18H_M16_2218025_FabioRamos.UserControl6();
             this.userControl51 = new PSI18H_M16_2218025_FabioRamos.UserControl5();
             this.userControl41 = new PSI18H_M16_2218025_FabioRamos.userControl4();
-            this.userControl71 = new PSI18H_M16_2218025_FabioRamos.UserControl7();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,10 +105,20 @@
             this.cmbhospital.TabIndex = 56;
             this.cmbhospital.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
+            // userControl71
+            // 
+            this.userControl71.AutoScroll = true;
+            this.userControl71.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl71.Location = new System.Drawing.Point(0, 86);
+            this.userControl71.Name = "userControl71";
+            this.userControl71.Size = new System.Drawing.Size(1080, 554);
+            this.userControl71.TabIndex = 4;
+            // 
             // userControl61
             // 
             this.userControl61.AutoScroll = true;
-            this.userControl61.Location = new System.Drawing.Point(0, 84);
+            this.userControl61.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl61.Location = new System.Drawing.Point(0, 86);
             this.userControl61.Name = "userControl61";
             this.userControl61.Size = new System.Drawing.Size(1080, 554);
             this.userControl61.TabIndex = 3;
@@ -116,7 +126,8 @@
             // userControl51
             // 
             this.userControl51.AutoScroll = true;
-            this.userControl51.Location = new System.Drawing.Point(0, 84);
+            this.userControl51.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl51.Location = new System.Drawing.Point(0, 86);
             this.userControl51.Name = "userControl51";
             this.userControl51.Size = new System.Drawing.Size(1080, 554);
             this.userControl51.TabIndex = 2;
@@ -124,18 +135,11 @@
             // userControl41
             // 
             this.userControl41.AutoScroll = true;
-            this.userControl41.Location = new System.Drawing.Point(0, 92);
+            this.userControl41.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl41.Location = new System.Drawing.Point(0, 86);
             this.userControl41.Name = "userControl41";
-            this.userControl41.Size = new System.Drawing.Size(1080, 546);
+            this.userControl41.Size = new System.Drawing.Size(1080, 554);
             this.userControl41.TabIndex = 1;
-            // 
-            // userControl71
-            // 
-            this.userControl71.AutoScroll = true;
-            this.userControl71.Location = new System.Drawing.Point(0, 84);
-            this.userControl71.Name = "userControl71";
-            this.userControl71.Size = new System.Drawing.Size(1080, 554);
-            this.userControl71.TabIndex = 4;
             // 
             // Profissionais
             // 
@@ -149,6 +153,7 @@
             this.Controls.Add(this.userControl41);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Profissionais";
             this.Text = "Formtestarcombobobxes1";
             this.Load += new System.EventHandler(this.Profissionais_Load);

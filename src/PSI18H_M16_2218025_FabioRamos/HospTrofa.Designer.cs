@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HospTrofa));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbhospitalTS = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,7 +39,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.EspecialidadesBA = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -46,6 +47,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbhospitalTS);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -53,7 +56,6 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.EspecialidadesBA);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -61,6 +63,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 692);
             this.panel1.TabIndex = 1;
+            // 
+            // cmbhospitalTS
+            // 
+            this.cmbhospitalTS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbhospitalTS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbhospitalTS.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbhospitalTS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.cmbhospitalTS.FormattingEnabled = true;
+            this.cmbhospitalTS.Location = new System.Drawing.Point(641, 346);
+            this.cmbhospitalTS.Name = "cmbhospitalTS";
+            this.cmbhospitalTS.Size = new System.Drawing.Size(353, 29);
+            this.cmbhospitalTS.TabIndex = 46;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(424, 580);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(87, 21);
+            this.comboBox1.TabIndex = 45;
             // 
             // label8
             // 
@@ -153,28 +175,6 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Contactos:";
             // 
-            // EspecialidadesBA
-            // 
-            this.EspecialidadesBA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EspecialidadesBA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.EspecialidadesBA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EspecialidadesBA.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EspecialidadesBA.ForeColor = System.Drawing.Color.White;
-            this.EspecialidadesBA.FormattingEnabled = true;
-            this.EspecialidadesBA.Items.AddRange(new object[] {
-            "Hospital Beatriz Ângelo",
-            "Hospital Cruz  Vermelha",
-            "Hospital Da Luz",
-            "Hospital Santa Maria",
-            ""});
-            this.EspecialidadesBA.Location = new System.Drawing.Point(625, 350);
-            this.EspecialidadesBA.Name = "EspecialidadesBA";
-            this.EspecialidadesBA.Size = new System.Drawing.Size(357, 30);
-            this.EspecialidadesBA.TabIndex = 37;
-            this.EspecialidadesBA.Text = "Especialidades";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -203,8 +203,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 692);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HospTrofa";
             this.Text = "HospTrofa";
+            this.Load += new System.EventHandler(this.HospTrofa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -222,8 +224,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox EspecialidadesBA;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbhospitalTS;
     }
 }

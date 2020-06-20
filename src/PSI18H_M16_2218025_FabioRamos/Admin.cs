@@ -43,10 +43,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void button1_Click(object sender, EventArgs e)
         {
             showSubmenu(panel2);
-            
-
             movepanel(button1);
-            //hideSubmenu();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -55,31 +52,16 @@ namespace PSI18H_M16_2218025_FabioRamos
                 panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
                 panelConteudo.Controls.Contains(ucConsultas.instancia) ||
                 !panelConteudo.Controls.Contains(MarcarC.instancia))
-
-
             {
                 panelConteudo.Controls.Add(MarcarC.instancia);
                 MarcarC.instancia.Dock = DockStyle.Fill;
                 MarcarC.instancia.BringToFront();
             }
 
-
             movepanel(button2);
-            
+
         }
 
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Medicos());
-            movepanel(button3);
-            
-        }
-
-        private void Admin_Load(object sender, EventArgs e)
-        {
-          
-        }
 
         private Form activeForm = null;
         private void openChildForm(Form childForm)
@@ -96,6 +78,13 @@ namespace PSI18H_M16_2218025_FabioRamos
             childForm.Show();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Medicos());
+            movepanel(button3);
+        }
+
+        
         
         private void button4_Click_2(object sender, EventArgs e)
         {

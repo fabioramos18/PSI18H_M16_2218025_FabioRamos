@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace PSI18H_M16_2218025_FabioRamos
 {
-    public partial class Edit : Form
+    public partial class Form1 : Form
     {
-        public Edit()
+        public Form1()
         {
             InitializeComponent();
         }
+
+        public Form1( string buttonText1, string buttonText2)
+        {
+          
+        }
     }
 }
+

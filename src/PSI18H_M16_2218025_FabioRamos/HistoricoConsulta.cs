@@ -35,7 +35,14 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select * FROM consulta WHERE Data_consulta  BETWEEN DATE_ADD(CURRENT_DATE(), INTERVAL -100 year ) AND CURRENT_DATE()";
+                string sql = $@"select idMarcacao as 'ID Marcação', User_id_user as 'ID User', c.nome_completo AS 'Nome do Utente ', 
+                                num_saude as 'Nº de Saúde', Data_nascimento as 'Data de Nascimento', 
+                                c.contacto as 'Contacto', c.morada 'Morada', nome_hospital as 'Hospital', 
+                                nome_especialidade as 'Especialidade', Data_consulta as 'Data da Consulta', nome_medico as'Médico Designado'
+                                FROM consulta c join `medico` m
+                                on c.Medico_idMedico = m.idMedico 
+                                WHERE Data_consulta  BETWEEN DATE_ADD(CURRENT_DATE(), INTERVAL -100 year ) AND CURRENT_DATE()";
+
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);

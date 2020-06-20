@@ -49,16 +49,13 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void customizeDesign()
         {
             panel1.Visible = false;
-            panel3.Visible = false;
+           
         }
 
         private void hideSubmenu()
         {
             if (panel1.Visible == true)
                 panel1.Visible = false;
-            else if (panel3.Visible == true)
-                panel3.Visible = false;
-
         }
 
         private void showSubmenu(Panel subMenu)
@@ -107,16 +104,16 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void btnProfissionais_Click(object sender, EventArgs e)
         {
-            showSubmenu(panel3);
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
             openChildForm(new Profissionais());
             //...
             //meu codico
             //...
             hideSubmenu();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void button16_Click(object sender, EventArgs e)

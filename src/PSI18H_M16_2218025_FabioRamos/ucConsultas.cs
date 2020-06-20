@@ -32,6 +32,12 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void ucConsultas_Load(object sender, EventArgs e)
         {
+            
+            
+            
+            
+            
+            
             panel3.Visible = false;
             MDB mdb = new MDB();
             {
@@ -67,7 +73,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
                 MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
-                command.Parameters.Add("@dc", MySqlDbType.Date).Value = dateTimePicker1.Value;
+                command.Parameters.Add("@dc", MySqlDbType.Date).Value = dateTimePicker2.Value;
                 command.Parameters.AddWithValue("@med", txtidMedico.Text);
                 command.Parameters.AddWithValue("@im", txtIdmarcacao.Text);
                

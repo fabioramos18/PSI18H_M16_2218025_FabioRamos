@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidoMarcacao));
             this.userControl11 = new PSI18H_M16_2218025_FabioRamos.UserControl1();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(1080, 640);
             this.Controls.Add(this.userControl11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PedidoMarcacao";
             this.Text = "PedidoMarcacao";
             this.ResumeLayout(false);

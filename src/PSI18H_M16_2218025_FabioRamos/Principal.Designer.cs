@@ -36,9 +36,6 @@
             this.btnFechar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.btnQuemsomos = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
             this.btnProfissionais = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
@@ -52,6 +49,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.panelConteudo = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -88,14 +86,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFechar)).BeginInit();
             this.MenuVertical.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -190,7 +186,6 @@
             this.MenuVertical.AutoScroll = true;
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.MenuVertical.Controls.Add(this.btnQuemsomos);
-            this.MenuVertical.Controls.Add(this.panel3);
             this.MenuVertical.Controls.Add(this.btnProfissionais);
             this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.btnServicos);
@@ -215,54 +210,13 @@
             this.btnQuemsomos.ForeColor = System.Drawing.Color.White;
             this.btnQuemsomos.Image = ((System.Drawing.Image)(resources.GetObject("btnQuemsomos.Image")));
             this.btnQuemsomos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuemsomos.Location = new System.Drawing.Point(0, 504);
+            this.btnQuemsomos.Location = new System.Drawing.Point(0, 427);
             this.btnQuemsomos.Name = "btnQuemsomos";
             this.btnQuemsomos.Size = new System.Drawing.Size(220, 35);
             this.btnQuemsomos.TabIndex = 9;
             this.btnQuemsomos.Text = "Quem Somos";
             this.btnQuemsomos.UseVisualStyleBackColor = false;
             this.btnQuemsomos.Click += new System.EventHandler(this.btnQuemsomos_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Teal;
-            this.panel3.Controls.Add(this.button16);
-            this.panel3.Controls.Add(this.button17);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 427);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(220, 77);
-            this.panel3.TabIndex = 11;
-            // 
-            // button16
-            // 
-            this.button16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.White;
-            this.button16.Location = new System.Drawing.Point(0, 40);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(220, 37);
-            this.button16.TabIndex = 12;
-            this.button16.Text = "Procure por Especialidade";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button17
-            // 
-            this.button17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.White;
-            this.button17.Location = new System.Drawing.Point(0, 0);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(220, 40);
-            this.button17.TabIndex = 11;
-            this.button17.Text = "Procure por Hospital";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // btnProfissionais
             // 
@@ -483,6 +437,14 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1082, 640);
             this.panel4.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 852);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1065, 8);
+            this.panel6.TabIndex = 92;
             // 
             // panel5
             // 
@@ -864,14 +826,6 @@
             this.label2.Text = resources.GetString("label2.Text");
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // panel6
-            // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 852);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1065, 8);
-            this.panel6.TabIndex = 92;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -881,6 +835,7 @@
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.BarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(750, 400);
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -892,7 +847,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFechar)).EndInit();
             this.MenuVertical.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -928,9 +882,6 @@
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnQuemsomos;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button btnProfissionais;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button14;
