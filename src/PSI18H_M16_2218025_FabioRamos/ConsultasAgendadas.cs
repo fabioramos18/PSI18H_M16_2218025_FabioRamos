@@ -252,6 +252,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             }
             #endregion
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -287,6 +288,11 @@ namespace PSI18H_M16_2218025_FabioRamos
                 }
             }
             #endregion
+        }
+         
+        private void button4_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

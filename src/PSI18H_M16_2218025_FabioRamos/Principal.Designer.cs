@@ -442,7 +442,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, 852);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1065, 8);
+            this.panel6.Size = new System.Drawing.Size(1065, 11);
             this.panel6.TabIndex = 92;
             // 
             // panel5
@@ -840,6 +840,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.BarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();

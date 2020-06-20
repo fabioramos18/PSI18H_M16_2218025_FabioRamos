@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 
 namespace PSI18H_M16_2218025_FabioRamos 
-{ 
+{
 
     public partial class Principal : Form
-    {  
-       
+    {
+
         public Principal()
         {
             InitializeComponent();
@@ -35,9 +36,9 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-            
+
         }
-       
+
         private void BarraTitulo_MouseMove(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -49,7 +50,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void customizeDesign()
         {
             panel1.Visible = false;
-           
+
         }
 
         private void hideSubmenu()
@@ -71,9 +72,9 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void btnServicos_Click(object sender, EventArgs e)
         {
-        showSubmenu(panel1);
+            showSubmenu(panel1);
         }
-       
+
         private void button12_Click(object sender, EventArgs e)
         {
             openChildForm(new HospBeatriz());
@@ -90,7 +91,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             //meu codico
             //....
             hideSubmenu();
-            
+
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -113,12 +114,12 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button17_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-        
+
             //...
             //meu codico
             //...
@@ -140,17 +141,19 @@ namespace PSI18H_M16_2218025_FabioRamos
             hideSubmenu();
         }
 
-      
+
 
         private void btnQuemsomos_Click(object sender, EventArgs e)
         {
+            Form1 entrarform = new Form1();
+            entrarform.Show();
             //...
             //meu codico
             //...
             hideSubmenu();
         }
 
-         
+
         //--------------------------------------------------------------------
         private Form activeForm = null;
         private void openChildForm(Form childForm)
@@ -218,6 +221,11 @@ namespace PSI18H_M16_2218025_FabioRamos
             principalform.Show();
         }
 
+        private void Principal_Load(object sender, EventArgs e)
+        {
+           
+        }
+    
     }
    
 }

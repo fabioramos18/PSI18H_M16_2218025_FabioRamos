@@ -21,6 +21,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void MinhaConta_Load(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             label5.Text = Entrar.passingText2;
 
             MDB mdb = new MDB();
@@ -64,11 +65,12 @@ namespace PSI18H_M16_2218025_FabioRamos
                     adapter.Fill(tablex);
                     bunifuCustomDataGrid1.DataSource = tablex;
             }
-
-
         }
-    }
 
-        
+        private void Btn5_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+    }   
 }
 
