@@ -51,10 +51,14 @@ namespace PSI18H_M16_2218025_FabioRamos
                     mdb.closeConnection();
                 }
                     DataTable tablex = new DataTable();
-                    string sql = $@"SELECT idMarcacao,User_id_user,nome_completo,num_saude,Data_nascimento,
-                    contacto,morada,nome_hospital,nome_especialidade,data_consulta,Medico_idMedico, 
-                    IF(data_consulta is not null, 'confirmado', 'pendente') 
-                    AS Estado FROM consulta where User_id_user = '" +label8.Text+ "' ";
+                    string sql = $@"SELECT idMarcacao as 'ID Marcação' ,nome_completo as 'Nome do Untente', num_saude as 'Nº de Saúde',
+                                 Data_nascimento as 'Data de Nascimento', c.contacto as 'contacto', c.morada as 'morada', 
+                                 nome_hospital as 'Hospital', nome_especialidade as 'Especialidade', data_consulta as 'Data da Consulta',
+                                 nome_medico as 'Médico Designado', 
+                                 IF(data_consulta > curdate(), 'confirmado', 'concluido')  
+                                 AS Estado FROM consulta c
+                                 inner join medico m on c.Medico_idMedico = m.idMedico  
+                                 where User_id_user = '" +label8.Text+ "' ";
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                     adapter.Fill(tablex);

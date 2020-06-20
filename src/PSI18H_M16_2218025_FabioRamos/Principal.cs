@@ -199,16 +199,12 @@ namespace PSI18H_M16_2218025_FabioRamos
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            Entrar entrarform = new Entrar();
+            entrarform.Show();
+            this.Hide();
         }
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
@@ -222,12 +218,6 @@ namespace PSI18H_M16_2218025_FabioRamos
             principalform.Show();
         }
 
-        private void panelConteudo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-       
     }
    
 }

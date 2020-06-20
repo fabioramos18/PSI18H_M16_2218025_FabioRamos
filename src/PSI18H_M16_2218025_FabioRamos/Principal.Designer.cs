@@ -382,11 +382,11 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 582);
+            this.button6.Location = new System.Drawing.Point(0, 586);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(220, 58);
+            this.button6.Size = new System.Drawing.Size(220, 54);
             this.button6.TabIndex = 7;
-            this.button6.Text = "Sair";
+            this.button6.Text = "Terminar sessão";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -400,7 +400,6 @@
             this.panelConteudo.Name = "panelConteudo";
             this.panelConteudo.Size = new System.Drawing.Size(1082, 640);
             this.panelConteudo.TabIndex = 4;
-            this.panelConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConteudo_Paint);
             // 
             // panel4
             // 
