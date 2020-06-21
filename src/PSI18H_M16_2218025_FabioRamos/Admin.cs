@@ -21,7 +21,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             if (panel2.Visible == true)
                 panel2.Visible = false;
         }
-      
+        
 
         private void showSubmenu(Panel subMenu)
         {
@@ -53,11 +53,12 @@ namespace PSI18H_M16_2218025_FabioRamos
                 panelConteudo.Controls.Contains(ucConsultas.instancia) ||
                 !panelConteudo.Controls.Contains(MarcarC.instancia))
             {
+                panelConteudo.Controls.Clear();
                 panelConteudo.Controls.Add(MarcarC.instancia);
                 MarcarC.instancia.Dock = DockStyle.Fill;
                 MarcarC.instancia.BringToFront();
             }
-
+            hideSubmenu();
             movepanel(button2);
 
         }
@@ -80,12 +81,20 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button3_Click(object sender, EventArgs e)
         {
+            panelConteudo.Controls.Clear();
             openChildForm(new Medicos());
-            movepanel(button3);
+             hideSubmenu();
+             movepanel(button3);
         }
 
-        
-        
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panelConteudo.Controls.Clear();
+            openChildForm(new Form1());
+            hideSubmenu();
+            movepanel(button6);
+        }
+
         private void button4_Click_2(object sender, EventArgs e)
         {
             if (panelConteudo.Controls.Contains(MarcarC.instancia) || 
@@ -93,6 +102,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                 panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
                 !panelConteudo.Controls.Contains(ucConsultas.instancia))
             {
+                panelConteudo.Controls.Clear();
                 panelConteudo.Controls.Add(ucConsultas.instancia);
                 ucConsultas.instancia.Dock = DockStyle.Fill;
                 ucConsultas.instancia.BringToFront();
@@ -107,6 +117,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                 panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
                 !panelConteudo.Controls.Contains(HistoricoConsulta.instancia))
             {
+                panelConteudo.Controls.Clear();
                 panelConteudo.Controls.Add(HistoricoConsulta.instancia);
                 HistoricoConsulta.instancia.Dock = DockStyle.Fill;
                 HistoricoConsulta.instancia.BringToFront();
@@ -121,11 +132,14 @@ namespace PSI18H_M16_2218025_FabioRamos
                 panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
                !panelConteudo.Controls.Contains(ConsultasAgendadas.instancia))
             {
+                panelConteudo.Controls.Clear();
                 panelConteudo.Controls.Add(ConsultasAgendadas.instancia);
                 ConsultasAgendadas.instancia.Dock = DockStyle.Fill;
                 ConsultasAgendadas.instancia.BringToFront();
             }
             hideSubmenu();
         }
+
+        
     }
 }

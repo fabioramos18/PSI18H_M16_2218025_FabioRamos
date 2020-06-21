@@ -225,6 +225,7 @@
             this.TextboxUserName.TabIndex = 18;
             this.TextboxUserName.Text = "nome utilizador";
             this.TextboxUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TextboxUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextboxUserName_KeyPress);
             // 
             // TextboxEmail
             // 
@@ -265,6 +266,7 @@
             this.TextboxCompleteName.TabIndex = 16;
             this.TextboxCompleteName.Text = "nome completo";
             this.TextboxCompleteName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TextboxCompleteName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextboxCompleteName_KeyPress);
             // 
             // label6
             // 

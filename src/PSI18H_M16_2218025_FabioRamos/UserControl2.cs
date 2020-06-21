@@ -19,9 +19,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             InitializeComponent();
         }
 
-       
 
-      
 
         private void txtNSaude_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -35,25 +33,33 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void txtNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 191 || e.KeyChar >= 246 && e.KeyChar <= 248))     
             {
                 MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
         }
-
+        
         private void txtContacto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47 || e.KeyChar >= 58 && e.KeyChar <= 255))
+              if ((e.KeyChar >= 32 && e.KeyChar <= 47 || e.KeyChar >= 58 && e.KeyChar <= 255))
+              {
+                   MessageBox.Show("Insira apenas números", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                   e.Handled = true;
+                   return;
+              }
+        }
+
+        private void txtMorada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 43 || e.KeyChar >=60 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 185 || e.KeyChar >= 187 && e.KeyChar <= 191 || e.KeyChar >= 246 && e.KeyChar <= 248))
             {
-                MessageBox.Show("Insira apenas números", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Caracter invalido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
         }
-
-
 
         public static string passingText2;
         public static string passingText3;
@@ -79,7 +85,6 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void Btn3_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
             this.Parent.Controls.Add(new UserControl1());
         }
@@ -87,6 +92,36 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void UserControl2_Load(object sender, EventArgs e)
         {
             dateTimePicker1.MaxDate = DateTime.Now;
+
+            MaxContacto();
+            MaxNumSaude();
         }
+
+
+        //max numeros
+        public void MaxContacto()
+        {
+            foreach (var ctl in txtContacto.Controls)
+            {
+                if (ctl.GetType() == typeof(TextBox))
+                {
+                    var txt = (TextBox)ctl;
+                    txt.MaxLength = 9;
+                }
+            }
+        }
+        public void MaxNumSaude()
+        {
+            foreach (var ctl in txtNSaude.Controls)
+            {
+                if (ctl.GetType() == typeof(TextBox))
+                {
+                    var txt = (TextBox)ctl;
+                    txt.MaxLength = 10;
+                }
+            }
+        }
+
+        
     }
 }

@@ -19,7 +19,61 @@ namespace PSI18H_M16_2218025_FabioRamos
             InitializeComponent();
         }
 
-       
+
+        private void txtNomeCompleto_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 191))
+            {
+                MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+
+        private void txtMorada_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 43 || e.KeyChar >= 60 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 185 || e.KeyChar >= 187 && e.KeyChar <= 191))
+            {
+                MessageBox.Show("Caracter invalido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        public static bool ValidarEmail(string strEmail)
+        {
+            string strModelo = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            if (System.Text.RegularExpressions.Regex.IsMatch(strEmail, strModelo))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private void TextboxCompleteName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 191 || e.KeyChar >= 246 && e.KeyChar <= 248))
+            {
+                MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TextboxUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 45 || e.KeyChar == 47 || e.KeyChar >= 58 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 94 || e.KeyChar == 96 || e.KeyChar >= 123 && e.KeyChar <= 191 || e.KeyChar >= 246 && e.KeyChar <= 248))
+            {
+                MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+        }
+
 
         private void btnRegister_Click_1(object sender, EventArgs e)
         {
@@ -49,26 +103,34 @@ namespace PSI18H_M16_2218025_FabioRamos
                         //verificar se as passwords são iguais
                         if (TextboxPassword.Text.Equals(TextboxPasswordConfirm.Text))
                         {
-                            // verificar se o username ja existe
-                            if (verificarUserName())
+                            //verificar email
+                            if (ValidarEmail(TextboxEmail.Text))
                             {
-                                MessageBox.Show("Esse nome de utilizador já existe. Experimente outro", " Username Duplicado ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                               // verificar se o username ja existe
+                                 if (verificarUserName())
+                                 {
+                                   MessageBox.Show("Esse nome de utilizador já existe. Experimente outro", " Username Duplicado ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                                 }
+                                 else
+                                 {
+                                    //consultar os dados
+                                    if (command.ExecuteNonQuery() == 1)
+                                    {
+                                       MessageBox.Show("A sua conta foi criada com sucesso", "Conta criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                       Entrar entrarform = new Entrar();
+                                       this.Hide();
+                                       entrarform.Show();
+                                    }
+                                    else
+                                    {
+                                       MessageBox.Show("ERRO");
+                                    }
+                                 }
                             }
                             else
                             {
-                                //consultar os dados
-                                if (command.ExecuteNonQuery() == 1)
-                                {
-                                    MessageBox.Show("A sua conta foi criada com sucesso", "Conta criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    Entrar entrarform = new Entrar();
-                                    this.Hide();
-                                    entrarform.Show();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("ERRO");
-                                }
+                                MessageBox.Show("Email com formato incorreto!", "ef3.Cinco");
                             }
                         }
                         else
@@ -76,11 +138,9 @@ namespace PSI18H_M16_2218025_FabioRamos
                             MessageBox.Show("As palavras-passe não correspondiam. Tente novamente", "Erro Passe", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                         }
                     }
-
                     else
                     {
                         MessageBox.Show("Preencha os campos com informação valida", "Empty Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-
                     }
                 }
                 catch (Exception erro)
@@ -116,19 +176,16 @@ namespace PSI18H_M16_2218025_FabioRamos
 
                 adapter.Fill(table);
 
-                //ver se o username existe na bd
-
+                //ver se o username existe na base de dados
                 if (table.Rows.Count > 0)
                 {
-                    return true;
-                    //MessageBox.Show("YES");
+                    return true;                   
                 }
                 else
                 {
-                    return false;
-                    //MessageBox.Show("NO");
+                    return false;                   
                 }            
-            }
+             }
 
             //verificar se  textbox contém os valores padrão
             Boolean VerificarValoresTextBoxes()
@@ -191,5 +248,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             this.Hide();
             entrarform.Show();
         }
+
+       
     }
 }

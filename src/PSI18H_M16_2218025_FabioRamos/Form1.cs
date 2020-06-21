@@ -17,7 +17,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             OpenFileDialog var = new OpenFileDialog();
             if (var.ShowDialog() == System.Windows.Forms.DialogResult.OK)

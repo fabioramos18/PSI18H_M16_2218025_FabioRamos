@@ -18,8 +18,47 @@ namespace PSI18H_M16_2218025_FabioRamos
             InitializeComponent();
         }
 
+        private void txtNomeCompleto_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 191 || e.KeyChar >= 246 && e.KeyChar <= 248))
+            {
+                MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+    
 
+        private void txtNSaude_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+           if ((e.KeyChar >= 32 && e.KeyChar <= 47 || e.KeyChar >= 58 && e.KeyChar <= 255))
+           {
+               MessageBox.Show("Insira apenas números", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               e.Handled = true;
+               return;
+           }
+        }
 
+        private void txtContacto_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47 || e.KeyChar >= 58 && e.KeyChar <= 255 ))
+            {
+                MessageBox.Show("Insira apenas números", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtMorada_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 43 || e.KeyChar >= 60 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 ||
+                e.KeyChar >= 123 && e.KeyChar <= 185 || e.KeyChar >= 187 && e.KeyChar <= 191 || e.KeyChar >= 246 && e.KeyChar <= 248))
+            {
+                MessageBox.Show("Caracter invalido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
         public void CarregarHospitais()
         {
@@ -53,14 +92,13 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void cmbhospital_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-                MDB mdb = new MDB();
-
+               MDB mdb = new MDB();
                 {
-                    string sql = $@"select e.idEspecialidade
-,           e.nome_especialidade 
-            from hospital_tem_especialidade x 
-	        inner join especialidade e on x.Especialidade_idEspecialidade = e.idEspecialidade 
-            where x.Hospital_idHospita = {cmbhospital.SelectedValue} order by e.nome_especialidade";
+                    string sql = $@"select e.idEspecialidade,
+                                 e.nome_especialidade 
+                                 from hospital_tem_especialidade x 
+	                             inner join especialidade e on x.Especialidade_idEspecialidade = e.idEspecialidade 
+                                 where x.Hospital_idHospita = {cmbhospital.SelectedValue} order by e.nome_especialidade";
 
                     MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
                     {
@@ -99,7 +137,14 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void UserControl3_Load(object sender, EventArgs e)
 
         {
+            MaxContacto();
+            MaxNumSaude();
             dateTimePicker1.MaxDate = DateTime.Now;
+            cmbhospital.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbespecialidade.DropDownStyle = ComboBoxStyle.DropDownList;
+            CarregarHospitais();
+
+           
             MDB mdb = new MDB();
             {
                 try
@@ -113,7 +158,8 @@ namespace PSI18H_M16_2218025_FabioRamos
                     MySqlDataReader dr;
                     dr = command.ExecuteReader();
                     dr.Read();
-                    passingText10 = dr.GetString(0);
+                     passingText10 = dr.GetString(0);
+                //   label5.Text = dr.GetString(0);
 
                 }
                 catch (Exception erro)
@@ -126,21 +172,42 @@ namespace PSI18H_M16_2218025_FabioRamos
                 }
             }
 
-                cmbhospital.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbespecialidade.DropDownStyle = ComboBoxStyle.DropDownList;
-                CarregarHospitais();
-
-                cmbhospital.Text = UserControl1.passingText;
-                cmbespecialidade.Text = UserControl1.passingText1;
-                txtNomeCompleto.Text = UserControl2.passingText2;
-                txtNSaude.Text = UserControl2.passingText3;
-                txtContacto.Text = UserControl2.passingText4;
-                dateTimePicker1.Text = UserControl2.passingText5;
-                txtMorada.Text = UserControl2.passingText6;
-             // txtEmail.Text = UserControl2.passingText7;
-           
+            cmbhospital.Text = UserControl1.passingText;
+            cmbespecialidade.Text = UserControl1.passingText1;
+            txtNomeCompleto.Text = UserControl2.passingText2;
+            txtNSaude.Text = UserControl2.passingText3;
+            txtContacto.Text = UserControl2.passingText4;
+            dateTimePicker1.Text = UserControl2.passingText5;
+            txtMorada.Text = UserControl2.passingText6;
         }
 
+        //max numeros
+        public void MaxContacto()
+        {
+            #region
+            foreach (var ctl in txtContacto.Controls)
+            {
+                if (ctl.GetType() == typeof(TextBox))
+                {
+                    var txt = (TextBox)ctl;
+                    txt.MaxLength = 9;
+                }
+            }
+            #endregion
+        }
+        public void MaxNumSaude()
+        {
+            #region
+            foreach (var ctl in txtNSaude.Controls)
+            {
+                if (ctl.GetType() == typeof(TextBox))
+                {
+                    var txt = (TextBox)ctl;
+                    txt.MaxLength = 10;
+                }
+            }
+            #endregion
+        }
 
 
         private void Btn5_Click(object sender, EventArgs e)
@@ -161,12 +228,12 @@ namespace PSI18H_M16_2218025_FabioRamos
 
              command.Parameters.Add("@iu", MySqlDbType.VarChar).Value = UserControl3.passingText10;
 
-                try
+             try
              {
                  mdb.openConnection();
                  if (command.ExecuteNonQuery() == 1)
                  {
-                     MessageBox.Show("Pedido de consulta realizado com sucesso", "Mrcação de consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     MessageBox.Show("Pedido de consulta realizado com sucesso! Abra o seu perfil para ver o estado da sua consulta.", "Mrcação de consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                  }
                  else
                  {
@@ -182,9 +249,8 @@ namespace PSI18H_M16_2218025_FabioRamos
                  mdb.closeConnection();
              }
            }
-         //this.AcceptButton = PedidoMarcar;
         }
 
-        
+     
     }
 }

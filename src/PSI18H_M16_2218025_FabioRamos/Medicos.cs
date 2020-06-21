@@ -326,5 +326,11 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form1 entrarform = new Form1();
+            entrarform.Show();
+        }
     }
 }

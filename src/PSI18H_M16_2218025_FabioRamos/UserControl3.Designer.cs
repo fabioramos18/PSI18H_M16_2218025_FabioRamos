@@ -126,7 +126,7 @@
             this.cmbespecialidade.FormattingEnabled = true;
             this.cmbespecialidade.Location = new System.Drawing.Point(253, 173);
             this.cmbespecialidade.Name = "cmbespecialidade";
-            this.cmbespecialidade.Size = new System.Drawing.Size(598, 29);
+            this.cmbespecialidade.Size = new System.Drawing.Size(547, 29);
             this.cmbespecialidade.TabIndex = 30;
             this.cmbespecialidade.Text = "Especialidade";
             // 
@@ -138,7 +138,7 @@
             this.cmbhospital.FormattingEnabled = true;
             this.cmbhospital.Location = new System.Drawing.Point(253, 116);
             this.cmbhospital.Name = "cmbhospital";
-            this.cmbhospital.Size = new System.Drawing.Size(598, 29);
+            this.cmbhospital.Size = new System.Drawing.Size(547, 29);
             this.cmbhospital.TabIndex = 29;
             this.cmbhospital.Text = "Hospital Beatriz Ângelo";
             this.cmbhospital.SelectedIndexChanged += new System.EventHandler(this.cmbhospital_SelectedIndexChanged_1);
@@ -157,10 +157,11 @@
             this.txtMorada.Location = new System.Drawing.Point(252, 482);
             this.txtMorada.Margin = new System.Windows.Forms.Padding(4);
             this.txtMorada.Name = "txtMorada";
-            this.txtMorada.Size = new System.Drawing.Size(599, 35);
+            this.txtMorada.Size = new System.Drawing.Size(548, 35);
             this.txtMorada.TabIndex = 54;
             this.txtMorada.Text = "Morada";
             this.txtMorada.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMorada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMorada_KeyPress_1);
             // 
             // txtContacto
             // 
@@ -180,6 +181,7 @@
             this.txtContacto.TabIndex = 52;
             this.txtContacto.Text = "Telemovel / Telefone ";
             this.txtContacto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContacto_KeyPress_1);
             // 
             // txtNSaude
             // 
@@ -199,6 +201,7 @@
             this.txtNSaude.TabIndex = 51;
             this.txtNSaude.Text = "Nº de Saude";
             this.txtNSaude.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNSaude.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNSaude_KeyPress_1);
             // 
             // txtNomeCompleto
             // 
@@ -214,10 +217,11 @@
             this.txtNomeCompleto.Location = new System.Drawing.Point(252, 231);
             this.txtNomeCompleto.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeCompleto.Name = "txtNomeCompleto";
-            this.txtNomeCompleto.Size = new System.Drawing.Size(599, 35);
+            this.txtNomeCompleto.Size = new System.Drawing.Size(548, 35);
             this.txtNomeCompleto.TabIndex = 50;
             this.txtNomeCompleto.Text = "Nome Completo";
             this.txtNomeCompleto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCompleto_KeyPress_1);
             // 
             // label9
             // 
@@ -297,7 +301,7 @@
             this.Btn5.IdleFillColor = System.Drawing.Color.White;
             this.Btn5.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.Btn5.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
-            this.Btn5.Location = new System.Drawing.Point(627, 582);
+            this.Btn5.Location = new System.Drawing.Point(827, 570);
             this.Btn5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Btn5.Name = "Btn5";
             this.Btn5.Size = new System.Drawing.Size(214, 45);
@@ -323,7 +327,7 @@
             this.Btn4.IdleFillColor = System.Drawing.Color.White;
             this.Btn4.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.Btn4.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
-            this.Btn4.Location = new System.Drawing.Point(429, 582);
+            this.Btn4.Location = new System.Drawing.Point(694, 570);
             this.Btn4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Btn4.Name = "Btn4";
             this.Btn4.Size = new System.Drawing.Size(125, 45);

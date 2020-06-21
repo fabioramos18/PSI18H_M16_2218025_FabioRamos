@@ -19,7 +19,6 @@ namespace PSI18H_M16_2218025_FabioRamos
         }
 
         private static ConsultasAgendadas _instancia;
-
         public static ConsultasAgendadas instancia
         {
             get
@@ -30,10 +29,9 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
         }
 
-
-
         private void ConsultasAgendadas_Load(object sender, EventArgs e)
         {
+            dateTimePicker2.MinDate = DateTime.Now;
             #region select para preencher o gridview
             MDB mdb = new MDB();
             {
@@ -71,8 +69,6 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
             #endregion
         }
-
-
 
         public void pesquisar(string valorpesquisa)
         {
@@ -174,7 +170,6 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             panel3.Visible = false;
         }
-
        
         private void btnAlterar_Click(object sender, EventArgs e)
         {
@@ -288,11 +283,6 @@ namespace PSI18H_M16_2218025_FabioRamos
                 }
             }
             #endregion
-        }
-         
-        private void button4_Click(object sender, EventArgs e)
-        {
-           
-        }
+        }         
     }
 }

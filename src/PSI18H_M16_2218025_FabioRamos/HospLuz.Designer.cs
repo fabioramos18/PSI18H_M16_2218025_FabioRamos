@@ -40,12 +40,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.label49 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox13);
+            this.panel1.Controls.Add(this.pictureBox14);
+            this.panel1.Controls.Add(this.label49);
             this.panel1.Controls.Add(this.cmbhospitalLUZ);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -64,12 +72,11 @@
             // 
             // cmbhospitalLUZ
             // 
-            this.cmbhospitalLUZ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbhospitalLUZ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbhospitalLUZ.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbhospitalLUZ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.cmbhospitalLUZ.FormattingEnabled = true;
-            this.cmbhospitalLUZ.Location = new System.Drawing.Point(674, 351);
+            this.cmbhospitalLUZ.Location = new System.Drawing.Point(674, 393);
             this.cmbhospitalLUZ.Name = "cmbhospitalLUZ";
             this.cmbhospitalLUZ.Size = new System.Drawing.Size(353, 29);
             this.cmbhospitalLUZ.TabIndex = 47;
@@ -81,7 +88,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(143, 544);
+            this.label8.Location = new System.Drawing.Point(140, 554);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(242, 20);
             this.label8.TabIndex = 44;
@@ -94,7 +101,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(99, 503);
+            this.label7.Location = new System.Drawing.Point(95, 514);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(185, 20);
             this.label7.TabIndex = 43;
@@ -107,7 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(40, 544);
+            this.label6.Location = new System.Drawing.Point(36, 555);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 19);
             this.label6.TabIndex = 42;
@@ -120,7 +127,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(40, 504);
+            this.label5.Location = new System.Drawing.Point(36, 515);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 19);
             this.label5.TabIndex = 41;
@@ -133,7 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(84, 465);
+            this.label4.Location = new System.Drawing.Point(80, 476);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 20);
             this.label4.TabIndex = 40;
@@ -146,7 +153,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 465);
+            this.label3.Location = new System.Drawing.Point(36, 476);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 19);
             this.label3.TabIndex = 39;
@@ -159,7 +166,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 419);
+            this.label2.Location = new System.Drawing.Point(36, 434);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 24);
             this.label2.TabIndex = 38;
@@ -181,11 +188,42 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 346);
+            this.label1.Location = new System.Drawing.Point(34, 363);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 31);
             this.label1.TabIndex = 35;
             this.label1.Text = "Hospital Da Luz:";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(696, 348);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(48, 30);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 150;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.Location = new System.Drawing.Point(945, 348);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(48, 29);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 149;
+            this.pictureBox14.TabStop = false;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.label49.Location = new System.Drawing.Point(750, 348);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(189, 28);
+            this.label49.TabIndex = 148;
+            this.label49.Text = "Especialidades";
             // 
             // HospLuz
             // 
@@ -200,6 +238,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,5 +257,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbhospitalLUZ;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Label label49;
     }
 }

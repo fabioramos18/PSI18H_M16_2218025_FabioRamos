@@ -32,19 +32,39 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void ucConsultas_Load(object sender, EventArgs e)
         {
-            
-            
             panel3.Visible = false;
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
-                string sql = $@"select * FROM consulta WHERE Data_consulta is null ";
+                string sql = $@"select idMarcacao as 'ID Marcação', User_id_user as 'ID User',
+                                nome_completo AS 'Nome do Utente ', num_saude as 'Nº de Saúde', 
+                                 Data_nascimento as 'Data de Nascimento', contacto as 'Contacto', 
+                                morada as 'Morada', nome_hospital as 'Hospital', nome_especialidade 
+                                as 'Especialidade' FROM consulta WHERE Data_consulta is null order by idMarcacao ASC ";
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 bunifuCustomDataGrid1.DataSource = table;
             }
 
             dateTimePicker2.MinDate = DateTime.Now;
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            MDB mdb = new MDB();
+            {
+                DataTable table = new DataTable();
+                string sql = $@"select idMarcacao as 'ID Marcação', User_id_user as 'ID User',
+                                nome_completo AS 'Nome do Utente ', num_saude as 'Nº de Saúde', 
+                                 Data_nascimento as 'Data de Nascimento', contacto as 'Contacto', 
+                                morada as 'Morada', nome_hospital as 'Hospital', nome_especialidade 
+                                as 'Especialidade' FROM consulta WHERE Data_consulta is null order by idMarcacao ASC ";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
+                adapter.Fill(table);
+                bunifuCustomDataGrid1.DataSource = table;
+            }
         }
         private void bunifuCustomDataGrid1_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
@@ -130,16 +150,31 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
         }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
+      
+        //pesquisar
+        public void pesquisar(string valorpesquisa)
         {
             MDB mdb = new MDB();
             {
+                string pesquisarQuery = "select idMarcacao as 'ID Marcação', User_id_user as 'ID User'," +
+                    "  nome_completo AS 'Nome do Utente ', num_saude as 'Nº de Saúde',   " +
+                    "Data_nascimento as 'Data de Nascimento', contacto as 'Contacto',  morada as 'Morada', " +
+                    "nome_hospital as 'Hospital', nome_especialidade as 'Especialidade' " +
+                    "FROM consulta WHERE Data_consulta is null " +
+                    "AND CONCAT(nome_completo, nome_especialidade, nome_hospital ) LIKE '%" + valorpesquisa + "%' order by idMarcacao ASC";
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(pesquisarQuery, mdb.getConnection());
                 DataTable table = new DataTable();
-                string sql = $@"select * FROM consulta WHERE Data_consulta is null ";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 bunifuCustomDataGrid1.DataSource = table;
             }
+
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            pesquisar(txtSearch.Text);
+        }
+       
     }
 }
