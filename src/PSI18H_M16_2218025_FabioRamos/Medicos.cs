@@ -17,6 +17,24 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             InitializeComponent();
         }
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelConteudo.Controls.Add(childForm);
+            panelConteudo.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+
+
+
 
         private void Medicos_Load(object sender, EventArgs e)
         {
@@ -179,12 +197,12 @@ namespace PSI18H_M16_2218025_FabioRamos
             txtContacto.Text = "";
 
             //ocultar os butões delet e editar
-            if (btnDelete.Visible == true || btnEditar.Visible == true || btnGuardar.Visible == false)
+            if (btnDelete.Visible == true || btnEditar.Visible == true || btnFicheiro.Visible == false || btnGuardar.Visible == false)
             {
                 btnDelete.Visible = false;
                 btnEditar.Visible = false;
                 btnGuardar.Visible = true;
-
+                btnFicheiro.Visible = true;
             }
 
             //mostrar panel
@@ -329,8 +347,10 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form1 entrarform = new Form1();
-            entrarform.Show();
+            panelConteudo.Visible = true;
+            openChildForm(new Form1());
+         //   Form1 entrarform = new Form1();
+          //  entrarform.Show();
         }
     }
 }

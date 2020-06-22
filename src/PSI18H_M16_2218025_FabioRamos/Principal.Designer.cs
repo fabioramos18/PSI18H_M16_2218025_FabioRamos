@@ -35,7 +35,6 @@
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnFechar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.btnQuemsomos = new System.Windows.Forms.Button();
             this.btnProfissionais = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
@@ -131,7 +130,6 @@
             // 
             this.MenuVertical.AutoScroll = true;
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.MenuVertical.Controls.Add(this.btnQuemsomos);
             this.MenuVertical.Controls.Add(this.btnProfissionais);
             this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.btnServicos);
@@ -144,24 +142,6 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(220, 640);
             this.MenuVertical.TabIndex = 3;
-            // 
-            // btnQuemsomos
-            // 
-            this.btnQuemsomos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.btnQuemsomos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuemsomos.FlatAppearance.BorderSize = 0;
-            this.btnQuemsomos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnQuemsomos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuemsomos.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuemsomos.ForeColor = System.Drawing.Color.White;
-            this.btnQuemsomos.Image = ((System.Drawing.Image)(resources.GetObject("btnQuemsomos.Image")));
-            this.btnQuemsomos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuemsomos.Location = new System.Drawing.Point(0, 427);
-            this.btnQuemsomos.Name = "btnQuemsomos";
-            this.btnQuemsomos.Size = new System.Drawing.Size(220, 35);
-            this.btnQuemsomos.TabIndex = 9;
-            this.btnQuemsomos.Text = "Quem Somos";
-            this.btnQuemsomos.UseVisualStyleBackColor = false;
             // 
             // btnProfissionais
             // 
@@ -176,7 +156,7 @@
             this.btnProfissionais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProfissionais.Location = new System.Drawing.Point(0, 392);
             this.btnProfissionais.Name = "btnProfissionais";
-            this.btnProfissionais.Size = new System.Drawing.Size(220, 35);
+            this.btnProfissionais.Size = new System.Drawing.Size(220, 45);
             this.btnProfissionais.TabIndex = 9;
             this.btnProfissionais.Text = "Profissionais";
             this.btnProfissionais.UseVisualStyleBackColor = false;
@@ -385,7 +365,6 @@
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btnQuemsomos;
         private System.Windows.Forms.Button btnProfissionais;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button14;

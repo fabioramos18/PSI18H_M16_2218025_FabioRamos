@@ -40,10 +40,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pdfreader.Enabled = true;
-            this.pdfreader.Location = new System.Drawing.Point(12, 12);
+            this.pdfreader.Location = new System.Drawing.Point(2, 3);
             this.pdfreader.Name = "pdfreader";
             this.pdfreader.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfreader.OcxState")));
-            this.pdfreader.Size = new System.Drawing.Size(964, 613);
+            this.pdfreader.Size = new System.Drawing.Size(1059, 351);
             this.pdfreader.TabIndex = 0;
             // 
             // button4
@@ -53,7 +53,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(791, 651);
+            this.button4.Location = new System.Drawing.Point(876, 360);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 33);
             this.button4.TabIndex = 92;
@@ -66,9 +66,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(988, 708);
+            this.ClientSize = new System.Drawing.Size(1064, 395);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pdfreader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";

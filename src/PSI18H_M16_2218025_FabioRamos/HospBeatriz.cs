@@ -23,7 +23,7 @@ namespace PSI18H_M16_2218025_FabioRamos
             MDB mdb = new MDB();
 
             {
-
+              
 
                 string sql = $@"select e.nome_especialidade 
 from hospital_tem_especialidade x 
@@ -54,5 +54,6 @@ where x.Hospital_idHospita = 1 order by e.nome_especialidade";
                 }
             }
         }
+
     }
 }

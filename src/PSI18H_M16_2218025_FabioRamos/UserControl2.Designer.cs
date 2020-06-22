@@ -190,7 +190,6 @@
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(548, 35);
             this.txtNomeCompleto.TabIndex = 40;
-            this.txtNomeCompleto.Text = "Nome Completo";
             this.txtNomeCompleto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCompleto_KeyPress);
             // 
@@ -213,7 +212,6 @@
             this.txtNSaude.Name = "txtNSaude";
             this.txtNSaude.Size = new System.Drawing.Size(266, 35);
             this.txtNSaude.TabIndex = 41;
-            this.txtNSaude.Text = "Nº de Saude";
             this.txtNSaude.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNSaude.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNSaude_KeyPress);
             // 
@@ -236,7 +234,6 @@
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(266, 35);
             this.txtContacto.TabIndex = 42;
-            this.txtContacto.Text = "Telemovel / Telefone ";
             this.txtContacto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContacto_KeyPress);
             // 
@@ -259,7 +256,6 @@
             this.txtMorada.Name = "txtMorada";
             this.txtMorada.Size = new System.Drawing.Size(548, 35);
             this.txtMorada.TabIndex = 44;
-            this.txtMorada.Text = "Morada";
             this.txtMorada.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMorada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMorada_KeyPress);
             // 

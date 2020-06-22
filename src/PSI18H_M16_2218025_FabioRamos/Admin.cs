@@ -81,8 +81,8 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button3_Click(object sender, EventArgs e)
         {
-            panelConteudo.Controls.Clear();
-            openChildForm(new Medicos());
+             panelConteudo.Controls.Clear();
+             openChildForm(new Medicos());
              hideSubmenu();
              movepanel(button3);
         }

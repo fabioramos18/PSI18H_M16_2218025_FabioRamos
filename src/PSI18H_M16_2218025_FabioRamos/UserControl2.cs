@@ -69,18 +69,42 @@ namespace PSI18H_M16_2218025_FabioRamos
         public static string passingText7;
 
 
+        //verificar se  textbox contém os valores padrão
+        Boolean VerificarValoresTextBoxes()
+        {
+            String completename = txtNomeCompleto.Text;
+            String nsaude = txtNSaude.Text;
+            String cont = txtContacto.Text;
+            String mor = txtMorada.Text;
 
+
+            if (completename.Equals("") || nsaude.Equals("") || cont.Equals("") || mor.Equals(""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void Btn2_Click(object sender, EventArgs e)
         {
-          //  DateTime data1 = Convert.ToDateTime(dateTimePicker1.text);
-            passingText2 = txtNomeCompleto.Text;
-            passingText3 = txtNSaude.Text;
-            passingText4 = txtContacto.Text;
-            passingText5 = dateTimePicker1.Text;
-            passingText6 = txtMorada.Text;
-            this.Hide();
-            this.Parent.Controls.Add(new UserControl3());
+            //verificar se as textbox teem valores padrao
+            if (!VerificarValoresTextBoxes())
+            { 
+                passingText2 = txtNomeCompleto.Text;
+                passingText3 = txtNSaude.Text;
+                passingText4 = txtContacto.Text;
+                passingText5 = dateTimePicker1.Text;
+                passingText6 = txtMorada.Text;
+                this.Hide();
+                this.Parent.Controls.Add(new UserControl3());
+            }
+            else
+            {
+                MessageBox.Show("Preencha os campos com informação valida", "Empty Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
 
         private void Btn3_Click(object sender, EventArgs e)

@@ -24,9 +24,10 @@ namespace PSI18H_M16_2218025_FabioRamos
             contMedico();
             contUsers();
         }
-        #region COUNT quantidade de Medicos
+        
         private void contMedico()
         {
+            #region COUNT quantidade de Medicos
             MDB mdb = new MDB();
             {
                 try
@@ -51,12 +52,14 @@ namespace PSI18H_M16_2218025_FabioRamos
                     mdb.closeConnection();
                 }
             }
+            #endregion
         }
-        #endregion
+        
 
-        #region COUNT quantidade de utillizadores
+        
         private void contUsers()
         {
+            #region COUNT quantidade de utillizadores
             MDB mdb = new MDB();
             {
                 try
@@ -81,8 +84,9 @@ namespace PSI18H_M16_2218025_FabioRamos
                     mdb.closeConnection();
                 }
             }
+            #endregion
         }
-        #endregion
+        
 
         private void pictureBox2_MouseHover(object sender, EventArgs e)
         {
@@ -93,5 +97,46 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             panel1.Visible = false;
         }
+
+        private void pictureBox3_MouseHover(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+        }
+
+        private void pictureBox4_MouseHover(object sender, EventArgs e)
+        {
+            panel3.Visible = true;
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            panel4.Visible = false;
+        }
+
+        private void pictureBox5_MouseHover(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
+        }
+
+        private void pictureBox6_MouseHover(object sender, EventArgs e)
+        {
+            panel7.Visible = true;
+        }
+
+        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.Visible = false;
+        }
+
     }
 }
