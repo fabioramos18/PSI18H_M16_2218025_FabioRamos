@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Jun-2020 às 23:42
+-- Tempo de geração: 24-Jun-2020 às 00:59
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.6
 
@@ -53,7 +53,6 @@ INSERT INTO `consulta` (`idMarcacao`, `User_id_user`, `nome_completo`, `num_saud
 (24, NULL, 'Nome Completo', 0, '2020-06-19', 0, 'Morada', 'Hospital Beatriz Ângelo', 'Cardiologia', '2020-06-19', 2),
 (25, NULL, 'eerrNome Completo', 0, '2020-06-19', 0, 'Morada', 'Hospital Beatriz Ângelo', 'Cardiologia', '2020-06-27', 2),
 (26, NULL, 'Nome Completoerrrrrr ', 213123123, '2020-06-19', 2132131, 'Moradaew fd', 'Hospital Beatriz Ângelo', 'Cardiologia', '2020-06-19', 2),
-(29, NULL, 'fabio Ramoss', 2147483647, '2020-10-31', 2147483647, 'RUA ALBERO FITMINO 198', 'Hospital Trofa Saúde', 'Vacina', '2020-10-31', 5),
 (30, NULL, 'cARLOS', 343434343, '1990-01-02', 2147483647, 'CAMPO GRANDE', 'Hospital Trofa Saúde', 'Neurologia', '1990-01-02', 2),
 (31, NULL, 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF', 2147483647, '2020-06-01', 2147483647, 'RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', 'Hospital Da Luz', 'Nutrição', '2021-09-28', 5),
 (32, NULL, 'teste teste', 1212121221, '2020-06-03', 2147483647, 'Moradaqualquer', 'Hospital Da Luz', 'Nutrição', '2020-06-27', 5),
@@ -61,7 +60,8 @@ INSERT INTO `consulta` (`idMarcacao`, `User_id_user`, `nome_completo`, `num_saud
 (34, NULL, 'teste teste t', 123454356, '2020-06-23', 986754673, 'lisboa', 'Hospital Trofa Saúde', 'Psicologia', '2020-06-23', 5),
 (35, NULL, 'Nome Completo para teste', 34545345, '2020-06-01', 345345345, 'Morada nº12', 'Hospital Trofa Saúde', 'Nutrição', '2020-06-23', 2),
 (36, NULL, 'Nome Completo tese', 2112121221, '2020-06-23', 76543235, 'rua x , 18, r/c', 'Hospital Beatriz Ângelo', 'Cardiologia', NULL, NULL),
-(37, NULL, 'fafafafafafafaf', 21444325, '2020-06-01', 967967976, 'Morada morada morada', 'Hospital Beatriz Ângelo', 'Cardiologia', NULL, NULL);
+(37, NULL, 'fafafafafafafaf', 21444325, '2020-06-01', 967967976, 'Morada morada morada', 'Hospital Beatriz Ângelo', 'Cardiologia', NULL, NULL),
+(38, 1, 'fabio Ramos', 12345678, '2020-06-23', 762565675, 'Rua livre,28', 'Hospital Da Luz', 'Fisioterapia', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,10 @@ CREATE TABLE `medico` (
 
 INSERT INTO `medico` (`idMedico`, `nome_medico`, `morada`, `email`, `contacto`, `Especialidade_idEspecialidade`, `Hospital_idHospita`) VALUES
 (2, 'Pedro Santos', 'Rua principal, vale das rosas, nº 19,rc', 'fabioramos10h@gmail.com', 9789957, 1, 1),
-(5, 'Rita Campos Oliveira', 'Rua das rosas, nº1, r/c, Lisboa', 'RitaCampos12@gmail.com', 966160444, 10, 3);
+(5, 'Rita Campos Oliveira', 'Rua das rosas, nº1, r/c, Lisboa', 'RitaCampos12@gmail.com', 966160444, 10, 3),
+(6, 'Carlos Santos pereira', 'Rua blala, nº5, r/c, Lisboa', 'csp@gmail.com', 96644444, 5, 2),
+(7, 'Ana Dos Santos pereira', 'Rua  rosas, nº4, 2ºdt, Lisboa', 'anaclrat@gmail.com', 966144444, 2, 1),
+(8, 'Rita Oliveira', 'Cais do Sodre, nº633, 3ºdt, Lisboa', 'rcoahdjdh2@gmail.com', 6160444, 10, 3);
 
 -- --------------------------------------------------------
 
@@ -192,7 +195,7 @@ INSERT INTO `user` (`id_user`, `nome_completo`, `user`, `email`, `passe`) VALUES
 (1, 'e', 'e', 'eeeeeeeee', 'e'),
 (3, 'Vera Costa', 'VeraCosta1', 'p@monteiro.com', 'vera123'),
 (4, 'CristIano António dos Santos Oliveira', 'CristIano.António', 'CristIano.António.12gmail.com', 'Cristiano123'),
-(7, 'teste teste', 'teste4', 'teste12@gmail.com', 't4');
+(7, 'teste teste', 'teste4', 'teste12@gmail.com', 't44');
 
 --
 -- Índices para tabelas despejadas
@@ -248,7 +251,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `consulta`
 --
 ALTER TABLE `consulta`
-  MODIFY `idMarcacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idMarcacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `especialidade`
@@ -266,7 +269,7 @@ ALTER TABLE `hospital`
 -- AUTO_INCREMENT de tabela `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `idMedico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idMedico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `user`
