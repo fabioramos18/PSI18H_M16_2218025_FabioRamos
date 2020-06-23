@@ -79,6 +79,39 @@ namespace PSI18H_M16_2218025_FabioRamos
                         txtMorada.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
                         txtHospital.Text = bunifuCustomDataGrid1.CurrentRow.Cells[7].Value.ToString();
                         txtEspecialidade.Text = bunifuCustomDataGrid1.CurrentRow.Cells[8].Value.ToString();
+
+
+            ///////////////////////////////////////////////////////////////
+
+            MDB mdb = new MDB();
+            {
+                DataTable table = new DataTable();
+                string sql = $@"select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada,
+                                contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade 
+                                from medico m 
+                                join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade 
+                                join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
+                adapter.Fill(table);
+                bunifuCustomDataGrid2.DataSource = table;
+
+
+            }
+
+        }
+        Boolean VerificarValoresTextBoxes()
+        {
+            String idmedico = txtidMedico.Text;
+
+            if (txtidMedico.Text.Equals(""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void btnAgendar_Click(object sender, EventArgs e)
@@ -96,14 +129,22 @@ namespace PSI18H_M16_2218025_FabioRamos
                 try
                 {
                     mdb.openConnection();
-                    if (command.ExecuteNonQuery() == 1)
+                    if (!VerificarValoresTextBoxes())
                     {
+                        if (command.ExecuteNonQuery() == 1)
+                        {
                         MessageBox.Show("Consulta Agendada", "Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         panel3.Visible = false;
+                        panel5.Visible = false;
+                        }
+                        else
+                        {
+                        MessageBox.Show("ERRO");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("ERRO");
+                        MessageBox.Show("Insira o ID do Médico", "ERRO", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception erro)
@@ -175,6 +216,15 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             pesquisar(txtSearch.Text);
         }
-       
+
+        private void bunifuCustomDataGrid2_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtidMedico.Text = bunifuCustomDataGrid2.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = true;
+        }
     }
 }

@@ -87,11 +87,11 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void MarcarC_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.MaxDate = DateTime.Now;
             CarregarHospitais();
             txtNomeCompleto.Text = "Nome Completo";
             txtNSaude.Text = "Nº de Saude";
             txtContacto.Text = "Telemovel / Telefone";
-            dateTimePicker1.Value = DateTime.Now;
             txtMorada.Text = "Morada";
         }
 
@@ -142,9 +142,9 @@ namespace PSI18H_M16_2218025_FabioRamos
                         txtNomeCompleto.Text = "Nome Completo";
                         txtNSaude.Text = "Nº de Saude";
                         txtContacto.Text = "Telemovel / Telefone";
-                        dateTimePicker1.Value = DateTime.Now;
+                 //       dateTimePicker1.Value = DateTime.Now;
                         txtMorada.Text = "Morada";
-                        this.Parent.Controls.Clear(); ;
+                        //this.Parent.Controls.Clear(); ;
                        
                     }
                     else

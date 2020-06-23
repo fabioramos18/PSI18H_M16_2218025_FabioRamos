@@ -146,6 +146,7 @@
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1007, 343);
             this.bunifuCustomDataGrid1.TabIndex = 83;
+            this.bunifuCustomDataGrid1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuCustomDataGrid1_MouseClick);
             this.bunifuCustomDataGrid1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.bunifuCustomDataGrid1_MouseDoubleClick);
             // 
             // label1
@@ -321,6 +322,7 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

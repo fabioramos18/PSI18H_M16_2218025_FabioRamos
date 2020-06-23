@@ -112,11 +112,11 @@ namespace PSI18H_M16_2218025_FabioRamos
             {
                 if(username.Trim().Equals(""))
                 {
-                    MessageBox.Show("Digite o seu nome de utilizador para fazer login", "Empty Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Digite o seu nome de utilizador para fazer login", " Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (password.Trim().Equals(""))
                 {
-                    MessageBox.Show("Digite a sua palavra passe para fazer login", "Empty Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Digite a sua palavra passe para fazer login", " Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

@@ -31,7 +31,7 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void ConsultasAgendadas_Load(object sender, EventArgs e)
         {
-            dateTimePicker2.MinDate = DateTime.Now;
+            
             #region select para preencher o gridview
             MDB mdb = new MDB();
             {
@@ -130,14 +130,14 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void hidepanel()
         {
-            if (panel6.Visible == true)
+            if (panel6.Visible == true || panel5.Visible == true || panel3.Visible == true)
             {
                 panel6.Visible = false;
-            }
-            if (panel3.Visible == true)
-            {
                 panel3.Visible = false;
+                panel5.Visible = false;
             }
+            
+            
 
         }
 
@@ -153,7 +153,25 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button2_Click(object sender, EventArgs e)
         {
-          #region passar valores do datagrid para os campos do panel3 
+            MDB mdb = new MDB();
+            {
+                DataTable table = new DataTable();
+                string sql = $@"select idMedico as ID, nome_medico as `Nome`,  email as Email, morada as Morada,
+                                contacto as Contacto, nome_hospital as Hospital, nome_especialidade as Especialidade 
+                                from medico m 
+                                join especialidade e on m.Especialidade_idEspecialidade = e.idEspecialidade 
+                                join hospital h on m.Hospital_idHospita = h.idHospita order by idMedico";
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
+                adapter.Fill(table);
+                bunifuCustomDataGrid2.DataSource = table;
+            }
+
+
+                #region passar valores do datagrid para os campos do panel3 
+
+                dateTimePicker2.MinDate = DateTime.Now;
+
             txtIdmarcacao.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
             txtIduser.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
             txtNomeutente.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
@@ -175,7 +193,20 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             panel3.Visible = false;
         }
-       
+        Boolean VerificarValoresTextBoxes()
+        {
+            String idmedico = textBox1.Text;
+           
+            if (textBox1.Text.Equals(""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             #region update na tabela consulta
@@ -192,14 +223,24 @@ namespace PSI18H_M16_2218025_FabioRamos
                 try
                 {
                     mdb.openConnection();
-                    if (command.ExecuteNonQuery() == 1)
+                    if (!VerificarValoresTextBoxes())
                     {
-                        MessageBox.Show("Consulta Agendada", "Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        panel3.Visible = false;
+
+                        if (command.ExecuteNonQuery() == 1)
+                        {
+                            MessageBox.Show("Consulta Alterada", "Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            panel3.Visible = false;
+                            panel5.Visible = false;
+                            textBox1.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERRO");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("ERRO");
+                        MessageBox.Show("Insira o ID do Médico", "ERRO", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception erro)
@@ -252,11 +293,13 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             }
             #endregion
-            if (panel3.Visible == true)
+            if (panel3.Visible == true ||
+                panel5.Visible == true)
             {
                 panel3.Visible = false;
+                panel5.Visible = false;
             }
-
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -292,6 +335,33 @@ namespace PSI18H_M16_2218025_FabioRamos
                 }
             }
             #endregion
-        }         
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+        }
+
+        private void bunifuCustomDataGrid2_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBox1.Text = bunifuCustomDataGrid2.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            #region validação 
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47 || e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Insira apenas números", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+            #endregion
+        }
     }
 }

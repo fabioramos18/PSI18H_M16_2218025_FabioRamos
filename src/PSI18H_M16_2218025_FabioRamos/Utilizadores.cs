@@ -63,29 +63,39 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void Utilizadores_Load(object sender, EventArgs e)
         {
             contConsultas();
+            #region select tabela user
+
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
                 string sql = $@"select id_user as 'ID User', nome_completo as 'Nome', 
                              user as 'Nome de Utilizador' , email as 'Email', passe as 'Palavra Passe'
-                             from user";
+                             from user order by id_user asc";
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 bunifuCustomDataGrid1.DataSource = table;
             }
+            #endregion 
         }
 
         private void bunifuCustomDataGrid1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            #region passar o texto do datagrid para o formulario
+
             txtIduser.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
             txtNomecompleto.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
             txtNomeUser.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
             txtEmail.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
             txtPasse.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
+
+            #endregion
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            #region UPDATE na tabela user
+
             MDB mdb = new MDB();
             {
                 string sql = $@"UPDATE `user` SET `nome_completo`= @nm , `user` = @us,  `email`= @email, `passe` = @ps WHERE `id_user` = @iu ";
@@ -125,10 +135,12 @@ namespace PSI18H_M16_2218025_FabioRamos
                     mdb.closeConnection();
                 }
             }
+            #endregion
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            #region DELETE na tabela user
             MDB mdb = new MDB();
             {
                 string sql = $@"DELETE FROM user WHERE id_user = @iu ";
@@ -141,7 +153,14 @@ namespace PSI18H_M16_2218025_FabioRamos
                     if (command.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Utilizador eliminado com sucesso", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        panel3.Visible = false;
+                       // panel3.Visible = false;
+
+                        txtIduser.Text="";
+                        txtNomecompleto.Text = "";
+                        txtNomeUser.Text = "";
+                        txtEmail.Text="";
+                        txtPasse.Text = "";
+
                     }
                     else
                     {
@@ -157,11 +176,13 @@ namespace PSI18H_M16_2218025_FabioRamos
                     mdb.closeConnection();
                 }
             }
+            #endregion
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             contConsultas();
+            #region select tabela user
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
@@ -174,6 +195,20 @@ namespace PSI18H_M16_2218025_FabioRamos
                 adapter.Fill(table);
                 bunifuCustomDataGrid1.DataSource = table;
             }
+            #endregion 
+        }
+
+        private void bunifuCustomDataGrid1_MouseClick(object sender, MouseEventArgs e)
+        {
+            #region passar o texto do datagrid para o formulario
+
+            txtIduser.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
+            txtNomecompleto.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
+            txtNomeUser.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
+            txtEmail.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
+            txtPasse.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
+
+            #endregion
         }
     }
     

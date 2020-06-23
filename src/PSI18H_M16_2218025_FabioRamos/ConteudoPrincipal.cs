@@ -88,55 +88,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         }
         
 
-        private void pictureBox2_MouseHover(object sender, EventArgs e)
-        {
-            panel1.Visible = true;
-        }
-
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            panel1.Visible = false;
-        }
-
-        private void pictureBox3_MouseHover(object sender, EventArgs e)
-        {
-            panel2.Visible = true;
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            panel2.Visible = false;
-        }
-
-        private void pictureBox4_MouseHover(object sender, EventArgs e)
-        {
-            panel3.Visible = true;
-        }
-
-        private void pictureBox4_MouseLeave(object sender, EventArgs e)
-        {
-            panel3.Visible = false;
-        }
-
-        private void pictureBox5_MouseLeave(object sender, EventArgs e)
-        {
-            panel4.Visible = false;
-        }
-
-        private void pictureBox5_MouseHover(object sender, EventArgs e)
-        {
-            panel4.Visible = true;
-        }
-
-        private void pictureBox6_MouseHover(object sender, EventArgs e)
-        {
-            panel7.Visible = true;
-        }
-
-        private void pictureBox6_MouseLeave(object sender, EventArgs e)
-        {
-            panel7.Visible = false;
-        }
+      
 
     }
 }

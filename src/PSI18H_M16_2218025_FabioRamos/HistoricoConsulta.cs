@@ -68,7 +68,8 @@ namespace PSI18H_M16_2218025_FabioRamos
                 {
                     mdb.openConnection();
                     DataTable table = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT count(distinct id_user ) FROM user", mdb.getConnection());
+                    MySqlCommand command = new MySqlCommand("SELECT count(distinct idMarcacao ) FROM consulta WHERE Data_consulta  " +
+                                                            "BETWEEN DATE_ADD(CURRENT_DATE(), INTERVAL -100 year ) AND CURRENT_DATE()", mdb.getConnection());
                     command.Parameters.Clear();
                     command.CommandType = CommandType.Text;
                     MySqlDataReader dr;
