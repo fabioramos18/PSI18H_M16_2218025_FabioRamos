@@ -226,5 +226,10 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             panel5.Visible = true;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+        }
     }
 }
