@@ -22,7 +22,6 @@ namespace PSI18H_M16_2218025_FabioRamos
                 panel2.Visible = false;
         }
         
-
         private void showSubmenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -46,6 +45,31 @@ namespace PSI18H_M16_2218025_FabioRamos
             movepanel(button1);
         }
 
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            #region childform
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelConteudo.Controls.Add(childForm);
+            panelConteudo.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            #endregion
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panelConteudo.Controls.Clear();
+            openChildForm(new Medicos());
+            hideSubmenu();
+            movepanel(button3);
+        }
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             if (panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
@@ -65,28 +89,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         }
 
 
-        private Form activeForm = null;
-        private void openChildForm(Form childForm)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelConteudo.Controls.Add(childForm);
-            panelConteudo.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-             panelConteudo.Controls.Clear();
-             openChildForm(new Medicos());
-             hideSubmenu();
-             movepanel(button3);
-        }
+       
 
         private void button6_Click(object sender, EventArgs e)
         {
