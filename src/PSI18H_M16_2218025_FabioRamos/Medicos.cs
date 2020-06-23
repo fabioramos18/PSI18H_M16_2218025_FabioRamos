@@ -317,40 +317,11 @@ namespace PSI18H_M16_2218025_FabioRamos
 
 
 
-        bool drag = false;
-        Point start_point = new Point(0, 0);
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            drag = true;
-            start_point = new Point(e.X, e.Y);
-        }
-
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (drag)
-            {
-                Point p = PointToScreen(e.Location);
-                this.Location = new Point(p.X - start_point.X, p.Y - start_point.Y);
-            }
-        }
-
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
-        {
-            drag = false;
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
             panelConteudo.Visible = true;
             openChildForm(new Form1());
-         //   Form1 entrarform = new Form1();
-          //  entrarform.Show();
         }
     }
 }

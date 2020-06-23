@@ -137,20 +137,6 @@ namespace PSI18H_M16_2218025_FabioRamos
             Application.Exit();
         }
 
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnMaximizar.Visible = false;
-            btnRestaurar.Visible = true;
-        }
-
-        private void btnRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnRestaurar.Visible = false;
-            btnMaximizar.Visible = true;
-        }
-
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -159,9 +145,23 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Entrar entrarform = new Entrar();
-            entrarform.Show();
-            this.Hide();
+
+            var result = MessageBox.Show(@"Deseja terminar a sessão?", "Confirmação", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    Entrar entrarform = new Entrar();
+                    entrarform.Show();
+                    this.Hide();
+                    break;
+                case DialogResult.No:
+                    break;
+                default:
+                    break;
+            }
+
+
+            
         }
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)

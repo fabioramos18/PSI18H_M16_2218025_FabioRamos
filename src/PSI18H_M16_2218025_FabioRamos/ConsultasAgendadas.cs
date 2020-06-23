@@ -134,6 +134,11 @@ namespace PSI18H_M16_2218025_FabioRamos
             {
                 panel6.Visible = false;
             }
+            if (panel3.Visible == true)
+            {
+                panel3.Visible = false;
+            }
+
         }
 
         private void bunifuCustomDataGrid1_MouseClick(object sender, MouseEventArgs e)
@@ -247,6 +252,10 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             }
             #endregion
+            if (panel3.Visible == true)
+            {
+                panel3.Visible = false;
+            }
 
         }
 
