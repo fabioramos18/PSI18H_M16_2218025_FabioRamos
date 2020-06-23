@@ -103,7 +103,7 @@
             this.panel5.Controls.Add(this.label21);
             this.panel5.Location = new System.Drawing.Point(12, 702);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(983, 150);
+            this.panel5.Size = new System.Drawing.Size(966, 150);
             this.panel5.TabIndex = 145;
             // 
             // label3
@@ -352,7 +352,7 @@
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
             this.pictureBox12.Location = new System.Drawing.Point(225, 421);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(553, 268);
+            this.pictureBox12.Size = new System.Drawing.Size(536, 268);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 131;
             this.pictureBox12.TabStop = false;

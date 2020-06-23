@@ -156,5 +156,22 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
             hideSubmenu();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show(@"Deseja terminar a sessão?", "Confirmação", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    Entrar entrarform = new Entrar();
+                    entrarform.Show();
+                    this.Hide();
+                    break;
+                case DialogResult.No:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
