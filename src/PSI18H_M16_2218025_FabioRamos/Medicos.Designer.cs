@@ -61,6 +61,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.btnFicheiro = new System.Windows.Forms.Button();
             this.panelConteudo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -293,22 +294,22 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(999, 26);
+            this.panel4.Size = new System.Drawing.Size(995, 26);
             this.panel4.TabIndex = 10;
             // 
             // txtContacto
             // 
             this.txtContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContacto.Location = new System.Drawing.Point(118, 178);
+            this.txtContacto.Location = new System.Drawing.Point(100, 189);
             this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(297, 24);
+            this.txtContacto.Size = new System.Drawing.Size(315, 24);
             this.txtContacto.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 184);
+            this.label5.Location = new System.Drawing.Point(25, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 18);
             this.label5.TabIndex = 12;
@@ -338,6 +339,7 @@
             this.txtIdmedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdmedico.Location = new System.Drawing.Point(119, 41);
             this.txtIdmedico.Name = "txtIdmedico";
+            this.txtIdmedico.ReadOnly = true;
             this.txtIdmedico.Size = new System.Drawing.Size(296, 24);
             this.txtIdmedico.TabIndex = 16;
             // 
@@ -399,6 +401,7 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btncancelar);
             this.panel3.Controls.Add(this.btnFicheiro);
             this.panel3.Controls.Add(this.btnEditar);
             this.panel3.Controls.Add(this.btnGuardar);
@@ -420,9 +423,24 @@
             this.panel3.Controls.Add(this.txtNomeMedico);
             this.panel3.Location = new System.Drawing.Point(36, 442);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(999, 283);
+            this.panel3.Size = new System.Drawing.Size(995, 283);
             this.panel3.TabIndex = 8;
             this.panel3.Visible = false;
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.BackColor = System.Drawing.Color.Tomato;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.White;
+            this.btncancelar.Location = new System.Drawing.Point(268, 233);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(114, 33);
+            this.btncancelar.TabIndex = 92;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Visible = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnFicheiro
             // 
@@ -442,9 +460,9 @@
             // 
             // panelConteudo
             // 
-            this.panelConteudo.Location = new System.Drawing.Point(3, 41);
+            this.panelConteudo.Location = new System.Drawing.Point(3, 168);
             this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(1064, 395);
+            this.panelConteudo.Size = new System.Drawing.Size(1064, 268);
             this.panelConteudo.TabIndex = 9;
             this.panelConteudo.Visible = false;
             // 
@@ -505,5 +523,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnFicheiro;
         private System.Windows.Forms.Panel panelConteudo;
+        private System.Windows.Forms.Button btncancelar;
     }
 }

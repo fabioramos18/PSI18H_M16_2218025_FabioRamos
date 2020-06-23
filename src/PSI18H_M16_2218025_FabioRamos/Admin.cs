@@ -49,6 +49,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void button2_Click_1(object sender, EventArgs e)
         {
             if (panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
+                panelConteudo.Controls.Contains(Utilizadores.instancia) ||
                 panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
                 panelConteudo.Controls.Contains(ucConsultas.instancia) ||
                 !panelConteudo.Controls.Contains(MarcarC.instancia))
@@ -89,15 +90,26 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button6_Click(object sender, EventArgs e)
         {
-            panelConteudo.Controls.Clear();
-            openChildForm(new Form1());
-            hideSubmenu();
             movepanel(button6);
+
+            if (panelConteudo.Controls.Contains(MarcarC.instancia) ||
+                panelConteudo.Controls.Contains(ucConsultas.instancia) ||
+                panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
+                panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
+                !panelConteudo.Controls.Contains(Utilizadores.instancia))
+            {
+                panelConteudo.Controls.Clear();
+                panelConteudo.Controls.Add(Utilizadores.instancia);
+                Utilizadores.instancia.Dock = DockStyle.Fill;
+                Utilizadores.instancia.BringToFront();
+            }
+            hideSubmenu();
         }
 
         private void button4_Click_2(object sender, EventArgs e)
         {
-            if (panelConteudo.Controls.Contains(MarcarC.instancia) || 
+            if (panelConteudo.Controls.Contains(MarcarC.instancia) ||
+                panelConteudo.Controls.Contains(Utilizadores.instancia) ||
                 panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
                 panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
                 !panelConteudo.Controls.Contains(ucConsultas.instancia))
@@ -112,7 +124,8 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (panelConteudo.Controls.Contains(MarcarC.instancia) || 
+            if (panelConteudo.Controls.Contains(MarcarC.instancia) ||
+                panelConteudo.Controls.Contains(Utilizadores.instancia) ||
                 panelConteudo.Controls.Contains(ucConsultas.instancia) ||
                 panelConteudo.Controls.Contains(ConsultasAgendadas.instancia) ||
                 !panelConteudo.Controls.Contains(HistoricoConsulta.instancia))
@@ -128,6 +141,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void button12_Click(object sender, EventArgs e)
         {
             if (panelConteudo.Controls.Contains(MarcarC.instancia) ||
+                panelConteudo.Controls.Contains(Utilizadores.instancia) ||
                 panelConteudo.Controls.Contains(ucConsultas.instancia) ||
                 panelConteudo.Controls.Contains(HistoricoConsulta.instancia) ||
                !panelConteudo.Controls.Contains(ConsultasAgendadas.instancia))
@@ -139,7 +153,5 @@ namespace PSI18H_M16_2218025_FabioRamos
             }
             hideSubmenu();
         }
-
-        
     }
 }

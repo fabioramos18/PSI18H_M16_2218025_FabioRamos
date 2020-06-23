@@ -68,8 +68,7 @@ namespace PSI18H_M16_2218025_FabioRamos
                 {
                     mdb.openConnection();
                     DataTable table = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT count(distinct idMarcacao ) FROM consulta WHERE Data_consulta  " +
-                        "BETWEEN DATE_ADD(CURRENT_DATE(), INTERVAL - 100 year) AND CURRENT_DATE()", mdb.getConnection());
+                    MySqlCommand command = new MySqlCommand("SELECT count(distinct id_user ) FROM user", mdb.getConnection());
                     command.Parameters.Clear();
                     command.CommandType = CommandType.Text;
                     MySqlDataReader dr;
@@ -91,9 +90,12 @@ namespace PSI18H_M16_2218025_FabioRamos
         }
        
 
+
+
         private void HistoricoConsulta_Load(object sender, EventArgs e)
         {
             contConsultas();
+            #region select historico
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
@@ -106,15 +108,16 @@ namespace PSI18H_M16_2218025_FabioRamos
                                 WHERE Data_consulta  BETWEEN DATE_ADD(CURRENT_DATE(), INTERVAL -100 year ) AND CURRENT_DATE() 
                                 ORDER BY Data_consulta desc";
 
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 bunifuCustomDataGrid1.DataSource = table;
             }
+            #endregion
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+            #region select historico
             MDB mdb = new MDB();
             {
                 DataTable table = new DataTable();
@@ -127,11 +130,11 @@ namespace PSI18H_M16_2218025_FabioRamos
                                 WHERE Data_consulta  BETWEEN DATE_ADD(CURRENT_DATE(), INTERVAL -100 year ) AND CURRENT_DATE() 
                                 ORDER BY Data_consulta desc";
 
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, mdb.getConnection());
                 adapter.Fill(table);
                 bunifuCustomDataGrid1.DataSource = table;
             }
         }
-    }
+        #endregion
+        }
 }

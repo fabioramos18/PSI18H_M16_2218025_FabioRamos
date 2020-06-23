@@ -66,8 +66,10 @@ namespace PSI18H_M16_2218025_FabioRamos
                 panel3.Visible = true;
 
             //mostrar botões
-            if (btnDelete.Visible == false || btnEditar.Visible == false)
+            if (btnDelete.Visible == false || btnEditar.Visible == false || btnFicheiro.Visible == true || btncancelar.Visible == true )
             {
+                btncancelar.Visible = false;
+                btnFicheiro.Visible = false;
                 btnDelete.Visible = true;
                 btnEditar.Visible = true;
             }
@@ -155,7 +157,6 @@ namespace PSI18H_M16_2218025_FabioRamos
                     mdb.closeConnection();
                 }
             }
-
             panel3.Visible = false;
         }
 
@@ -163,6 +164,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             panel3.Visible = false;
+            
 
             MDB mdb = new MDB();
             {
@@ -197,12 +199,13 @@ namespace PSI18H_M16_2218025_FabioRamos
             txtContacto.Text = "";
 
             //ocultar os butões delet e editar
-            if (btnDelete.Visible == true || btnEditar.Visible == true || btnFicheiro.Visible == false || btnGuardar.Visible == false)
+            if (btnDelete.Visible == true || btnEditar.Visible == true || btnFicheiro.Visible == false || btnGuardar.Visible == false || btncancelar.Visible == false)
             {
                 btnDelete.Visible = false;
                 btnEditar.Visible = false;
                 btnGuardar.Visible = true;
                 btnFicheiro.Visible = true;
+                btncancelar.Visible = true;
             }
 
             //mostrar panel
@@ -217,7 +220,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             MDB mdb = new MDB();
             {
-                string sql = $@"DELETE FROM `medico` WHERE idMedico = @im ";
+                string sql = $@"DELETE FROM medico WHERE idMedico = @im ";
                 MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
 
                 command.Parameters.AddWithValue("@im", txtIdmedico.Text);
@@ -254,7 +257,6 @@ namespace PSI18H_M16_2218025_FabioRamos
                 string sql = $@"UPDATE `medico` SET `nome_medico`= @nm ,  `email`= @email, `morada` = @mor, `contacto` = @cont, `Especialidade_idEspecialidade` = @ie, `Hospital_idHospita` =@ih WHERE `idMedico` = @im ";
 
                 MySqlCommand command = new MySqlCommand(sql, mdb.getConnection());
-
 
                 command.Parameters.AddWithValue("@nm", txtNomeMedico.Text);
                 command.Parameters.AddWithValue("@mor", txtMorada.Text);
@@ -322,6 +324,11 @@ namespace PSI18H_M16_2218025_FabioRamos
         {
             panelConteudo.Visible = true;
             openChildForm(new Form1());
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            panelConteudo.Visible = false;
         }
     }
 }
