@@ -20,26 +20,7 @@ namespace PSI18H_M16_2218025_FabioRamos
         }
 
 
-        private void txtNomeCompleto_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 191))
-            {
-                MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-
-        private void txtMorada_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 43 || e.KeyChar >= 60 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 96 || e.KeyChar >= 123 && e.KeyChar <= 185 || e.KeyChar >= 187 && e.KeyChar <= 191))
-            {
-                MessageBox.Show("Caracter invalido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
+        
 
         public static bool ValidarEmail(string strEmail)
         {
@@ -65,7 +46,8 @@ namespace PSI18H_M16_2218025_FabioRamos
 
         private void TextboxUserName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 45 || e.KeyChar == 47 || e.KeyChar >= 58 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 94 || e.KeyChar == 96 || e.KeyChar >= 123 && e.KeyChar <= 191 || e.KeyChar >= 246 && e.KeyChar <= 248))
+            if ((e.KeyChar >= 33 && e.KeyChar <= 45 || e.KeyChar == 47 || e.KeyChar >= 58 && e.KeyChar <= 64 || e.KeyChar >= 91 && e.KeyChar <= 94 ||
+                e.KeyChar == 96 || e.KeyChar >= 123 && e.KeyChar <= 191 || e.KeyChar >= 246 && e.KeyChar <= 248))
             {
                 MessageBox.Show("Apenas letras (a-z)", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;

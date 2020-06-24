@@ -82,7 +82,8 @@ namespace PSI18H_M16_2218025_FabioRamos
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE (`user`collate utf8_bin) = @usn AND (`passe` collate utf8_bin) = @pass", mdb.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE (`user`collate utf8_bin) = @usn " +
+                "AND (`passe` collate utf8_bin) = @pass", mdb.getConnection());
             
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
@@ -91,9 +92,6 @@ namespace PSI18H_M16_2218025_FabioRamos
             
             adapter.Fill(table);
 
-
-            //ver se u utilizador existe ou não
-        
 
             if (TextboxUser.Text.Equals("Admin") && TextboxPassword.Text.Equals("Admin"))
             {
